@@ -1,0 +1,347 @@
+/* HERO SECTION - NEW MODERN SOLAR DESIGN */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #0f1115;
+    padding-top: 80px;
+}
+
+/* Background Layer */
+.hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #0f1115 0%, rgba(15, 17, 21, 0.8) 50%, rgba(15, 17, 21, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+/* Container Grid */
+.hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 6rem 6rem 3rem 6rem;
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-container {
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+/* LEFT COLUMN */
+.hero-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-content-left {
+        grid-column: span 5;
+    }
+}
+
+/* Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.badge-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--color-brand-green);
+    animation: pulse 2s infinite;
+}
+
+.badge-text {
+    color: var(--color-brand-green);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* Typography */
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.025em;
+    font-family: var(--font-heading);
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+.text-gradient {
+    background: linear-gradient(to right, white, #9ca3af);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-underline-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-underline-svg {
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    bottom: -4px;
+    left: 0;
+    color: var(--color-brand-green);
+}
+
+.hero-desc {
+    font-size: 1.125rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    max-width: 28rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 1.5rem;
+}
+
+/* Buttons */
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .hero-actions {
+        flex-direction: row;
+    }
+}
+
+.btn-hero-primary {
+    position: relative;
+    padding: 1rem 2rem;
+    background-color: var(--color-brand-blue);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 20px -10px rgba(45, 71, 149, 0.5);
+    transition: all 0.3s;
+}
+
+.btn-hero-primary:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 30px -15px rgba(45, 71, 149, 0.6);
+}
+
+.btn-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.7s ease-in-out;
+}
+
+.btn-hero-primary:hover .btn-shine {
+    transform: translateX(100%);
+}
+
+.btn-hero-secondary {
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #0f1115;
+    border-radius: 8px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.btn-hero-secondary:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.2);
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0.6;
+}
+
+.trust-avatars {
+    display: flex;
+    margin-left: 0.75rem;
+}
+
+.trust-avatar-item {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid #0f1115;
+    background-color: #4b5563;
+    margin-left: -0.75rem;
+    overflow: hidden;
+}
+
+.trust-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trust-text {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.trust-bold {
+    color: white;
+    font-weight: 700;
+}
+
+/* RIGHT COLUMN - CARDS */
+.hero-content-right {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content-right {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content-right {
+        grid-column: span 7;
+    }
+}
+
+.hero-blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 80%;
+    background-color: rgba(45, 71, 149, 0.2);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stagger-1 {
+    margin-top: 0;
+}
+
+.stagger-2 {
+    margin-top: 0;
+}
+
+.stagger-3 {
+    margin-top: 0;
+}
+
+.stagger-4 {
+    margin-top: 0;
+}
+
+@media (min-width: 768px) {
+    .stagger-2 {
+        margin-top: 3rem;
+    }
+
+    .stagger-3 {
+        margin-top: 6rem;
+    }
+
+    .stagger-4 {
+        margin-top: 9rem;
+    }
+}
+
+/* Standard Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

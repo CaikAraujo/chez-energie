@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Brand Colors */
+    --color-brand-green: #84cc16;
+    /* lime-500 */
+    --color-brand-blue: #2563eb;
+    /* blue-600 */
+    --color-brand-black: #0f172a;
+    /* slate-900 */
+
+    /* Feature Specific - Lime/Yellow Update */
+    --color-solar: #d4e635;
+    /* lime-yellow */
+    --color-heat: #3b82f6;
+    /* blue-500 */
+    --color-ev: #10b981;
+    /* emerald-500 */
+
+    /* Text Colors */
+    --color-text-main: #0f172a;
+    --color-text-body: #475569;
+    --color-text-muted: #94a3b8;
+
+    /* UI Colors */
+    --color-bg-subtle: #f8fafc;
+    --color-border: #e2e8f0;
+
+    /* Dimensions */
+    --radius-card: 16px;
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Spacing */
+    --container-width: 1280px;
+    --spacing-sm: 1.5rem;
+    /* 24px */
+    --spacing-md: 3rem;
+    /* 48px */
+    --spacing-lg: 6rem;
+    /* 96px */
+}
+
+@layer base {
+    body {
+        font-family: var(--font-body);
+        @apply bg-slate-50 text-slate-900 antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+    }
+}

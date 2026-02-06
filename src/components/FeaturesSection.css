@@ -1,0 +1,651 @@
+/* FeaturesSection.css */
+
+/* MASTER TIMING PLAN (Total Cycle: 8s) */
+/* 0s-1s: Solar (Yellow) -> 1s-3s: Beam 1 -> 3s-4s: Battery (Blue) -> 4s-6s: Beam 2 -> 6s-7s: Home (Green) -> 7s-8s: Hold */
+
+/* --- KEYFRAMES --- */
+
+/* Station Animations */
+@keyframes station-solar {
+
+    0%,
+    5% {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-muted);
+        box-shadow: none;
+    }
+
+    12%,
+    85% {
+        border-color: #eab308;
+        color: #eab308;
+        box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
+    }
+
+    100% {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-muted);
+        box-shadow: none;
+    }
+}
+
+@keyframes station-heat {
+
+    0%,
+    35% {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-muted);
+        box-shadow: none;
+    }
+
+    40%,
+    85% {
+        border-color: var(--color-heat);
+        color: var(--color-heat);
+        box-shadow: 0 0 30px rgba(45, 71, 149, 0.3);
+    }
+
+    100% {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-muted);
+        box-shadow: none;
+    }
+}
+
+@keyframes station-ev {
+
+    0%,
+    72% {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-muted);
+        box-shadow: none;
+    }
+
+    77%,
+    85% {
+        border-color: var(--color-ev);
+        color: var(--color-ev);
+        box-shadow: 0 0 30px rgba(111, 186, 34, 0.3);
+    }
+
+    100% {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-muted);
+        box-shadow: none;
+    }
+}
+
+/* Beam Travel Animations */
+@keyframes beam-travel-1 {
+
+    0%,
+    12% {
+        stroke-dashoffset: 240;
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    37% {
+        opacity: 1;
+    }
+
+    38%,
+    100% {
+        stroke-dashoffset: -240;
+        opacity: 0;
+    }
+}
+
+@keyframes beam-travel-2 {
+
+    0%,
+    50% {
+        stroke-dashoffset: 240;
+        opacity: 0;
+    }
+
+    51% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    76%,
+    100% {
+        stroke-dashoffset: -240;
+        opacity: 0;
+    }
+}
+
+/* Text Sync Animations */
+@keyframes text-solar {
+
+    0%,
+    5% {
+        color: var(--color-text-muted);
+    }
+
+    12%,
+    85% {
+        color: white;
+    }
+
+    100% {
+        color: var(--color-text-muted);
+    }
+}
+
+@keyframes text-heat {
+
+    0%,
+    35% {
+        color: var(--color-text-muted);
+    }
+
+    40%,
+    85% {
+        color: white;
+    }
+
+    100% {
+        color: var(--color-text-muted);
+    }
+}
+
+@keyframes text-ev {
+
+    0%,
+    72% {
+        color: var(--color-text-muted);
+    }
+
+    77%,
+    85% {
+        color: white;
+    }
+
+    100% {
+        color: var(--color-text-muted);
+    }
+}
+
+
+/* --- COMPONENT STYLES --- */
+
+.features-section {
+    position: relative;
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-bg-subtle);
+    overflow: hidden;
+}
+
+/* Background Elements */
+.features-bg-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
+}
+
+.features-bg-orb-primary {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background-color: var(--color-brand-blue);
+    opacity: 0.05;
+    border-radius: 9999px;
+    filter: blur(100px);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.features-bg-orb-accent {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: var(--color-brand-green);
+    opacity: 0.05;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.features-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    position: relative;
+    z-index: 10;
+}
+
+/* Header */
+.features-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.features-label {
+    display: block;
+    color: var(--color-text-muted);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.features-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .features-title {
+        font-size: 3rem;
+    }
+}
+
+.features-highlight {
+    background: linear-gradient(to right, var(--color-brand-blue), var(--color-brand-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.features-desc {
+    color: var(--color-text-body);
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    font-weight: 300;
+}
+
+/* Cards Grid */
+.features-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Feature Card */
+.feature-card {
+    padding: 2rem;
+    border-radius: var(--radius-card);
+    background: white;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.feature-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-float);
+}
+
+/* Color Variants for Hovers */
+.feature-card.solar:hover {
+    border-color: #d4e635;
+    /* lime-yellow */
+}
+
+.feature-card.heat:hover {
+    border-color: var(--color-heat);
+}
+
+.feature-card.ev:hover {
+    border-color: var(--color-ev);
+}
+
+/* Decoration Icon */
+.card-decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    opacity: 0.05;
+    transition: opacity 0.3s;
+}
+
+.feature-card:hover .card-decor {
+    opacity: 0.1;
+}
+
+.decor-icon {
+    width: 6rem;
+    height: 6rem;
+    margin-right: -2rem;
+    margin-top: -2rem;
+    transform: rotate(12deg);
+}
+
+.decor-icon.solar {
+    color: #d4e635;
+}
+
+.decor-icon.heat {
+    color: var(--color-heat);
+}
+
+.decor-icon.ev {
+    color: var(--color-ev);
+}
+
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 10;
+}
+
+.card-icon-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+/* Icon Box Colors */
+.card-icon-box.solar {
+    background: #fbfec4;
+    color: #b1c206;
+}
+
+.feature-card.solar:hover .card-icon-box.solar {
+    background: #d4e635;
+    color: white;
+}
+
+.card-icon-box.heat {
+    background: #eff6ff;
+    color: var(--color-heat);
+}
+
+.feature-card.heat:hover .card-icon-box.heat {
+    background: var(--color-heat);
+    color: white;
+}
+
+.card-icon-box.ev {
+    background: #f0fdf4;
+    color: var(--color-ev);
+}
+
+.feature-card.ev:hover .card-icon-box.ev {
+    background: var(--color-ev);
+    color: white;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: var(--color-text-body);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+    line-height: 1.625;
+}
+
+.card-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+}
+
+.card-label {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.card-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    transition: color 0.3s;
+}
+
+.feature-card.solar:hover .card-value {
+    color: #d4e635;
+}
+
+.feature-card.heat:hover .card-value {
+    color: var(--color-heat);
+}
+
+.feature-card.ev:hover .card-value {
+    color: var(--color-ev);
+}
+
+
+/* --- SYSTEM PILLARS (Dark Card) --- */
+.system-pillars {
+    position: relative;
+    border-radius: var(--radius-card);
+    background-color: var(--color-brand-black);
+    box-shadow: var(--shadow-float);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .system-pillars {
+        padding: 3rem;
+    }
+}
+
+.system-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.system-content {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .system-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.system-text h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.system-text p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.625;
+}
+
+.system-btn {
+    color: var(--color-brand-green);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.system-btn:hover {
+    gap: 0.75rem;
+}
+
+/* Animation Container */
+.system-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .system-flow {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+/* Pillar Item */
+.pillar-item {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.pillar-circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 9999px;
+    background-color: #1a1d24;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.pillar-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: color 0.3s;
+}
+
+.pillar-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Animations Classes */
+.pillar-item.solar .pillar-circle {
+    animation: station-solar 8s ease-out infinite;
+}
+
+.pillar-item.heat .pillar-circle {
+    animation: station-heat 8s ease-out infinite;
+}
+
+.pillar-item.ev .pillar-circle {
+    animation: station-ev 8s ease-out infinite;
+}
+
+.pillar-item.solar .pillar-label {
+    animation: text-solar 8s ease-out infinite;
+}
+
+.pillar-item.heat .pillar-label {
+    animation: text-heat 8s ease-out infinite;
+}
+
+.pillar-item.ev .pillar-label {
+    animation: text-ev 8s ease-out infinite;
+}
+
+
+/* Connectors */
+.connector-box {
+    display: none;
+    flex: 1;
+    height: 3rem;
+    position: relative;
+    margin: 0 -1rem;
+    z-index: 0;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .connector-box {
+        display: block;
+    }
+}
+
+.beam-animate-1 {
+    stroke-dasharray: 20 400;
+    animation: beam-travel-1 8s linear infinite;
+}
+
+.beam-animate-2 {
+    stroke-dasharray: 20 400;
+    animation: beam-travel-2 8s linear infinite;
+}
+
+/* Wind Variant */
+.feature-card.wind:hover {
+    border-color: #06b6d4;
+}
+
+.decor-icon.wind {
+    color: #06b6d4;
+}
+
+.card-icon-box.wind {
+    background: #ecfeff;
+    color: #06b6d4;
+}
+
+.feature-card.wind:hover .card-icon-box.wind {
+    background: #06b6d4;
+    color: white;
+}
+
+.feature-card.wind:hover .card-value {
+    color: #06b6d4;
+}

@@ -1,0 +1,227 @@
+/* Navigation.css */
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.nav-bar.scrolled {
+    background: rgba(15, 17, 21, 0.95);
+    /* #0f1115/95 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1280px;
+    /* Standard container width */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    /* Base height increased */
+    transition: height 0.3s ease;
+}
+
+.nav-bar.scrolled .nav-container {
+    height: 70px;
+    /* Scrolled height increased */
+}
+
+/* LOGO */
+.nav-logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+}
+
+.nav-logo-icon {
+    background-color: var(--color-brand-primary, #6fba22);
+    color: white;
+    padding: 0.375rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo-text {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.025em;
+    color: white;
+}
+
+.nav-logo-accent {
+    color: var(--color-brand-accent, #6fba22);
+}
+
+.nav-logo:hover .nav-logo-img {
+    transform: scale(1.05);
+}
+
+/* DESKTOP NAV */
+.desktop-menu {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #d1d5db;
+    /* text-gray-300 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 2px;
+    font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+}
+
+.nav-link-indicator {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    background-color: var(--color-brand-primary, #6fba22);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover .nav-link-indicator,
+.nav-link.active .nav-link-indicator {
+    width: 100%;
+}
+
+/* CTA BUTTON & ACTIONS */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-cta {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .btn-cta {
+        display: block;
+        padding: 0.625rem 1.5rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-cta:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(111, 186, 34, 0.5);
+        box-shadow: 0 0 15px rgba(111, 186, 34, 0.2);
+    }
+}
+
+/* MOBILE TOGGLE */
+.mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-toggle {
+        display: none;
+    }
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f1115;
+    /* Brand Black */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-out;
+}
+
+.mobile-link {
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    font-family: var(--font-body, sans-serif);
+}
+
+.mobile-link.active {
+    color: var(--color-brand-primary, #6fba22);
+}
+
+.btn-mobile-cta {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--color-brand-primary, #6fba22);
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

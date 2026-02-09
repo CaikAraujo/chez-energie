@@ -2,10 +2,19 @@ import React from 'react';
 import { ServiceCardProps } from '../../types';
 import './ServiceCard.css';
 
-export const ServiceCard: React.FC<ServiceCardProps> = ({ title, subtitle, image, icon: Icon, delay = 0 }) => {
+export const ServiceCard: React.FC<ServiceCardProps> = ({
+  title,
+  subtitle,
+  image,
+  icon: Icon,
+  delay = 0,
+  imagePosition = 'center',
+  imageScale = 1,
+  className = ''
+}) => {
   return (
     <div
-      className="service-card"
+      className={`service-card ${className}`}
       style={{
         animationDelay: `${delay}s`
       }}
@@ -16,6 +25,10 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, subtitle, image
           src={image}
           alt={title}
           className="card-bg-img"
+          style={{
+            objectPosition: imagePosition,
+            ...(imageScale !== 1 ? { transform: `scale(${imageScale})` } : {})
+          }}
         />
         {/* Dark Gradient Overlay for readability */}
         <div className="card-overlay" />

@@ -5,146 +5,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chez Energy - Ecossistemas Inteligentes</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Manrope', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-          },
-          colors: {
-            midnight: '#020617', // Mantemos para o footer/CTA
-            deep: '#0B1120',
-            accent: {
-              cyan: '#06b6d4',
-              lime: '#84cc16',
-              emerald: '#10b981'
-            }
-          },
-          animation: {
-            'blob': 'blob 7s infinite',
-            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-          },
-          keyframes: {
-            blob: {
-              '0%': { transform: 'translate(0px, 0px) scale(1)' },
-              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-              '100%': { transform: 'translate(0px, 0px) scale(1)' },
-            },
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    :root {
-      /* Brand Colors */
-      --color-brand-green: #84cc16;
-      /* lime-500 */
-      --color-brand-blue: #2563eb;
-      /* blue-600 */
-      --color-brand-black: #0f172a;
-      /* slate-900 */
-
-      /* Feature Specific - Lime/Yellow Update */
-      --color-solar: #d4e635;
-      /* lime-yellow */
-      --color-heat: #3b82f6;
-      /* blue-500 */
-      --color-ev: #10b981;
-      /* emerald-500 */
-
-      /* Text Colors */
-      --color-text-main: #0f172a;
-      --color-text-body: #475569;
-      --color-text-muted: #94a3b8;
-
-      /* UI Colors */
-      --color-bg-subtle: #f8fafc;
-      --color-border: #e2e8f0;
-
-      /* Dimensions */
-      --radius-card: 16px;
-
-      /* Typography */
-      --font-heading: 'Outfit', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-
-      /* Shadows */
-      --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-      /* Spacing */
-      --container-width: 1280px;
-      --spacing-sm: 1.5rem;
-      /* 24px */
-      --spacing-md: 3rem;
-      /* 48px */
-      --spacing-lg: 6rem;
-      /* 96px */
-    }
-
-    body {
-      background-color: #f8fafc;
-      /* Slate-50 */
-      color: #1e293b;
-      /* Slate-800 */
-      font-family: var(--font-body);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: var(--font-heading);
-    }
-
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    }
-
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-    }
-
-    .text-gradient {
-      background: linear-gradient(135deg, #0891b2 0%, #16a34a 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    /* Custom styles can go here if needed */
   </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4"
-  }
-}
-</script>
 </head>
 
 <body>

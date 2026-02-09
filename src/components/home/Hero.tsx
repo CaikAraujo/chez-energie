@@ -109,9 +109,10 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
             <ServiceCard
               title="Bombas de Calor"
               subtitle="Climatização Eficiente"
-              image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2732&auto=format&fit=crop"
+              image="/img/pompe_card.jpeg"
               icon={Thermometer}
               delay={0.2}
+              imagePosition="30% center"
             />
           </div>
 
@@ -119,9 +120,10 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
             <ServiceCard
               title="Carregamento EV"
               subtitle="Mobilidade Elétrica"
-              image="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2672&auto=format&fit=crop"
+              image="/img/prise_card.jpeg"
               icon={Zap}
               delay={0.3}
+              imagePosition="70% center"
             />
           </div>
 
@@ -129,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
             <ServiceCard
               title="Climatização"
               subtitle="Conforto 365 dias"
-              image="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=2070&auto=format&fit=crop"
+              image="/img/clim_card.jpeg"
               icon={Wind}
               delay={0.4}
             />

@@ -1,7 +1,7 @@
 import React from 'react';
-import ServicesSection from '../components/ServicesSection';
-import StatsSection from '../components/StatsSection';
-import CTASection from '../components/CTASection';
+import ServicesSection from '../components/shared/ServicesSection';
+import StatsSection from '../components/shared/StatsSection';
+import CTASection from '../components/shared/CTASection';
 
 const ServicesPage: React.FC = () => {
     return (

@@ -1,13 +1,13 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import FeaturesSection from '../components/FeaturesSection';
-import StatsSection from '../components/StatsSection';
-import CTASection from '../components/CTASection';
+import Hero from '../components/home/Hero';
+import FeaturesSection from '../components/home/FeaturesSection';
+import StatsSection from '../components/shared/StatsSection';
+import CTASection from '../components/shared/CTASection';
 import { SectionId } from '../types';
 
-import TestimonialsSection from '../components/TestimonialsSection'; // Import
+import TestimonialsSection from '../components/home/TestimonialsSection'; // Import
 
-import TrustMarquee from '../components/TrustMarquee'; // Import
+import TrustMarquee from '../components/home/TrustMarquee'; // Import
 
 const HomePage: React.FC = () => {
 

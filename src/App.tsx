@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import Navigation from './components/layout/Navigation';
+import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import SolutionsPage from './pages/SolutionsPage';
 import ContactPage from './pages/ContactPage';
-import { WhatsAppButton } from './components/WhatsAppButton';
+import { WhatsAppButton } from './components/ui/WhatsAppButton';
 
 const App: React.FC = () => {
   return (

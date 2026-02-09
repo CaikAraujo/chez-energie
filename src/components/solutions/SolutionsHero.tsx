@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDown, Zap } from 'lucide-react';
-import { SectionId } from '../types';
+import { SectionId } from '../../types';
 
 interface SolutionsHeroProps {
     scrollTo: (sectionId: SectionId) => void;

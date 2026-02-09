@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Phone, Sun, Thermometer, Zap, Wind } from 'lucide-react';
-import { SectionId } from '../types';
-import ServiceCard from './ServiceCard';
+import { SectionId } from '../../types';
+import ServiceCard from '../ui/ServiceCard';
 import './Hero.css';
 
 interface HeroProps {

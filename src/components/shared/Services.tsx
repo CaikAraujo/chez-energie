@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionId } from '../types';
+import { SectionId } from '../../types';
 import { Thermometer, Zap, Fan, Leaf, Home, BarChart3, ArrowUpRight } from 'lucide-react';
 
 const Services: React.FC = () => {

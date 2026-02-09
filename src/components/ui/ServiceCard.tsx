@@ -1,5 +1,5 @@
 import React from 'react';
-import { ServiceCardProps } from '../types';
+import { ServiceCardProps } from '../../types';
 import './ServiceCard.css';
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ title, subtitle, image, icon: Icon, delay = 0 }) => {

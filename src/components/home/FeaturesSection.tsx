@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sun, Thermometer, Zap, Battery, Home, ArrowRight, Wind } from 'lucide-react';
-import { SectionId } from '../types';
+import { SectionId } from '../../types';
 import './FeaturesSection.css';
 
 interface FeaturesSectionProps {

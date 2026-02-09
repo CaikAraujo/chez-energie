@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionId } from '../types';
+import { SectionId } from '../../types';
 
 const AboutSection: React.FC = () => {
     return (

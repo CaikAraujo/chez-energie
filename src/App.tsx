@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
+import SolutionsPage from './pages/SolutionsPage';
 import ContactPage from './pages/ContactPage';
 import { WhatsAppButton } from './components/WhatsAppButton';
 
@@ -17,7 +18,8 @@ const App: React.FC = () => {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services" element={<SolutionsPage />} />
+              <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               {/* Fallback to Home */}
               <Route path="*" element={<HomePage />} />

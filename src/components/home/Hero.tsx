@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Phone, Sun, Thermometer, Zap, Wind } from 'lucide-react';
 import { SectionId } from '../../types';
 import ServiceCard from '../ui/ServiceCard';
@@ -9,6 +10,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
+  const navigate = useNavigate();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
           {/* Buttons */}
           <div className="hero-actions">
             <button
-              onClick={() => scrollTo(SectionId.PROJECTS)}
+              onClick={() => navigate('/contact')}
               className="btn-hero-primary"
             >
               <div className="btn-shine" />
@@ -65,13 +67,15 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               <ArrowRight size={18} />
             </button>
 
-            <button
-              onClick={() => scrollTo(SectionId.CONTACT)}
+            <a
+              href="https://wa.me/33123456789"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-hero-secondary"
             >
               <Phone size={18} />
               <span>Falar com Técnico</span>
-            </button>
+            </a>
           </div>
 
           {/* Trust Indicators */}

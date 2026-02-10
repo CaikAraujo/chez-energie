@@ -19,16 +19,16 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
     return (
         <div className="lg:col-span-2 space-y-6">
             {/* Top Card: Investment Summary */}
-            <div className="relative overflow-hidden bg-slate-900 rounded-3xl border border-slate-800 p-8 flex flex-col md:flex-row justify-between items-end md:items-center gap-6 group">
+            <div className="relative overflow-hidden bg-slate-900 rounded-3xl border border-slate-800 p-8 flex flex-col md:flex-row justify-between items-center gap-6 group">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
 
-                <div className="relative">
+                <div className="relative text-center md:text-left">
                     <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Economia Total (25 Anos)</div>
                     <div className="text-5xl md:text-6xl font-display font-bold text-white mb-6 tabular-nums tracking-tight">
                         {Math.round(calculations.totalSavings25y).toLocaleString('de-CH')}<span className="text-2xl text-slate-500 ml-2">CHF</span>
                     </div>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-3">
                         <div className="bg-slate-950/50 backdrop-blur border border-slate-800 px-4 py-2 rounded-lg">
                             <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Payback</div>
                             <div className="text-emerald-400 font-bold">{calculations.paybackYear} Anos</div>
@@ -47,7 +47,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
             </div>
 
             {/* Environment Stats Row */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="bg-slate-900 border border-slate-800 p-6 rounded-3xl flex items-center gap-5 hover:border-emerald-500/30 transition-colors group">
                     <div className="p-3 bg-emerald-950/30 text-emerald-400 rounded-2xl group-hover:scale-110 transition-transform duration-300 border border-emerald-500/10">
                         <Trees className="w-6 h-6" />
@@ -86,7 +86,7 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
                 </div>
 
                 <ResponsiveContainer width="100%" height="100%" maxHeight={240}>
-                    <AreaChart data={calculations.data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <AreaChart data={calculations.data} margin={{ top: 10, right: 10, left: -20, bottom: 20 }}>
                         <defs>
                             <linearGradient id="colorSolar" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />

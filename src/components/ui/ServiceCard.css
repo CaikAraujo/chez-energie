@@ -112,7 +112,7 @@
 .card-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: white;
+    color: #0f172a !important;
     margin-bottom: 0.25rem;
     font-family: var(--font-heading);
 }
@@ -126,10 +126,13 @@
 .card-subtitle {
     font-size: 0.875rem;
     font-weight: 500;
-    color: #d1d5db;
+    color: #e5e7eb;
+    /* Lightened from #d1d5db for better contrast */
     letter-spacing: 0.025em;
-    opacity: 0.8;
+    opacity: 0.9;
+    /* Increased opacity */
     transition: all 0.3s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .service-card:hover .card-subtitle {

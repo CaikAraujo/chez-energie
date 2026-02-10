@@ -10,11 +10,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   delay = 0,
   imagePosition = 'center',
   imageScale = 1,
-  className = ''
+  className = '',
+  onClick
 }) => {
   return (
     <div
       className={`service-card ${className}`}
+      onClick={onClick}
       style={{
         animationDelay: `${delay}s`
       }}

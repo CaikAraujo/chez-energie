@@ -174,11 +174,11 @@ const ContactPage: React.FC = () => {
                             onChange={handleChange}
                         />
 
-                        <div className="pt-4 flex items-center justify-between gap-4">
-                            <div className="text-[10px] text-slate-400 max-w-[200px] leading-tight">
+                        <div className="pt-6 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
+                            <div className="text-xs text-slate-400 text-center md:text-left max-w-xs leading-relaxed">
                                 Ao enviar, concorda com a nossa política de privacidade. Seus dados estão seguros.
                             </div>
-                            <Button type="submit">
+                            <Button type="submit" className="w-full md:w-auto text-sm md:text-base py-4 md:py-4">
                                 Enviar Pedido <ArrowRight size={18} />
                             </Button>
                         </div>
@@ -187,17 +187,7 @@ const ContactPage: React.FC = () => {
                 </motion.div>
             </div>
 
-            {/* Floating Action Button for WhatsApp */}
-            <a href="#" className="fixed bottom-8 right-8 z-50 group">
-                <div className="bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.005.572 2.173.894 3.478.894 3.193 0 5.775-2.581 5.779-5.766.002-3.185-2.575-5.777-5.765-5.777zm5.333 7.986c-.235.658-1.293 1.258-1.776 1.341-.421.072-.962.155-2.733-.566-1.921-.781-3.262-2.787-3.364-2.922-.109-.142-.81-1.079-.81-2.059-.001-.983.513-1.467.691-1.666.195-.218.423-.272.563-.272.138 0 .277.001.398.006.128.005.297-.048.463.348.174.417.592 1.45.643 1.555.05.105.084.228.012.368-.071.14-.106.227-.211.347-.116.133-.243.297-.348.4-.112.11-.23.23-.1.459.13.228.573.947 1.228 1.531.849.757 1.565.991 1.789 1.096.222.105.353.09.485-.05.132-.14.573-.664.726-.892.152-.227.304-.19.512-.113.208.077 1.314.618 1.539.73.225.113.375.169.429.264.054.095.054.549-.181 1.207z" />
-                    </svg>
-                </div>
-                <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-lg shadow-lg text-brand-dark text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    Fale no WhatsApp
-                </div>
-            </a>
+
 
         </div >
     );

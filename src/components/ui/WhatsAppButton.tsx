@@ -7,7 +7,7 @@ export const WhatsAppButton: React.FC = () => {
             href="https://wa.me/33612345678" // Replace with actual number
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-12 right-8 z-50 group flex items-center justify-center"
+            className="fixed bottom-12 right-8 z-50 group hidden md:flex items-center justify-center"
             aria-label="Contact on WhatsApp"
         >
             <span className="absolute right-full mr-4 bg-white px-4 py-2 rounded-xl shadow-lg text-brand-dark font-bold text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">

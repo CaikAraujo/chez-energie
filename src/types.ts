@@ -17,6 +17,7 @@ export interface ServiceCardProps {
     imagePosition?: string;
     imageScale?: number;
     className?: string;
+    onClick?: () => void;
 }
 
 export enum ProjectType {

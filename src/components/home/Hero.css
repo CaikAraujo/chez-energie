@@ -45,13 +45,16 @@
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 6rem 6rem 3rem 6rem;
+    /* Mobile: More top padding for header, less side padding */
+    padding: 6rem 1.5rem 4rem 1.5rem;
     display: grid;
     gap: 3rem;
 }
 
 @media (min-width: 1024px) {
     .hero-container {
+        /* Desktop: Increased side padding as requested */
+        padding: 6rem 8rem 3rem 8rem;
         grid-template-columns: repeat(12, 1fr);
         align-items: center;
         gap: 2rem;
@@ -63,11 +66,15 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
+    text-align: center;
 }
 
 @media (min-width: 1024px) {
     .hero-content-left {
         grid-column: span 5;
+        align-items: flex-start;
+        text-align: left;
     }
 }
 
@@ -76,8 +83,14 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    align-self: flex-start;
+    align-self: center;
     animation: fadeInUp 0.8s ease-out;
+}
+
+@media (min-width: 1024px) {
+    .hero-badge {
+        align-self: flex-start;
+    }
 }
 
 .badge-dot {
@@ -98,17 +111,21 @@
 
 /* Typography */
 .hero-title {
-    font-size: 3rem;
-    line-height: 1.1;
+    font-size: 1.8rem;
+    line-height: 1.25;
     font-weight: 800;
     color: white;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.01em;
     font-family: var(--font-heading);
+    white-space: nowrap;
 }
 
 @media (min-width: 768px) {
     .hero-title {
         font-size: 4rem;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        white-space: normal;
     }
 }
 
@@ -133,10 +150,17 @@
 .hero-underline-svg {
     position: absolute;
     width: 100%;
-    height: 12px;
-    bottom: -4px;
+    height: 8px;
+    bottom: -2px;
     left: 0;
     color: var(--color-brand-green);
+}
+
+@media (min-width: 768px) {
+    .hero-underline-svg {
+        height: 12px;
+        bottom: -4px;
+    }
 }
 
 .hero-desc {
@@ -144,8 +168,19 @@
     color: #d1d5db;
     line-height: 1.6;
     max-width: 28rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-    padding-left: 1.5rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    max-width: 28rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-desc {
+        border-left: 2px solid rgba(255, 255, 255, 0.1);
+        padding-left: 1.5rem;
+        padding-right: 0;
+        text-align: left;
+    }
 }
 
 /* Buttons */
@@ -154,11 +189,20 @@
     flex-direction: column;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
 }
 
 @media (min-width: 640px) {
     .hero-actions {
         flex-direction: row;
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-actions {
+        justify-content: flex-start;
     }
 }
 
@@ -177,6 +221,7 @@
     border: none;
     box-shadow: 0 10px 20px -10px rgba(45, 71, 149, 0.5);
     transition: all 0.3s;
+    white-space: nowrap;
 }
 
 .btn-hero-primary:hover {
@@ -210,6 +255,7 @@
     border: none;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
+    white-space: nowrap;
 }
 
 .btn-hero-secondary:hover {
@@ -260,14 +306,41 @@
 /* RIGHT COLUMN - CARDS */
 .hero-content-right {
     position: relative;
-    display: grid;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 1rem;
+    padding-bottom: 2rem;
+    /* Space for scroll / ease of swipe */
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hero-content-right::-webkit-scrollbar {
+    display: none;
+}
+
+/* Target direct children (stagger divs) for carousel sizing */
+.hero-content-right>div {
+    min-width: 85vw;
+    /* Show mostly one card with a peek of the next */
+    scroll-snap-align: center;
 }
 
 @media (min-width: 768px) {
     .hero-content-right {
+        display: grid;
+        overflow-x: visible;
+        padding-bottom: 0;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
+    }
+
+    .hero-content-right>div {
+        min-width: auto;
+        scroll-snap-align: none;
     }
 }
 

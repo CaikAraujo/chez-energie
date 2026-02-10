@@ -99,6 +99,7 @@ const ServicesSection: React.FC = () => {
         {detailedServices.map((service, index) => (
           <div
             key={service.id}
+            id={service.id}
             className={`flex flex-col lg:items-center gap-12 lg:gap-20 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               }`}
           >
@@ -128,8 +129,8 @@ const ServicesSection: React.FC = () => {
                 ))}
               </div>
 
-              {/* Actions */}
-              <div className="flex items-center gap-4 pt-4">
+              {/* Actions (Desktop Only) */}
+              <div className="hidden lg:flex items-center gap-4 pt-4">
                 <button
                   onClick={handleContactClick}
                   className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors flex items-center gap-2 group"
@@ -179,6 +180,21 @@ const ServicesSection: React.FC = () => {
                       'from-gray-200/40 to-slate-200/40'
                 } rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
             </div>
+
+            {/* Actions (Mobile Only - After Image) */}
+            <div className="flex lg:hidden flex-col sm:flex-row items-center gap-4 w-full">
+              <button
+                onClick={handleContactClick}
+                className="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2 group"
+              >
+                Pedir Orçamento
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="w-full sm:w-auto px-8 py-3.5 border border-slate-200 text-slate-600 rounded-full font-bold hover:bg-slate-50 transition-colors text-center">
+                Ver Projetos
+              </button>
+            </div>
+
           </div>
         ))}
       </div>

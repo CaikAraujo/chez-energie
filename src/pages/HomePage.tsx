@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Hero from '../components/home/Hero';
 import FeaturesSection from '../components/home/FeaturesSection';
 import StatsSection from '../components/shared/StatsSection';
@@ -10,6 +11,7 @@ import TestimonialsSection from '../components/home/TestimonialsSection'; // Imp
 import TrustMarquee from '../components/home/TrustMarquee'; // Import
 
 const HomePage: React.FC = () => {
+    const navigate = useNavigate();
 
     const scrollTo = (sectionId: SectionId) => {
         const element = document.getElementById(sectionId);
@@ -21,7 +23,7 @@ const HomePage: React.FC = () => {
     return (
         <>
             <Hero scrollTo={scrollTo} />
-            <FeaturesSection onLearnMoreClick={() => scrollTo(SectionId.ABOUT)} />
+            <FeaturesSection onLearnMoreClick={() => navigate('/solutions#calculator')} />
             <StatsSection />
             <TestimonialsSection />
             <CTASection />

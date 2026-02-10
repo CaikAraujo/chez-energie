@@ -177,7 +177,7 @@ const AboutPage: React.FC = () => {
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs text-slate-900">
+                            <div className="absolute -bottom-6 left-4 right-4 md:left-auto md:right-auto md:-left-6 bg-white p-6 rounded-xl shadow-xl md:max-w-xs text-slate-900">
                                 <p className="font-display font-bold text-3xl text-emerald-600 mb-1">100%</p>
                                 <p className="text-sm font-medium">Compromisso com a satisfação e qualidade técnica.</p>
                             </div>

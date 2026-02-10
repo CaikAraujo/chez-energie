@@ -12,6 +12,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
   const navigate = useNavigate();
   const [mounted, setMounted] = useState(false);
+  const [activeCard, setActiveCard] = useState(0);
 
   useEffect(() => {
     setMounted(true);
@@ -41,8 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
 
           {/* Title */}
           <h1 className="hero-title">
-            Autonomia <br />
-            <span className="text-gradient">Energética</span> <br />
+            Autonomia <br className="hidden md:block" /> <span className="text-gradient">Energética</span> <br />
             <div className="hero-underline-wrapper">
               360º
               <svg className="hero-underline-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -98,7 +98,16 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
         </div>
 
         {/* Right Content Column (Cards) */}
-        <div className="hero-content-right">
+        <div
+          className="hero-content-right"
+          onScroll={(e) => {
+            const container = e.currentTarget;
+            const scrollLeft = container.scrollLeft;
+            const cardWidth = container.offsetWidth;
+            const index = Math.round(scrollLeft / cardWidth);
+            setActiveCard(index);
+          }}
+        >
           <div className="stagger-1">
             <ServiceCard
               title="Painéis Solares"
@@ -106,6 +115,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               image="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2658&auto=format&fit=crop"
               icon={Sun}
               delay={0.1}
+              onClick={() => navigate('/services#solar')}
             />
           </div>
 
@@ -117,6 +127,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               icon={Thermometer}
               delay={0.2}
               imagePosition="30% center"
+              onClick={() => navigate('/services#heat-pumps')}
             />
           </div>
 
@@ -128,6 +139,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               icon={Zap}
               delay={0.3}
               imagePosition="70% center"
+              onClick={() => navigate('/services#ev-charging')}
             />
           </div>
 
@@ -138,8 +150,20 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               image="/img/clim_card.jpeg"
               icon={Wind}
               delay={0.4}
+              onClick={() => navigate('/services#hvac')}
             />
           </div>
+        </div>
+
+        {/* Mobile Carousel Indicators */}
+        <div className="flex justify-center gap-2 mt-4 md:hidden">
+          {[0, 1, 2, 3].map((index) => (
+            <div
+              key={index}
+              className={`h-2 rounded-full transition-all duration-300 ${activeCard === index ? 'w-8 bg-brand-accent' : 'w-2 bg-white/20'
+                }`}
+            />
+          ))}
         </div>
 
         {/* Soft Background Elements */}

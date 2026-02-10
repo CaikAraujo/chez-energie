@@ -21,9 +21,10 @@ export interface ServiceCardProps {
 
 export enum ProjectType {
     SOLAR = 'Painéis Solares',
-    INSULATION = 'Isolamento Térmico',
+    HEATPUMP = 'Bombas de Calor',
+    BATTERY = 'Baterias & Armazenamento',
+    EVCHARGER = 'Carregamento Elétrico',
     HVAC = 'Climatização',
-    AUDIT = 'Auditoria Energética',
     OTHER = 'Outro'
 }
 

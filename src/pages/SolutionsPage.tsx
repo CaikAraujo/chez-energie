@@ -17,11 +17,13 @@ const SolutionsPage: React.FC = () => {
         <div className="bg-slate-900"> {/* Dark background base */}
             <SolutionsHero scrollTo={scrollTo} />
             <div id="solutions-content" className="relative z-10 bg-slate-50 space-y-24 pb-24">
-                <ServicesSection />
-
                 {/* Calculator Section - Full Width */}
-                <div className="w-full">
+                <div id="calculator" className="w-full">
                     <SolarCalculator />
+                </div>
+
+                <div id="services">
+                    <ServicesSection />
                 </div>
 
                 <SolutionsFAQ />

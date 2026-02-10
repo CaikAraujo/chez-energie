@@ -43,14 +43,17 @@ const SolutionsHero: React.FC<SolutionsHeroProps> = ({ scrollTo }) => {
                 {/* Actions */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button
-                        onClick={() => scrollTo(SectionId.CONTACT)}
+                        onClick={() => {
+                            const el = document.getElementById('calculator');
+                            el?.scrollIntoView({ behavior: 'smooth' });
+                        }}
                         className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-100 transition-all active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
                     >
                         Solicitar Estudo Técnico
                     </button>
                     <button
                         onClick={() => {
-                            const el = document.getElementById('solutions-content');
+                            const el = document.getElementById('services');
                             el?.scrollIntoView({ behavior: 'smooth' });
                         }}
                         className="px-8 py-4 border border-white/20 text-white rounded-full font-medium hover:bg-white/10 transition-all backdrop-blur-sm"

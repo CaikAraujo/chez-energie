@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, ArrowRight, Zap, Sun, Wind, CheckCircle2 } from 'lucide-react';
-import { ProjectType, ContactFormData, AiFeedback } from '../types';
-import { analyzeMessageContext } from '../services/geminiService';
+import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, ArrowRight, Zap, Sun, Wind, CheckCircle2, Thermometer, Battery } from 'lucide-react';
+import { ProjectType, ContactFormData } from '../types';
 import { Button } from '../components/contact/Button';
 import { InputField } from '../components/contact/InputField';
-import { GeminiFeedback } from '../components/contact/GeminiFeedback';
 
 const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -15,25 +13,6 @@ const ContactPage: React.FC = () => {
         projectType: ProjectType.SOLAR,
         message: ''
     });
-
-    const [aiFeedback, setAiFeedback] = useState<AiFeedback | null>(null);
-    const [isAnalyzing, setIsAnalyzing] = useState(false);
-
-    // Debounce logic for AI analysis
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (formData.message.length > 15) {
-                setIsAnalyzing(true);
-                analyzeMessageContext(formData.message, formData.projectType)
-                    .then(feedback => {
-                        setAiFeedback(feedback);
-                        setIsAnalyzing(false);
-                    });
-            }
-        }, 1500); // Wait 1.5s after typing stops
-
-        return () => clearTimeout(timer);
-    }, [formData.message, formData.projectType]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -46,9 +25,10 @@ const ContactPage: React.FC = () => {
 
     const projectIcons = {
         [ProjectType.SOLAR]: <Sun className="w-6 h-6" />,
+        [ProjectType.HEATPUMP]: <Thermometer className="w-6 h-6" />,
+        [ProjectType.BATTERY]: <Battery className="w-6 h-6" />,
+        [ProjectType.EVCHARGER]: <Zap className="w-6 h-6" />,
         [ProjectType.HVAC]: <Wind className="w-6 h-6" />,
-        [ProjectType.INSULATION]: <CheckCircle2 className="w-6 h-6" />,
-        [ProjectType.AUDIT]: <Zap className="w-6 h-6" />,
         [ProjectType.OTHER]: <ArrowRight className="w-6 h-6" />
     };
 
@@ -186,18 +166,13 @@ const ContactPage: React.FC = () => {
                             onChange={handleChange}
                         />
 
-                        <div className="relative">
-                            <InputField
-                                label="Mensagem (Opcional)"
-                                name="message"
-                                isTextArea
-                                value={formData.message}
-                                onChange={handleChange}
-                            />
-
-                            {/* Gemini AI Integration */}
-                            <GeminiFeedback feedback={aiFeedback} loading={isAnalyzing} />
-                        </div>
+                        <InputField
+                            label="Mensagem (Opcional)"
+                            name="message"
+                            isTextArea
+                            value={formData.message}
+                            onChange={handleChange}
+                        />
 
                         <div className="pt-4 flex items-center justify-between gap-4">
                             <div className="text-[10px] text-slate-400 max-w-[200px] leading-tight">
@@ -224,7 +199,7 @@ const ContactPage: React.FC = () => {
                 </div>
             </a>
 
-        </div>
+        </div >
     );
 };
 

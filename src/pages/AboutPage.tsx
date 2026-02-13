@@ -5,11 +5,18 @@ import { Sun, Thermometer, Wind, Battery, Zap, ShieldCheck, Wrench, Users, Arrow
 import { useNavigate } from 'react-router-dom';
 import { ServiceCard, ServiceColor } from '../components/ServiceCard';
 
+import DocumentTitle from '../components/shared/DocumentTitle';
+
 const AboutPage: React.FC = () => {
     const navigate = useNavigate();
 
     return (
         <div className="min-h-screen bg-slate-50">
+            <DocumentTitle
+                title="À Propos de Nous"
+                description="Découvrez Chez Énergie, votre partenaire local à Genève pour l'installation experte de systèmes énergétiques durables."
+                // canonical="/about"
+            />
             {/* Hero Section */}
             <section className="relative bg-slate-900 text-white py-60 overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -172,7 +179,7 @@ const AboutPage: React.FC = () => {
                         <div className="relative">
                             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                                 <img
-                                    src="/img/panneau_installation.jpeg"
+                                    src="/img/panneau_installation.webp"
                                     alt="Installation de Panneaux Solaires"
                                     className="w-full h-full object-cover"
                                 />

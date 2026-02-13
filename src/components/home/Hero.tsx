@@ -26,6 +26,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2932&auto=format&fit=crop"
           alt="Panneaux Solaires"
           className="hero-bg-img"
+          loading="eager" // LCP Image
+          fetchPriority="high"
         />
         <div className="hero-overlay-gradient" />
         <div className="hero-noise" />
@@ -123,7 +125,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
             <ServiceCard
               title="Pompes à Chaleur"
               subtitle="Climatisation Efficace"
-              image="/img/pompe_card.jpeg"
+              image="/img/pompe_card.webp"
               icon={Thermometer}
               delay={0.2}
               imagePosition="30% center"
@@ -135,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
             <ServiceCard
               title="Recharge VE"
               subtitle="Mobilité Électrique"
-              image="/img/prise_card.jpeg"
+              image="/img/prise_card.webp"
               icon={Zap}
               delay={0.3}
               imagePosition="70% center"
@@ -147,7 +149,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
             <ServiceCard
               title="Climatisation"
               subtitle="Confort 365 jours"
-              image="/img/clim_card.jpeg"
+              image="/img/clim_card.webp"
               icon={Wind}
               delay={0.4}
               onClick={() => navigate('/services#hvac')}

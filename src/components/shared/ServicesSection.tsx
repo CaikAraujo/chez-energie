@@ -13,7 +13,7 @@ const ServicesSection: React.FC = () => {
       projectType: ProjectType.HEATPUMP,
       category: "Solution 01",
       description: "La technologie de la pompe à chaleur remplace les chaudières au fioul et au gaz. Elle utilise l'énergie thermique de l'air extérieur pour chauffer votre maison avec une efficacité exceptionnelle.",
-      image: "/img/services/pompe_chaleur.jpg", // Ensure this path exists or use a placeholder if needed
+      image: "/img/services/pompe_chaleur.webp", // Ensure this path exists or use a placeholder if needed
       highlight: "Grâce au système d'injection de vapeur, elle maintient 100% de sa capacité de chauffage même à -15°C.",
       specs: [
         { label: "Économies", value: "Jusqu'à 75% sur la facture", icon: TrendingUp },
@@ -28,7 +28,7 @@ const ServicesSection: React.FC = () => {
       projectType: ProjectType.SOLAR,
       category: "Solution 02",
       description: "Produisez votre propre électricité propre et gratuite. Nos systèmes photovoltaïques sont dimensionnés spécifiquement pour votre profil de consommation, maximisant le retour sur investissement.",
-      image: "/img/services/panneau.jpg",
+      image: "/img/services/panneau.webp",
       highlight: "Panneaux monocristallins PERC avec une garantie de production linéaire de 25 ans et une efficacité supérieure à 21%.",
       specs: [
         { label: "Retour", value: "4-5 Ans", icon: Timer },
@@ -43,7 +43,7 @@ const ServicesSection: React.FC = () => {
       projectType: ProjectType.BATTERY,
       category: "Solution 03",
       description: "Maximisez votre indépendance énergétique en stockant le surplus solaire. Utilisez votre énergie gratuite même la nuit ou lors de pannes de réseau.",
-      image: "/img/services/energy.jpg",
+      image: "/img/services/energy.webp",
       highlight: "Batteries Lithium Fer Phosphate (LFP) avec +6000 cycles de vie et une profondeur de décharge de 90%.",
       specs: [
         { label: "Autonomie", value: "Jusqu'à 100% Hors Réseau", icon: Battery },
@@ -58,7 +58,7 @@ const ServicesSection: React.FC = () => {
       projectType: ProjectType.EVCHARGER,
       category: "Solution 04",
       description: "Intégrez la mobilité électrique dans votre écosystème. Rechargez votre voiture avec le surplus d'énergie solaire et réduisez vos coûts de carburant à zéro.",
-      image: "/img/services/prise_eletrique.jpg",
+      image: "/img/services/prise_eletrique.webp",
       highlight: "Chargeurs intelligents avec équilibrage de charge dynamique protégeant votre tableau électrique.",
       specs: [
         { label: "Vitesse", value: "Jusqu'à 22kW AC", icon: Zap },
@@ -73,7 +73,7 @@ const ServicesSection: React.FC = () => {
       projectType: ProjectType.HVAC,
       category: "Solution 05",
       description: "Solutions de climatisation et chauffage au sol garantissant une température parfaite dans chaque pièce, avec une efficacité énergétique maximale.",
-      image: "/img/services/clima.jpg",
+      image: "/img/services/clima.webp",
       highlight: "Systèmes inverter silencieux avec filtration d'air avancée et contrôle Wi-Fi intégré.",
       specs: [
         { label: "Efficacité", value: "Classe A+++", icon: Zap },
@@ -156,6 +156,7 @@ const ServicesSection: React.FC = () => {
                 <img
                   src={service.image}
                   alt={service.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 

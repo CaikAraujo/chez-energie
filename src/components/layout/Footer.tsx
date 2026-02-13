@@ -36,9 +36,9 @@ const Footer: React.FC = () => {
               Leaders en solutions d'énergie durable. Nous transformons des maisons en foyers efficaces et écologiques.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Instagram size={16} /></a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Facebook size={16} /></a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Linkedin size={16} /></a>
+              <a href="#" aria-label="Instagram" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Instagram size={16} /></a>
+              <a href="#" aria-label="Facebook" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Facebook size={16} /></a>
+              <a href="#" aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Linkedin size={16} /></a>
             </div>
           </div>
 

@@ -13,7 +13,7 @@ const SolutionsHero: React.FC<SolutionsHeroProps> = ({ scrollTo }) => {
             {/* Cinematic Background */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/bg-services.jpg"
+                    src="/bg-services.webp"
                     alt="Engenharia de Precisão"
                     className="w-full h-full object-cover opacity-60 mix-blend-overlay"
                 />

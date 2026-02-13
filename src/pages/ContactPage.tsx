@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, ArrowRight, Zap, Sun, Wind, CheckCircle2, Thermometer, Battery, ChevronDown, Loader2 } from 'lucide-react';
 import { ProjectType, ContactFormData } from '../types';
 import { Button } from '../components/contact/Button';
 import { InputField } from '../components/contact/InputField';
+import { SuccessScreen } from '../components/contact/SuccessScreen';
+import DocumentTitle from '../components/shared/DocumentTitle';
 
 const ContactPage: React.FC = () => {
     const location = useLocation();
@@ -94,19 +96,32 @@ const ContactPage: React.FC = () => {
             }
 
             setSubmitStatus('success');
-            setFormData({
-                name: '',
-                phone: '',
-                email: '',
-                projectType: ProjectType.SOLAR,
-                message: ''
-            });
+            // Form clearing is handled when resetting the status
         } catch (error) {
             console.error('Error sending message:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
         }
+    };
+
+    const handleReset = () => {
+        setSubmitStatus('idle');
+        setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            projectType: ProjectType.SOLAR,
+            message: '',
+            monthlyConsumption: '',
+            availableArea: '',
+            currentHeatingType: '',
+            existingSolarSystem: '',
+            storageCapacity: '',
+            desiredPower: '',
+            distanceToPanel: '',
+            numberOfRooms: ''
+        });
     };
 
     const projectIcons = {
@@ -120,7 +135,11 @@ const ContactPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-brand-surface font-sans selection:bg-brand-accent selection:text-brand-dark flex flex-col md:flex-row">
-
+            <DocumentTitle
+                title="Contactez-nous | Devis Gratuit"
+                description="Demandez votre devis gratuit ou un diagnostic énergétique à Genève. Réponse sous 24h."
+            // canonical="/contact"
+            />
             {/* Left Panel: Brand & Info */}
             <div className="w-full md:w-5/12 p-8 md:p-16 flex flex-col justify-between relative overflow-hidden bg-brand-dark text-white pt-24">
                 {/* Decorative Background Elements */}
@@ -196,154 +215,157 @@ const ContactPage: React.FC = () => {
 
             {/* Right Panel: Form */}
             <div className="w-full md:w-7/12 bg-white text-brand-dark p-8 md:p-16 md:overflow-y-auto pt-24">
-                <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
-                    className="max-w-xl mx-auto mt-20"
-                >
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-display font-bold mb-2">Demander un Devis Gratuit</h2>
-                        <p className="text-slate-500">Remplissez le formulaire ci-dessous et notre équipe vous contactera.</p>
-                    </div>
-
-                    {submitStatus === 'success' && (
+                <AnimatePresence mode="wait">
+                    {submitStatus === 'success' ? (
+                        <SuccessScreen key="success" onReset={handleReset} />
+                    ) : (
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="bg-emerald-50 text-emerald-800 p-4 rounded-lg mb-8 flex items-center gap-3 border border-emerald-100"
+                            key="form"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                            className="max-w-xl mx-auto mt-20"
                         >
-                            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                            <div>
-                                <p className="font-bold text-sm">Message envoyé avec succès !</p>
-                                <p className="text-xs text-emerald-700">Nous vous recontacterons dans les plus brefs délais.</p>
+                            <div className="mb-12">
+                                <h2 className="text-3xl font-display font-bold mb-2">Demander un Devis Gratuit</h2>
+                                <p className="text-slate-500">Remplissez le formulaire ci-dessous et notre équipe vous contactera.</p>
                             </div>
+
+                            {submitStatus === 'error' && (
+                                <div className="bg-red-50 text-red-800 p-4 rounded-lg mb-8 border border-red-100 text-sm">
+                                    Une erreur est survenue lors de l'envoi du message. Veuillez réessayer ou nous contacter par téléphone.
+                                </div>
+                            )}
+
+                            <form className="space-y-8" onSubmit={handleSubmit}>
+
+                                {/* Project Type Selection - Visual Cards */}
+                                <div>
+                                    <label className="block text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Intérêt Principal</label>
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                        {Object.values(ProjectType).map((type) => (
+                                            <div
+                                                key={type}
+                                                onClick={() => handleTypeSelect(type)}
+                                                className={`cursor-pointer p-4 rounded-lg border-2 flex flex-col items-center justify-center text-center gap-2 transition-all duration-200 ${formData.projectType === type
+                                                    ? 'bg-brand-dark text-white border-brand-dark shadow-lg scale-[1.02]'
+                                                    : 'bg-white border-slate-100 text-slate-500 hover:border-brand-dark/30'
+                                                    }`}
+                                            >
+                                                {projectIcons[type]}
+                                                <span className="text-xs font-bold leading-tight">{type}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <InputField
+                                        label="Nom Complet"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                    />
+                                    <InputField
+                                        label="Numéro de Téléphone"
+                                        name="phone"
+                                        type="tel"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+
+                                <InputField
+                                    label="Email Professionnel ou Personnel"
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+
+                                {/* Dynamic Fields Section */}
+                                {currentDynamicFields.length > 0 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: 'auto' }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden pt-4"
+                                    >
+                                        {currentDynamicFields.map((field) => (
+                                            <div key={field.name}>
+                                                {field.type === 'select' ? (
+                                                    <div className="relative mt-2">
+                                                        <select
+                                                            id={field.name}
+                                                            name={field.name}
+                                                            value={(formData as any)[field.name]}
+                                                            onChange={handleChange}
+                                                            className={`peer w-full border-b-2 border-slate-200 bg-transparent py-3 pr-8 focus:border-brand-primary focus:outline-none transition-colors appearance-none cursor-pointer 
+                                                        ${(formData as any)[field.name] ? 'text-slate-900' : 'text-transparent'}`}
+                                                        >
+                                                            <option value="" disabled className="text-slate-500">Sélectionner</option>
+                                                            {field.options?.map(opt => (
+                                                                <option key={opt} value={opt} className="text-slate-900">{opt}</option>
+                                                            ))}
+                                                        </select>
+                                                        <label
+                                                            htmlFor={field.name}
+                                                            className={`absolute left-0 transition-all font-medium tracking-wide pointer-events-none 
+                                                        ${(formData as any)[field.name]
+                                                                    ? '-top-3.5 text-xs text-brand-primary'
+                                                                    : 'top-3 text-base text-slate-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-primary'
+                                                                }`}
+                                                        >
+                                                            {field.label}
+                                                        </label>
+                                                        <ChevronDown className="absolute right-0 top-3 text-slate-400 pointer-events-none" size={16} />
+                                                    </div>
+                                                ) : (
+                                                    <InputField
+                                                        label={field.label}
+                                                        name={field.name}
+                                                        type={field.type}
+                                                        placeholder={field.placeholder}
+                                                        value={(formData as any)[field.name]}
+                                                        onChange={handleChange}
+                                                    />
+                                                )}
+                                            </div>
+                                        ))}
+                                    </motion.div>
+                                )}
+
+                                <InputField
+                                    label="Message (Optionnel)"
+                                    name="message"
+                                    isTextArea
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                />
+
+                                <div className="pt-8 flex flex-col items-center gap-4 w-full">
+                                    <Button type="submit" disabled={isSubmitting} className="group w-full py-3 md:py-5 text-base md:text-xl font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50 transform hover:-translate-y-1 transition-all duration-300 border-none flex justify-center items-center">
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-6 h-6 animate-spin mr-2" />
+                                                Envoi en cours...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Envoyer la Demande <ArrowRight size={24} className="ml-3 group-hover:translate-x-1 transition-transform" />
+                                            </>
+                                        )}
+                                    </Button>
+                                    <div className="text-xs text-slate-400 text-center max-w-sm leading-relaxed opacity-80">
+                                        En envoyant, vous acceptez notre politique de confidentialité. Vos données sont 100% sécurisées.
+                                    </div>
+                                </div>
+
+                            </form>
                         </motion.div>
                     )}
-
-                    {submitStatus === 'error' && (
-                        <div className="bg-red-50 text-red-800 p-4 rounded-lg mb-8 border border-red-100 text-sm">
-                            Une erreur est survenue lors de l'envoi du message. Veuillez réessayer ou nous contacter par téléphone.
-                        </div>
-                    )}
-
-                    <form className="space-y-8" onSubmit={handleSubmit}>
-
-                        {/* Project Type Selection - Visual Cards */}
-                        <div>
-                            <label className="block text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Intérêt Principal</label>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                {Object.values(ProjectType).map((type) => (
-                                    <div
-                                        key={type}
-                                        onClick={() => handleTypeSelect(type)}
-                                        className={`cursor-pointer p-4 rounded-lg border-2 flex flex-col items-center justify-center text-center gap-2 transition-all duration-200 ${formData.projectType === type
-                                            ? 'bg-brand-dark text-white border-brand-dark shadow-lg scale-[1.02]'
-                                            : 'bg-white border-slate-100 text-slate-500 hover:border-brand-dark/30'
-                                            }`}
-                                    >
-                                        {projectIcons[type]}
-                                        <span className="text-xs font-bold leading-tight">{type}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <InputField
-                                label="Nom Complet"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                            />
-                            <InputField
-                                label="Numéro de Téléphone"
-                                name="phone"
-                                type="tel"
-                                value={formData.phone}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <InputField
-                            label="Email Professionnel ou Personnel"
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-
-                        {/* Dynamic Fields Section */}
-                        {currentDynamicFields.length > 0 && (
-                            <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden pt-4"
-                            >
-                                {currentDynamicFields.map((field) => (
-                                    <div key={field.name}>
-                                        {field.type === 'select' ? (
-                                            <div className="relative mt-2">
-                                                <select
-                                                    id={field.name}
-                                                    name={field.name}
-                                                    value={(formData as any)[field.name]}
-                                                    onChange={handleChange}
-                                                    className={`peer w-full border-b-2 border-slate-200 bg-transparent py-3 pr-8 focus:border-brand-primary focus:outline-none transition-colors appearance-none cursor-pointer 
-                                                        ${(formData as any)[field.name] ? 'text-slate-900' : 'text-transparent'}`}
-                                                >
-                                                    <option value="" disabled className="text-slate-500">Sélectionner</option>
-                                                    {field.options?.map(opt => (
-                                                        <option key={opt} value={opt} className="text-slate-900">{opt}</option>
-                                                    ))}
-                                                </select>
-                                                <label
-                                                    htmlFor={field.name}
-                                                    className={`absolute left-0 transition-all font-medium tracking-wide pointer-events-none 
-                                                        ${(formData as any)[field.name]
-                                                            ? '-top-3.5 text-xs text-brand-primary'
-                                                            : 'top-3 text-base text-slate-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-primary'
-                                                        }`}
-                                                >
-                                                    {field.label}
-                                                </label>
-                                                <ChevronDown className="absolute right-0 top-3 text-slate-400 pointer-events-none" size={16} />
-                                            </div>
-                                        ) : (
-                                            <InputField
-                                                label={field.label}
-                                                name={field.name}
-                                                type={field.type}
-                                                placeholder={field.placeholder}
-                                                value={(formData as any)[field.name]}
-                                                onChange={handleChange}
-                                            />
-                                        )}
-                                    </div>
-                                ))}
-                            </motion.div>
-                        )}
-
-                        <InputField
-                            label="Message (Optionnel)"
-                            name="message"
-                            isTextArea
-                            value={formData.message}
-                            onChange={handleChange}
-                        />
-
-                        <div className="pt-8 flex flex-col items-center gap-4 w-full">
-                            <Button type="submit" className="group w-full py-5 text-xl font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50 transform hover:-translate-y-1 transition-all duration-300 border-none flex justify-center items-center">
-                                Envoyer la Demande <ArrowRight size={24} className="ml-3 group-hover:translate-x-1 transition-transform" />
-                            </Button>
-                            <div className="text-xs text-slate-400 text-center max-w-sm leading-relaxed opacity-80">
-                                En envoyant, vous acceptez notre politique de confidentialité. Vos données sont 100% sécurisées.
-                            </div>
-                        </div>
-
-                    </form>
-                </motion.div>
+                </AnimatePresence>
             </div>
 
 

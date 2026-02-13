@@ -26,7 +26,7 @@ export const servicesData: ServiceData[] = [
             "Suppression de la facture de gaz",
             "Silencieux et écologique"
         ],
-        image: "/img/services/heat-pump.jpg",
+        image: "/img/services/heat-pump.webp",
         gradient: "from-blue-400 to-indigo-500",
         accent: "text-blue-500",
         border: "group-hover:border-blue-500/30"
@@ -43,7 +43,7 @@ export const servicesData: ServiceData[] = [
             "Retour sur investissement en 4-5 ans",
             "Garantie de 25 ans"
         ],
-        image: "/img/services/solar-panels.jpg",
+        image: "/img/services/solar-panels.webp",
         gradient: "from-amber-300 to-orange-500",
         accent: "text-amber-500",
         border: "group-hover:border-amber-500/30"
@@ -60,7 +60,7 @@ export const servicesData: ServiceData[] = [
             "Rentabilité maximale",
             "Gestion via App"
         ],
-        image: "/img/services/battery.jpg",
+        image: "/img/services/battery.webp",
         gradient: "from-emerald-400 to-teal-500",
         accent: "text-emerald-500",
         border: "group-hover:border-emerald-500/30"
@@ -77,7 +77,7 @@ export const servicesData: ServiceData[] = [
             "Équilibrage dynamique",
             "Compatibilité universelle"
         ],
-        image: "/img/services/ev-charger.jpg",
+        image: "/img/services/ev-charger.webp",
         gradient: "from-cyan-400 to-blue-500",
         accent: "text-cyan-500",
         border: "group-hover:border-cyan-500/30"
@@ -94,7 +94,7 @@ export const servicesData: ServiceData[] = [
             "Automatisation des routines",
             "Alertes de sécurité"
         ],
-        image: "/img/services/smart-home.jpg",
+        image: "/img/services/smart-home.webp",
         gradient: "from-purple-400 to-pink-500",
         accent: "text-purple-500",
         border: "group-hover:border-purple-500/30"
@@ -111,7 +111,7 @@ export const servicesData: ServiceData[] = [
             "Design discret",
             "Efficacité A+++"
         ],
-        image: "/img/services/hvac.jpg",
+        image: "/img/services/hvac.webp",
         gradient: "from-gray-300 to-gray-500",
         accent: "text-gray-500",
         border: "group-hover:border-gray-500/30"

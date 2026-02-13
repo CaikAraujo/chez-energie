@@ -1,4 +1,5 @@
 import SolutionsHero from '../components/solutions/SolutionsHero';
+import DocumentTitle from '../components/shared/DocumentTitle';
 import ServicesSection from '../components/shared/ServicesSection';
 import SolutionsFAQ from '../components/solutions/SolutionsFAQ';
 import SolarCalculator from '../components/solutions/SolarCalculator';
@@ -40,6 +41,11 @@ const SolutionsPage: React.FC = () => {
 
     return (
         <div className="bg-slate-900"> {/* Dark background base */}
+            <DocumentTitle
+                title="Calculateur Solaire & Solutions"
+                description="Simulez vos économies solaires et découvrez nos solutions techniques détaillées."
+                // canonical="/solutions"
+            />
             <SolutionsHero scrollTo={scrollTo} />
             <div id="solutions-content" className="relative z-10 bg-slate-50 space-y-24 pb-24">
                 {/* Calculator Section - Full Width */}

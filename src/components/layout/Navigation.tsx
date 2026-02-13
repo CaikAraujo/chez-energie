@@ -75,6 +75,7 @@ export const Navigation: React.FC = () => {
                     <button
                         className="mobile-toggle"
                         onClick={() => setMobileOpen(!mobileOpen)}
+                        aria-label="Toggle Menu"
                     >
                         {mobileOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>

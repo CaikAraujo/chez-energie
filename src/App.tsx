@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';

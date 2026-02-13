@@ -4,21 +4,21 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 const SolutionsFAQ: React.FC = () => {
     const faqs = [
         {
-            question: "Como funciona a garantia e manutenção?",
-            answer: "Oferecemos garantia de 25 anos na performance dos painéis solares e assistência técnica vitalícia. As nossas soluções incluem manutenção preventiva anual para garantir a máxima eficiência."
+            question: "Comment fonctionne la garantie et la maintenance ?",
+            answer: "Nous offrons une garantie de 25 ans sur la performance des panneaux solaires et une assistance technique à vie. Nos solutions incluent une maintenance préventive annuelle pour garantir une efficacité maximale."
         },
         {
-            question: "Quanto posso poupar na fatura de energia?",
-            answer: "Com um sistema integrado (Fotovoltaico + Bateria + Bomba de Calor), a poupança pode chegar aos 80% anuais, reduzindo drasticamente a dependência da rede elétrica pública."
+            question: "Combien puis-je économiser sur ma facture d'énergie ?",
+            answer: "Avec un système intégré (Photovoltaïque + Batterie + Pompe à Chaleur), les économies peuvent atteindre 80 % par an, réduisant drastiquement la dépendance au réseau électrique public."
         },
         {
-            question: "Existem subsídios disponíveis?",
-            answer: "Sim, existem diversos apoios cantonais e federais (Pronovo) para instalação de energias renováveis. A nossa equipa trata de todo o processo burocrático e candidaturas por si."
+            question: "Existe-t-il des subventions disponibles ?",
+            answer: "Oui, il existe diverses aides cantonales et fédérales (Pronovo) pour l'installation d'énergies renouvelables. Notre équipe s'occupe de tout le processus bureaucratique et des demandes pour vous."
         },
         {
-            question: "Quanto tempo demora a instalação?",
-            answer: "Após a aprovação do projeto, a instalação física geralmente demora entre 2 a 3 dias, dependendo da complexidade e dimensão do sistema. Garantimos o mínimo impacto na sua rotina diária."
-        }
+            question: "Combien de temps dure l'installation ?",
+            answer: "Après l'approbation du projet, l'installation physique prend généralement entre 2 et 3 jours, selon la complexité et la dimension du système. Nous garantissons un impact minimal sur votre routine quotidienne."
+        },
     ];
 
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -28,10 +28,10 @@ const SolutionsFAQ: React.FC = () => {
             <div className="max-w-3xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">
-                        Perguntas Frequentes
+                        Questions Fréquentes
                     </h2>
                     <p className="text-slate-600">
-                        Dúvidas sobre a transição energética? Nós esclarecemos.
+                        Des questions sur la transition énergétique ? Nous clarifions tout.
                     </p>
                 </div>
 

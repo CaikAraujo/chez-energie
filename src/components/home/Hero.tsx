@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
       <div className="hero-bg-wrapper">
         <img
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2932&auto=format&fit=crop"
-          alt="Painéis Solares"
+          alt="Panneaux Solaires"
           className="hero-bg-img"
         />
         <div className="hero-overlay-gradient" />
@@ -37,12 +37,12 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
           {/* Badge */}
           <div className="hero-badge">
             <div className="badge-dot" />
-            <span className="badge-text">Líderes em Energia Renovável na Suíça</span>
+            <span className="badge-text">Leaders en Énergie Renouvelable en Suisse</span>
           </div>
 
           {/* Title */}
           <h1 className="hero-title">
-            Autonomia <br className="hidden md:block" /> <span className="text-gradient">Energética</span> <br />
+            Autonomie <br className="hidden md:block" /> <span className="text-gradient">Énergétique</span> <br />
             <div className="hero-underline-wrapper">
               360º
               <svg className="hero-underline-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
 
           {/* Description */}
           <p className="hero-desc">
-            Soluções completas de hardware e instalação para residências modernas. Produza, climatize e carregue com tecnologia de ponta.
+            Solutions complètes de matériel et d'installation pour résidences modernes. Produisez, climatisez et chargez avec une technologie de pointe.
           </p>
 
           {/* Buttons */}
@@ -63,18 +63,18 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               className="btn-hero-primary"
             >
               <div className="btn-shine" />
-              <span>Configurar Sistema</span>
+              <span>Configurer le Système</span>
               <ArrowRight size={18} />
             </button>
 
             <a
-              href="https://wa.me/33123456789"
+              href="https://wa.me/41765133166"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-hero-secondary"
             >
               <Phone size={18} />
-              <span>Falar com Técnico</span>
+              <span>Parler à un Technicien</span>
             </a>
           </div>
 
@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
               ))}
             </div>
             <span className="trust-text">
-              <span className="trust-bold">500+</span> Projetos instalados
+              <span className="trust-bold">500+</span> Projets installés
             </span>
           </div>
         </div>
@@ -110,8 +110,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
         >
           <div className="stagger-1">
             <ServiceCard
-              title="Painéis Solares"
-              subtitle="Produção Fotovoltaica"
+              title="Panneaux Solaires"
+              subtitle="Production Photovoltaïque"
               image="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2658&auto=format&fit=crop"
               icon={Sun}
               delay={0.1}
@@ -121,8 +121,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
 
           <div className="stagger-2">
             <ServiceCard
-              title="Bombas de Calor"
-              subtitle="Climatização Eficiente"
+              title="Pompes à Chaleur"
+              subtitle="Climatisation Efficace"
               image="/img/pompe_card.jpeg"
               icon={Thermometer}
               delay={0.2}
@@ -133,8 +133,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
 
           <div className="stagger-3">
             <ServiceCard
-              title="Carregamento EV"
-              subtitle="Mobilidade Elétrica"
+              title="Recharge VE"
+              subtitle="Mobilité Électrique"
               image="/img/prise_card.jpeg"
               icon={Zap}
               delay={0.3}
@@ -145,8 +145,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollTo }) => {
 
           <div className="stagger-4">
             <ServiceCard
-              title="Climatização"
-              subtitle="Conforto 365 dias"
+              title="Climatisation"
+              subtitle="Confort 365 jours"
               image="/img/clim_card.jpeg"
               icon={Wind}
               delay={0.4}

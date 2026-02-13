@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2, Zap, Thermometer, Sun, Timer, ShieldCheck, Leaf, TrendingUp, Smartphone, Battery, Home, Wind } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { ProjectType } from '../../types';
 
 
 const ServicesSection: React.FC = () => {
@@ -8,78 +9,83 @@ const ServicesSection: React.FC = () => {
   const detailedServices = [
     {
       id: "heat-pumps",
-      title: "Bombas de Calor",
-      category: "Solução 01",
-      description: "A tecnologia de bomba de calor é o substituto moderno das caldeiras a gás e gasóleo. Utiliza a energia térmica presente no ar exterior para aquecer a sua casa com um rendimento excecional.",
+      title: "Pompes à Chaleur",
+      projectType: ProjectType.HEATPUMP,
+      category: "Solution 01",
+      description: "La technologie de la pompe à chaleur remplace les chaudières au fioul et au gaz. Elle utilise l'énergie thermique de l'air extérieur pour chauffer votre maison avec une efficacité exceptionnelle.",
       image: "/img/services/pompe_chaleur.jpg", // Ensure this path exists or use a placeholder if needed
-      highlight: "Graças ao sistema de injeção de vapor, mantém 100% da capacidade de aquecimento mesmo a -15°C.",
+      highlight: "Grâce au système d'injection de vapeur, elle maintient 100% de sa capacité de chauffage même à -15°C.",
       specs: [
-        { label: "Poupança", value: "Até 75% na fatura", icon: TrendingUp },
-        { label: "Água Quente", value: "Disponível 24/7", icon: Thermometer },
-        { label: "Eficiência", value: "COP até 5.0", icon: Zap },
-        { label: "Ambiente", value: "0 Emissões Locais", icon: Leaf },
+        { label: "Économies", value: "Jusqu'à 75% sur la facture", icon: TrendingUp },
+        { label: "Eau Chaude", value: "Disponible 24/7", icon: Thermometer },
+        { label: "Efficacité", value: "COP jusqu'à 5.0", icon: Zap },
+        { label: "Environnement", value: "0 Émissions Locales", icon: Leaf },
       ]
     },
     {
       id: "solar",
-      title: "Energia Solar",
-      category: "Solução 02",
-      description: "Produza a sua própria eletricidade limpa e gratuita. Os nossos sistemas fotovoltaicos são dimensionados especificamente para o seu perfil de consumo, maximizando o retorno.",
+      title: "Énergie Solaire",
+      projectType: ProjectType.SOLAR,
+      category: "Solution 02",
+      description: "Produisez votre propre électricité propre et gratuite. Nos systèmes photovoltaïques sont dimensionnés spécifiquement pour votre profil de consommation, maximisant le retour sur investissement.",
       image: "/img/services/panneau.jpg",
-      highlight: "Painéis monocristalinos PERC com garantia de produção linear de 25 anos e eficiência superior a 21%.",
+      highlight: "Panneaux monocristallins PERC avec une garantie de production linéaire de 25 ans et une efficacité supérieure à 21%.",
       specs: [
-        { label: "Retorno", value: "4-5 Anos", icon: Timer },
-        { label: "Garantia", value: "25 Anos Performance", icon: ShieldCheck },
-        { label: "Produção", value: "Monitorização App", icon: Smartphone },
-        { label: "Poupança", value: "Imediata", icon: TrendingUp },
+        { label: "Retour", value: "4-5 Ans", icon: Timer },
+        { label: "Garantie", value: "25 Ans de Performance", icon: ShieldCheck },
+        { label: "Production", value: "Suivi App", icon: Smartphone },
+        { label: "Économies", value: "Immédiate", icon: TrendingUp },
       ]
     },
     {
       id: "battery",
-      title: "Armazenamento",
-      category: "Solução 03",
-      description: "Maximize a sua independência energética armazenando o excedente solar. Utilize a sua energia gratuita mesmo durante a noite ou em falhas de rede.",
+      title: "Stockage",
+      projectType: ProjectType.BATTERY,
+      category: "Solution 03",
+      description: "Maximisez votre indépendance énergétique en stockant le surplus solaire. Utilisez votre énergie gratuite même la nuit ou lors de pannes de réseau.",
       image: "/img/services/energy.jpg",
-      highlight: "Baterias de Lítio Ferro Fosfato (LFP) com +6000 ciclos de vida e profundidade de descarga de 90%.",
+      highlight: "Batteries Lithium Fer Phosphate (LFP) avec +6000 cycles de vie et une profondeur de décharge de 90%.",
       specs: [
-        { label: "Autonomia", value: "Até 100% Off-Grid", icon: Battery },
-        { label: "Vida Útil", value: "+15 Anos", icon: ShieldCheck },
-        { label: "Backup", value: "Proteção Blackout", icon: Zap },
-        { label: "Gestão", value: "IA Integrada", icon: Smartphone },
+        { label: "Autonomie", value: "Jusqu'à 100% Hors Réseau", icon: Battery },
+        { label: "Durée de Vie", value: "+15 Ans", icon: ShieldCheck },
+        { label: "Secours", value: "Protection Coupure", icon: Zap },
+        { label: "Gestion", value: "IA Intégrée", icon: Smartphone },
       ]
     },
     {
       id: "ev-charging",
-      title: "Carregamento EV",
-      category: "Solução 04",
-      description: "Integre a mobilidade elétrica no seu ecossistema. Carregue o seu carro com a energia solar excedente e reduza os custos de combustível a zero.",
+      title: "Recharge VE",
+      projectType: ProjectType.EVCHARGER,
+      category: "Solution 04",
+      description: "Intégrez la mobilité électrique dans votre écosystème. Rechargez votre voiture avec le surplus d'énergie solaire et réduisez vos coûts de carburant à zéro.",
       image: "/img/services/prise_eletrique.jpg",
-      highlight: "Carregadores inteligentes com balanceamento de carga dinâmico que protegem o seu quadro elétrico.",
+      highlight: "Chargeurs intelligents avec équilibrage de charge dynamique protégeant votre tableau électrique.",
       specs: [
-        { label: "Velocidade", value: "Até 22kW AC", icon: Zap },
-        { label: "Modo Solar", value: "Carga 100% Verde", icon: Sun },
-        { label: "Conectividade", value: "Wi-Fi & 4G", icon: Smartphone },
-        { label: "Compatível", value: "Universal Type 2", icon: CheckCircle2 },
+        { label: "Vitesse", value: "Jusqu'à 22kW AC", icon: Zap },
+        { label: "Mode Solaire", value: "Charge 100% Verte", icon: Sun },
+        { label: "Connectivité", value: "Wi-Fi & 4G", icon: Smartphone },
+        { label: "Compatible", value: "Universel Type 2", icon: CheckCircle2 },
       ]
     },
     {
       id: "hvac",
-      title: "Climatização",
-      category: "Solução 05",
-      description: "Soluções de Ar Condicionado e Piso Radiante que garantem a temperatura perfeita em cada divisão, com a máxima eficiência energética.",
+      title: "Climatisation",
+      projectType: ProjectType.HVAC,
+      category: "Solution 05",
+      description: "Solutions de climatisation et chauffage au sol garantissant une température parfaite dans chaque pièce, avec une efficacité énergétique maximale.",
       image: "/img/services/clima.jpg",
-      highlight: "Sistemas inverter silenciosos com filtragem de ar avançada e controlo Wi-Fi integrado.",
+      highlight: "Systèmes inverter silencieux avec filtration d'air avancée et contrôle Wi-Fi intégré.",
       specs: [
-        { label: "Eficiência", value: "Classe A+++", icon: Zap },
-        { label: "Conforto", value: "Multizona", icon: Home },
-        { label: "Saúde", value: "Filtros HEPA", icon: Wind },
-        { label: "Ruído", value: "Ultra Silencioso", icon: ShieldCheck },
+        { label: "Efficacité", value: "Classe A+++", icon: Zap },
+        { label: "Confort", value: "Multizone", icon: Home },
+        { label: "Santé", value: "Filtres HEPA", icon: Wind },
+        { label: "Bruit", value: "Ultra Silencieux", icon: ShieldCheck },
       ]
     }
   ];
 
-  const handleContactClick = () => {
-    navigate('/contact');
+  const handleContactClick = (type: ProjectType) => {
+    navigate(`/contact?project=${encodeURIComponent(type)}`);
   };
 
   return (
@@ -88,10 +94,10 @@ const ServicesSection: React.FC = () => {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-24">
         <h2 className="font-display font-bold text-4xl md:text-5xl text-slate-900 mb-6">
-          O Nosso <span className="text-emerald-500">Ecossistema</span>
+          Notre <span className="text-emerald-500">Écosystème</span>
         </h2>
         <p className="text-slate-600 text-lg leading-relaxed">
-          Cada serviço foi desenhado para funcionar isoladamente ou integrado numa solução completa de independência energética.
+          Chaque service a été conçu pour fonctionner isolément ou intégré dans une solution complète d'indépendance énergétique.
         </p>
       </div>
 
@@ -132,14 +138,14 @@ const ServicesSection: React.FC = () => {
               {/* Actions (Desktop Only) */}
               <div className="hidden lg:flex items-center gap-4 pt-4">
                 <button
-                  onClick={handleContactClick}
+                  onClick={() => handleContactClick(service.projectType)}
                   className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors flex items-center gap-2 group"
                 >
-                  Pedir Orçamento
+                  Demander un Devis
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="px-8 py-3.5 border border-slate-200 text-slate-600 rounded-full font-bold hover:bg-slate-50 transition-colors">
-                  Ver Projetos
+                  Voir les Projets
                 </button>
               </div>
             </div>
@@ -163,7 +169,7 @@ const ServicesSection: React.FC = () => {
                       <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1 text-white/90">Destaque Técnico</h4>
+                      <h4 className="font-bold text-sm mb-1 text-white/90">Point Technique</h4>
                       <p className="text-xs leading-relaxed text-white/80 font-medium">
                         {service.highlight}
                       </p>
@@ -184,14 +190,14 @@ const ServicesSection: React.FC = () => {
             {/* Actions (Mobile Only - After Image) */}
             <div className="flex lg:hidden flex-col sm:flex-row items-center gap-4 w-full">
               <button
-                onClick={handleContactClick}
+                onClick={() => handleContactClick(service.projectType)}
                 className="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2 group"
               >
-                Pedir Orçamento
+                Demander un Devis
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="w-full sm:w-auto px-8 py-3.5 border border-slate-200 text-slate-600 rounded-full font-bold hover:bg-slate-50 transition-colors text-center">
-                Ver Projetos
+                Voir les Projets
               </button>
             </div>
 

@@ -29,13 +29,13 @@ const AboutSection: React.FC = () => {
                     {/* Floating Stats Card - Experience */}
                     <div className="absolute -right-6 top-12 bg-white p-6 rounded-3xl shadow-xl shadow-black/20 animate-float">
                         <p className="font-display font-bold text-4xl text-brand-dark mb-1">10+</p>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Anos de XP</p>
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Ans d'Exp.</p>
                     </div>
 
                     {/* Floating Stats Card - CO2 */}
                     <div className="absolute -left-6 bottom-12 bg-brand-accent text-brand-dark p-6 rounded-3xl shadow-xl shadow-brand-accent/20 animate-float" style={{ animationDelay: '2s' }}>
                         <p className="font-display font-bold text-4xl mb-1">CO₂</p>
-                        <p className="text-xs font-bold uppercase tracking-widest opacity-80">Redução Real</p>
+                        <p className="text-xs font-bold uppercase tracking-widest opacity-80">Réduction Réelle</p>
                     </div>
                 </div>
 
@@ -43,23 +43,23 @@ const AboutSection: React.FC = () => {
                 <div className="lg:w-1/2 space-y-10">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-2">
                         <div className="w-2 h-2 rounded-full bg-brand-accent animate-ping" />
-                        <span className="text-brand-accent text-xs font-bold tracking-widest uppercase">Sobre Nós</span>
+                        <span className="text-brand-accent text-xs font-bold tracking-widest uppercase">À propos de nous</span>
                     </div>
 
                     <h2 className="font-display text-4xl md:text-6xl font-bold text-white leading-tight">
-                        Engenharia de precisão <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white">com toque humano.</span>
+                        Ingénierie de précision <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white">avec une touche humaine.</span>
                     </h2>
 
                     <p className="text-slate-400 text-lg leading-relaxed border-l-4 border-brand-primary pl-6">
-                        A <span className="text-white font-bold">Chez Energie</span> nasceu da fusão entre a exigência técnica e a necessidade de sustentabilidade. Não vendemos apenas equipamentos; desenhamos o ecossistema energético da sua casa para durar gerações.
+                        <span className="text-white font-bold">Chez Energie</span> est née de la fusion entre l'exigence technique et la nécessité de durabilité. Nous ne vendons pas seulement des équipements ; nous concevons l'écosystème énergétique de votre maison pour durer des générations.
                     </p>
 
                     <div className="flex flex-col gap-4">
                         {[
-                            "Projetos chave na mão sem surpresas",
-                            "Acompanhamento técnico vitalício",
-                            "Parceiros oficiais das melhores marcas"
+                            "Projets clé en main sans surprises",
+                            "Suivi technique à vie",
+                            "Partenaires officiels des meilleures marques"
                         ].map((item, i) => (
                             <div key={i} className="flex items-center gap-4 group">
                                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors">

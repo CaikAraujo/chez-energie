@@ -4,14 +4,14 @@ import { MessageCircle } from 'lucide-react';
 export const WhatsAppButton: React.FC = () => {
     return (
         <a
-            href="https://wa.me/33612345678" // Replace with actual number
+            href="https://wa.me/41765133166" // Number from user
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-12 right-8 z-50 group hidden md:flex items-center justify-center"
             aria-label="Contact on WhatsApp"
         >
             <span className="absolute right-full mr-4 bg-white px-4 py-2 rounded-xl shadow-lg text-brand-dark font-bold text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                Fale connosco agora!
+                Contactez-nous sur WhatsApp
             </span>
             <div className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:scale-110 transition-all duration-300">
                 <svg viewBox="0 0 24 24" className="w-9 h-9 fill-white" xmlns="http://www.w3.org/2000/svg">

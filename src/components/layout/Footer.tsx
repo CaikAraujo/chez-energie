@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Líderes em soluções de energia sustentável. Transformamos casas em lares eficientes e ecológicos.
+              Leaders en solutions d'énergie durable. Nous transformons des maisons en foyers efficaces et écologiques.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-all"><Instagram size={16} /></a>
@@ -44,40 +44,40 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div className="md:col-span-1">
-            <h4 className="font-bold text-white mb-6">Navegação</h4>
+            <h4 className="font-bold text-white mb-6">Navigation</h4>
             <div className="flex flex-col gap-3 text-slate-400 text-sm">
-              <button onClick={() => handleNavClick('/')} className="footer-link">Home</button>
-              <button onClick={() => handleNavClick('/services')} className="footer-link">Soluções</button>
-              <button onClick={() => handleNavClick('/')} className="footer-link">Sobre Nós</button>
-              <button onClick={() => handleNavClick('/contact')} className="footer-link">Contactos</button>
+              <button onClick={() => handleNavClick('/')} className="footer-link">Accueil</button>
+              <button onClick={() => handleNavClick('/services')} className="footer-link">Solutions</button>
+              <button onClick={() => handleNavClick('/')} className="footer-link">À propos</button>
+              <button onClick={() => handleNavClick('/contact')} className="footer-link">Contact</button>
             </div>
           </div>
 
           {/* Services */}
           <div className="md:col-span-1">
-            <h4 className="font-bold text-white mb-6">Soluções</h4>
+            <h4 className="font-bold text-white mb-6">Solutions</h4>
             <div className="flex flex-col gap-3 text-slate-400 text-sm">
-              <span className="footer-link cursor-default">Bombas de Calor</span>
-              <span className="footer-link cursor-default">Carregadores EV</span>
-              <span className="footer-link cursor-default">Ar Condicionado</span>
-              <span className="footer-link cursor-default">Painéis Solares</span>
+              <span className="footer-link cursor-default">Pompes à Chaleur</span>
+              <span className="footer-link cursor-default">Recharge VE</span>
+              <span className="footer-link cursor-default">Climatisation</span>
+              <span className="footer-link cursor-default">Panneaux Solaires</span>
             </div>
           </div>
 
           {/* Legal */}
           <div className="md:col-span-1">
-            <h4 className="font-bold text-white mb-6">Legal</h4>
+            <h4 className="font-bold text-white mb-6">Légal</h4>
             <div className="flex flex-col gap-3 text-slate-400 text-sm">
-              <a href="#" className="footer-link">Política de Privacidade</a>
-              <a href="#" className="footer-link">Termos e Condições</a>
-              <a href="#" className="footer-link">Livro de Reclamações</a>
+              <a href="#" className="footer-link">Politique de Confidentialité</a>
+              <a href="#" className="footer-link">Conditions Générales</a>
+              <a href="#" className="footer-link">Réclamations</a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© 2024 Chez Energie. Todos os direitos reservados.</p>
-          <p>Desenvolvido com energia verde.</p>
+          <p>© 2024 Chez Energie. Tous droits réservés.</p>
+          <p>Développé avec de l'énergie verte.</p>
         </div>
       </div>
     </footer>

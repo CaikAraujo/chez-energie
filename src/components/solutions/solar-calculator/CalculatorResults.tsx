@@ -24,24 +24,24 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
 
                 <div className="relative text-center md:text-left">
-                    <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Economia Total (25 Anos)</div>
+                    <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Économies Totales (25 Ans)</div>
                     <div className="text-5xl md:text-6xl font-display font-bold text-white mb-6 tabular-nums tracking-tight">
                         {Math.round(calculations.totalSavings25y).toLocaleString('de-CH')}<span className="text-2xl text-slate-500 ml-2">CHF</span>
                     </div>
                     <div className="flex flex-wrap justify-center md:justify-start gap-3">
                         <div className="bg-slate-950/50 backdrop-blur border border-slate-800 px-4 py-2 rounded-lg">
-                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Payback</div>
-                            <div className="text-emerald-400 font-bold">{calculations.paybackYear} Anos</div>
+                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Amortissement</div>
+                            <div className="text-emerald-400 font-bold">{calculations.paybackYear} Ans</div>
                         </div>
                         <div className="bg-slate-950/50 backdrop-blur border border-slate-800 px-4 py-2 rounded-lg">
-                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Investimento</div>
+                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Investissement</div>
                             <div className="text-white font-bold">{calculations.initialCost.toLocaleString()} CHF</div>
                         </div>
                     </div>
                 </div>
 
                 <button className="relative z-10 bg-white hover:bg-emerald-50 text-slate-900 pl-6 pr-5 py-3.5 rounded-xl font-bold flex items-center gap-2 transition-colors shadow-xl shadow-white/5 active:scale-95 duration-200">
-                    Receber Proposta
+                    Recevoir une Offre
                     <ArrowRight className="w-4 h-4" />
                 </button>
             </div>
@@ -53,9 +53,9 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
                         <Trees className="w-6 h-6" />
                     </div>
                     <div>
-                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Floresta Equiv.</div>
+                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Forêt Équiv.</div>
                         <div className="text-2xl font-bold text-white">
-                            {calculations.treesPlanted} <span className="text-sm font-normal text-slate-500">árvores</span>
+                            {calculations.treesPlanted} <span className="text-sm font-normal text-slate-500">arbres</span>
                         </div>
                     </div>
                 </div>
@@ -64,9 +64,9 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
                         <Leaf className="w-6 h-6" />
                     </div>
                     <div>
-                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">CO₂ Evitado</div>
+                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">CO₂ Évité</div>
                         <div className="text-2xl font-bold text-white">
-                            {calculations.totalCO2SavedTons.toFixed(0)} <span className="text-sm font-normal text-slate-500">toneladas</span>
+                            {calculations.totalCO2SavedTons.toFixed(0)} <span className="text-sm font-normal text-slate-500">tonnes</span>
                         </div>
                     </div>
                 </div>
@@ -77,11 +77,11 @@ export const CalculatorResults: React.FC<CalculatorResultsProps> = ({ calculatio
                 <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center gap-2">
                         <Zap className="w-4 h-4 text-emerald-400" />
-                        <span className="text-sm font-bold text-white">Análise Financeira Acumulada</span>
+                        <span className="text-sm font-bold text-white">Analyse Financière Cumulée</span>
                     </div>
                     <div className="flex gap-4 text-xs font-medium">
-                        <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-slate-600" /> Sem Solar</div>
-                        <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]" /> Com Solar</div>
+                        <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-slate-600" /> Sans Solaire</div>
+                        <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]" /> Avec Solaire</div>
                     </div>
                 </div>
 

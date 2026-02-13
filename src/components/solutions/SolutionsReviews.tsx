@@ -5,24 +5,24 @@ const SolutionsReviews: React.FC = () => {
     const reviews = [
         {
             name: "Jean-Pierre M.",
-            location: "Geneva",
-            role: "Instalação Solar + Bateria",
-            content: "Impressionante o nível de detalhe técnico. A equipa explicou cada passo e o sistema está a produzir exatamente o que foi prometido no estudo inicial. A independência da rede é real.",
-            date: "Outubro 2025"
+            location: "Genève",
+            role: "Installation Solaire + Batterie",
+            content: "Impressionnant le niveau de détail technique. L'équipe a expliqué chaque étape et le système produit exactement ce qui a été promis dans l'étude initiale. L'indépendance du réseau est réelle.",
+            date: "Octobre 2025"
         },
         {
             name: "Sarah L.",
             location: "Lausanne",
-            role: "Bomba de Calor",
-            content: "Substituímos nossa caldeira a óleo antiga. O conforto térmico é incomparável e o silêncio da unidade exterior surpreendeu-me. A fatura de aquecimento caiu 60%.",
-            date: "Novembro 2025"
+            role: "Pompe à Chaleur",
+            content: "Nous avons remplacé notre vieille chaudière à mazout. Le confort thermique est incomparable et le silence de l'unité extérieure m'a surpris. La facture de chauffage a chuté de 60%.",
+            date: "Novembre 2025"
         },
         {
             name: "Marc D.",
             location: "Fribourg",
-            role: "Wallbox + Solar",
-            content: "Carregar o carro com o sol é uma sensação incrível. A app permite-me controlar tudo e ver quando estou a carregar 'de graça'. Recomendo a Chez Energie pela seriedade.",
-            date: "Janeiro 2026"
+            role: "Wallbox + Solaire",
+            content: "Charger la voiture avec le soleil est une sensation incroyable. L'application me permet de tout contrôler et de voir quand je charge 'gratuitement'. Je recommande Chez Energie pour leur sérieux.",
+            date: "Janvier 2026"
         }
     ];
 
@@ -31,10 +31,10 @@ const SolutionsReviews: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-6">
-                        Resultados Comprovados
+                        Résultats Prouvés
                     </h2>
                     <p className="text-slate-600 text-lg">
-                        Veja o que dizem os proprietários que já fizeram a transição energética completa.
+                        Découvrez ce que disent les propriétaires qui ont déjà effectué la transition énergétique complète.
                     </p>
                 </div>
 

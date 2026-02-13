@@ -4,28 +4,28 @@ import { ShieldCheck, Award, Users, Clock } from 'lucide-react';
 const SolutionsStats: React.FC = () => {
     const stats = [
         {
-            label: "Engenharia",
-            value: "Certificada",
+            label: "Ingénierie",
+            value: "Certifiée",
             icon: Award,
             desc: "ISO 9001"
         },
         {
-            label: "Instalações",
+            label: "Installations",
             value: "500+",
             icon: Users,
-            desc: "Em toda a Suíça"
+            desc: "Dans toute la Suisse"
         },
         {
-            label: "Suporte",
+            label: "Support",
             value: "24/7",
             icon: Clock,
-            desc: "Resposta Imediata"
+            desc: "Réponse Immédiate"
         },
         {
-            label: "Garantia",
-            value: "25 Anos",
+            label: "Garantie",
+            value: "25 Ans",
             icon: ShieldCheck,
-            desc: "Performance Linear"
+            desc: "Performance Linéaire"
         },
     ];
 

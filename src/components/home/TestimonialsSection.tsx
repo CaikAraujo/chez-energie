@@ -5,26 +5,26 @@ import './TestimonialsSection.css';
 const testimonials = [
     {
         name: "Marie Dubois",
-        loc: "Paris, France",
-        text: "A instalação da bomba de calor foi impecável. A equipa foi super profissional e a economia na fatura energética foi imediata. Recomendo vivamente!",
+        loc: "Lausanne, Suisse",
+        text: "L'installation de la pompe à chaleur a été impeccable. L'équipe était super professionnelle et les économies sur la facture énergétique ont été immédiates. Je recommande vivement !",
         initial: "M"
     },
     {
         name: "Jean Pierre",
-        loc: "Lyon, France",
-        text: "Profissionalismo raro nos dias de hoje. O carregador EV funciona perfeitamente e a estética da instalação ficou ótima na minha garagem.",
+        loc: "Fribourg, Suisse",
+        text: "Professionnalisme rare de nos jours. Le chargeur VE fonctionne parfaitement et l'esthétique de l'installation est superbe dans mon garage.",
         initial: "J"
     },
     {
         name: "Sophie Martin",
-        loc: "Bordeaux, France",
-        text: "Transformaram completamente o conforto da nossa casa antiga. O sistema é silencioso, eficiente e muito fácil de controlar pelo telemóvel.",
+        loc: "Neuchâtel, Suisse",
+        text: "Ils ont complètement transformé le confort de notre vieille maison. Le système est silencieux, efficace et très facile à contrôler via mobile.",
         initial: "S"
     },
     {
         name: "Thomas Bernard",
-        loc: "Geneva, Switzerland",
-        text: "Excelente acompanhamento desde o primeiro contacto até à instalação final. Os painéis solares estão a produzir acima do esperado.",
+        loc: "Genève, Suisse",
+        text: "Excellent suivi du premier contact à l'installation finale. Les panneaux solaires produisent au-delà des attentes.",
         initial: "T"
     }
 ];
@@ -38,10 +38,10 @@ const TestimonialsSection: React.FC = () => {
 
             <div className="testimonials-container">
                 <div className="testimonials-header">
-                    <h3 className="testimonials-title">O que dizem os nossos clientes</h3>
+                    <h3 className="testimonials-title">Ce que disent nos clients</h3>
                     <p className="testimonials-subtitle">
-                        Mais de 500 famílias já confiam na Chez Energie para a sua transição energética.
-                        A satisfação dos nossos clientes é a nossa melhor garantia.
+                        Plus de 500 familles font déjà confiance à Chez Energie pour leur transition énergétique.
+                        La satisfaction de nos clients est notre meilleure garantie.
                     </p>
                 </div>
 

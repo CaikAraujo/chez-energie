@@ -8,7 +8,7 @@ const TrustMarquee: React.FC = () => {
     return (
         <div className="bg-slate-950 py-12 border-y border-white/5 overflow-hidden relative">
             <p className="text-center text-slate-500 text-sm font-bold tracking-[0.2em] uppercase mb-8">
-                Mais de 500 parcerias de sucesso
+                Plus de 500 partenariats réussis
             </p>
 
             {/* Gradient Masks */}

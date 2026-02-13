@@ -3,10 +3,10 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const SolutionsCTA: React.FC = () => {
     const benefits = [
-        "Estudo energético gratuito",
-        "Dimensionamento personalizado",
-        "Cálculo de retorno financeiro (ROI)",
-        "Orçamento detalhado sem compromisso"
+        "Étude énergétique gratuite",
+        "Dimensionnement personnalisé",
+        "Calcul du retour sur investissement (ROI)",
+        "Devis détaillé sans engagement"
     ];
 
     return (
@@ -29,19 +29,19 @@ const SolutionsCTA: React.FC = () => {
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                             </span>
                             <span className="text-xs font-bold tracking-widest text-slate-300 uppercase">
-                                Vagas limitadas para este mês
+                                Places limitées ce mois-ci
                             </span>
                         </div>
 
                         <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight tracking-tight">
-                            Transforme a sua casa <br />
+                            Transformez votre maison <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
-                                numa central de energia.
+                                en centrale énergétique.
                             </span>
                         </h2>
 
                         <p className="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed max-w-lg font-light">
-                            Dê o primeiro passo para a independência energética. A nossa equipa de engenharia está pronta para desenhar a solução ideal para si.
+                            Faites le premier pas vers l'indépendance énergétique. Notre équipe d'ingénieurs est prête à concevoir la solution idéale pour vous.
                         </p>
 
                         <div className="space-y-4 mb-10">
@@ -60,24 +60,24 @@ const SolutionsCTA: React.FC = () => {
                     <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/40 relative overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500"></div>
 
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2 font-display">Comece o seu projeto</h3>
-                        <p className="text-slate-500 mb-8 text-sm font-medium">Responda em menos de 1 minuto.</p>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-2 font-display">Démarrez votre projet</h3>
+                        <p className="text-slate-500 mb-8 text-sm font-medium">Répondez en moins d'une minute.</p>
 
                         <form className="space-y-4">
                             <div className="grid grid-cols-2 gap-4">
-                                <input type="text" placeholder="Nome" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
-                                <input type="text" placeholder="Apelido" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
+                                <input type="text" placeholder="Prénom" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
+                                <input type="text" placeholder="Nom" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
                             </div>
                             <input type="email" placeholder="Email" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
-                            <input type="tel" placeholder="Telefone" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
+                            <input type="tel" placeholder="Téléphone" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 text-sm font-medium" />
 
                             <button type="submit" className="w-full py-4 mt-4 bg-slate-900 hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-600/25 transition-all duration-300 flex items-center justify-center gap-2 group transform active:scale-[0.98]">
-                                Receber Estudo Gratuito
+                                Recevoir mon Étude Gratuite
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
 
                             <p className="text-[11px] text-center text-slate-400 mt-6 leading-relaxed">
-                                Ao submeter, concorda com a nossa política de privacidade. Seus dados estão seguros e não partilhamos com terceiros.
+                                En soumettant ce formulaire, vous acceptez notre politique de confidentialité. Vos données sont sécurisées et ne sont pas partagées avec des tiers.
                             </p>
                         </form>
                     </div>

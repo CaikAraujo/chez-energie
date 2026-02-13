@@ -1,26 +1,112 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, ArrowRight, Zap, Sun, Wind, CheckCircle2, Thermometer, Battery } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, ArrowRight, Zap, Sun, Wind, CheckCircle2, Thermometer, Battery, ChevronDown, Loader2 } from 'lucide-react';
 import { ProjectType, ContactFormData } from '../types';
 import { Button } from '../components/contact/Button';
 import { InputField } from '../components/contact/InputField';
 
 const ContactPage: React.FC = () => {
+    const location = useLocation();
     const [formData, setFormData] = useState<ContactFormData>({
         name: '',
         phone: '',
         email: '',
         projectType: ProjectType.SOLAR,
-        message: ''
+        message: '',
+        monthlyConsumption: '',
+        availableArea: '',
+        currentHeatingType: '',
+        existingSolarSystem: '',
+        storageCapacity: '',
+        desiredPower: '',
+        distanceToPanel: '',
+        numberOfRooms: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    // Configuration for dynamic fields based on ProjectType
+    const dynamicFieldConfig = useMemo(() => ({
+        [ProjectType.SOLAR]: [
+            { name: 'monthlyConsumption', label: 'Conso. Mensuelle Moyenne (kWh)', type: 'number' },
+            { name: 'availableArea', label: 'Surface Disponible (m²)', type: 'number' }
+        ],
+        [ProjectType.HEATPUMP]: [
+            { name: 'availableArea', label: 'Surface à Chauffer (m²)', type: 'number' },
+            { name: 'currentHeatingType', label: 'Type de Chauffage Actuel', type: 'text' }
+        ],
+        [ProjectType.BATTERY]: [
+            { name: 'existingSolarSystem', label: 'Système Solaire Existant ?', type: 'select', options: ['Oui', 'Non'] },
+            { name: 'storageCapacity', label: 'Capacité Souhaitée (kWh)', type: 'number' }
+        ],
+        [ProjectType.EVCHARGER]: [
+            { name: 'desiredPower', label: 'Puissance Souhaitée', type: 'select', options: ['7kW', '11kW', '22kW'] },
+            { name: 'distanceToPanel', label: 'Distance Tableau Électrique (m)', type: 'number' }
+        ],
+        [ProjectType.HVAC]: [
+            { name: 'availableArea', label: 'Surface à Climatiser (m²)', type: 'number' },
+            { name: 'numberOfRooms', label: 'Nombre de Pièces', type: 'number' }
+        ],
+        [ProjectType.OTHER]: []
+    }), []);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const currentDynamicFields = dynamicFieldConfig[formData.projectType as ProjectType] || [];
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const emailParam = params.get('email');
+        const projectParam = params.get('project');
+
+        if (emailParam) {
+            setFormData(prev => ({ ...prev, email: emailParam }));
+        }
+
+        if (projectParam && Object.values(ProjectType).includes(projectParam as ProjectType)) {
+            setFormData(prev => ({ ...prev, projectType: projectParam as ProjectType }));
+        }
+    }, [location]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
     const handleTypeSelect = (type: ProjectType) => {
         setFormData(prev => ({ ...prev, projectType: type }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
+
+            setSubmitStatus('success');
+            setFormData({
+                name: '',
+                phone: '',
+                email: '',
+                projectType: ProjectType.SOLAR,
+                message: ''
+            });
+        } catch (error) {
+            console.error('Error sending message:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const projectIcons = {
@@ -48,11 +134,12 @@ const ContactPage: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="relative z-10 mt-20"
                 >
-                    <h1 className="text-4xl md:text-5xl font-display font-bold leading-[1.1] mb-6">
-                        Vamos construir o <span className="text-brand-accent">futuro</span> do seu projeto.
+                    <div className="w-16 h-1 bg-brand-accent mb-6 rounded-full" />
+                    <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-8 tracking-tight">
+                        Construisons le <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-emerald-400">futur</span> de votre projet.
                     </h1>
-                    <p className="text-slate-300 text-lg max-w-md leading-relaxed">
-                        Soluções energéticas inteligentes para residências e empresas. De Paris a Lisboa, transformamos a forma como você consome energia.
+                    <p className="text-slate-300 text-lg md:text-xl max-w-lg leading-relaxed mb-10 border-l-2 border-slate-700 pl-6">
+                        Solutions énergétiques intelligentes pour résidences et entreprises. À Genève et dans toute la Suisse Romande, nous transformons votre façon de consommer l'énergie.
                     </p>
                 </motion.div>
 
@@ -68,9 +155,9 @@ const ContactPage: React.FC = () => {
                                 <Phone size={20} />
                             </div>
                             <div>
-                                <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Telefone</p>
-                                <p className="text-xl font-display">+33 1 23 45 67 89</p>
-                                <p className="text-sm text-white/50">Seg-Sex, 9h-18h</p>
+                                <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Téléphone</p>
+                                <p className="text-xl font-display">+41 76 513 31 66</p>
+                                <p className="text-sm text-white/50">Lun-Ven, 9h-18h</p>
                             </div>
                         </div>
 
@@ -80,8 +167,8 @@ const ContactPage: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Email</p>
-                                <p className="text-xl font-display">bonjour@chezenergie.com</p>
-                                <p className="text-sm text-white/50">Resposta em 24h</p>
+                                <p className="text-xl font-display">Info@chezenergy.ch</p>
+                                <p className="text-sm text-white/50">Réponse sous 24h</p>
                             </div>
                         </div>
 
@@ -90,9 +177,9 @@ const ContactPage: React.FC = () => {
                                 <MapPin size={20} />
                             </div>
                             <div>
-                                <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Escritórios</p>
-                                <p className="text-xl font-display">Paris & Lisboa</p>
-                                <p className="text-sm text-white/50">Visitas por marcação</p>
+                                <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Bureaux</p>
+                                <p className="text-xl font-display">Genève</p>
+                                <p className="text-sm text-white/50">Visites sur rendez-vous</p>
                             </div>
                         </div>
                     </div>
@@ -116,15 +203,35 @@ const ContactPage: React.FC = () => {
                     className="max-w-xl mx-auto mt-20"
                 >
                     <div className="mb-12">
-                        <h2 className="text-3xl font-display font-bold mb-2">Pedir Orçamento Gratuito</h2>
-                        <p className="text-slate-500">Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
+                        <h2 className="text-3xl font-display font-bold mb-2">Demander un Devis Gratuit</h2>
+                        <p className="text-slate-500">Remplissez le formulaire ci-dessous et notre équipe vous contactera.</p>
                     </div>
 
-                    <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                    {submitStatus === 'success' && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="bg-emerald-50 text-emerald-800 p-4 rounded-lg mb-8 flex items-center gap-3 border border-emerald-100"
+                        >
+                            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                            <div>
+                                <p className="font-bold text-sm">Message envoyé avec succès !</p>
+                                <p className="text-xs text-emerald-700">Nous vous recontacterons dans les plus brefs délais.</p>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                        <div className="bg-red-50 text-red-800 p-4 rounded-lg mb-8 border border-red-100 text-sm">
+                            Une erreur est survenue lors de l'envoi du message. Veuillez réessayer ou nous contacter par téléphone.
+                        </div>
+                    )}
+
+                    <form className="space-y-8" onSubmit={handleSubmit}>
 
                         {/* Project Type Selection - Visual Cards */}
                         <div>
-                            <label className="block text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Interesse Principal</label>
+                            <label className="block text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Intérêt Principal</label>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                                 {Object.values(ProjectType).map((type) => (
                                     <div
@@ -144,13 +251,13 @@ const ContactPage: React.FC = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <InputField
-                                label="Nome Completo"
+                                label="Nom Complet"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                             />
                             <InputField
-                                label="Contacto Telefónico"
+                                label="Numéro de Téléphone"
                                 name="phone"
                                 type="tel"
                                 value={formData.phone}
@@ -159,28 +266,80 @@ const ContactPage: React.FC = () => {
                         </div>
 
                         <InputField
-                            label="Email Corporativo ou Pessoal"
+                            label="Email Professionnel ou Personnel"
                             name="email"
                             type="email"
                             value={formData.email}
                             onChange={handleChange}
                         />
 
+                        {/* Dynamic Fields Section */}
+                        {currentDynamicFields.length > 0 && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden pt-4"
+                            >
+                                {currentDynamicFields.map((field) => (
+                                    <div key={field.name}>
+                                        {field.type === 'select' ? (
+                                            <div className="relative mt-2">
+                                                <select
+                                                    id={field.name}
+                                                    name={field.name}
+                                                    value={(formData as any)[field.name]}
+                                                    onChange={handleChange}
+                                                    className={`peer w-full border-b-2 border-slate-200 bg-transparent py-3 pr-8 focus:border-brand-primary focus:outline-none transition-colors appearance-none cursor-pointer 
+                                                        ${(formData as any)[field.name] ? 'text-slate-900' : 'text-transparent'}`}
+                                                >
+                                                    <option value="" disabled className="text-slate-500">Sélectionner</option>
+                                                    {field.options?.map(opt => (
+                                                        <option key={opt} value={opt} className="text-slate-900">{opt}</option>
+                                                    ))}
+                                                </select>
+                                                <label
+                                                    htmlFor={field.name}
+                                                    className={`absolute left-0 transition-all font-medium tracking-wide pointer-events-none 
+                                                        ${(formData as any)[field.name]
+                                                            ? '-top-3.5 text-xs text-brand-primary'
+                                                            : 'top-3 text-base text-slate-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-primary'
+                                                        }`}
+                                                >
+                                                    {field.label}
+                                                </label>
+                                                <ChevronDown className="absolute right-0 top-3 text-slate-400 pointer-events-none" size={16} />
+                                            </div>
+                                        ) : (
+                                            <InputField
+                                                label={field.label}
+                                                name={field.name}
+                                                type={field.type}
+                                                placeholder={field.placeholder}
+                                                value={(formData as any)[field.name]}
+                                                onChange={handleChange}
+                                            />
+                                        )}
+                                    </div>
+                                ))}
+                            </motion.div>
+                        )}
+
                         <InputField
-                            label="Mensagem (Opcional)"
+                            label="Message (Optionnel)"
                             name="message"
                             isTextArea
                             value={formData.message}
                             onChange={handleChange}
                         />
 
-                        <div className="pt-6 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
-                            <div className="text-xs text-slate-400 text-center md:text-left max-w-xs leading-relaxed">
-                                Ao enviar, concorda com a nossa política de privacidade. Seus dados estão seguros.
-                            </div>
-                            <Button type="submit" className="w-full md:w-auto text-sm md:text-base py-4 md:py-4">
-                                Enviar Pedido <ArrowRight size={18} />
+                        <div className="pt-8 flex flex-col items-center gap-4 w-full">
+                            <Button type="submit" className="group w-full py-5 text-xl font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50 transform hover:-translate-y-1 transition-all duration-300 border-none flex justify-center items-center">
+                                Envoyer la Demande <ArrowRight size={24} className="ml-3 group-hover:translate-x-1 transition-transform" />
                             </Button>
+                            <div className="text-xs text-slate-400 text-center max-w-sm leading-relaxed opacity-80">
+                                En envoyant, vous acceptez notre politique de confidentialité. Vos données sont 100% sécurisées.
+                            </div>
                         </div>
 
                     </form>

@@ -5,23 +5,23 @@ const SolutionsProcess: React.FC = () => {
     const steps = [
         {
             icon: ClipboardCheck,
-            title: "1. Consultoria",
-            description: "Análise gratuita do seu perfil de consumo e necessidades energéticas."
+            title: "1. Consultation",
+            description: "Analyse gratuite de votre profil de consommation et de vos besoins énergétiques."
         },
         {
             icon: PenTool,
-            title: "2. Engenharia",
-            description: "Desenvolvimento de uma solução técnica personalizada e dimensionada."
+            title: "2. Ingénierie",
+            description: "Développement d'une solution technique personnalisée et dimensionnée."
         },
         {
             icon: Wrench,
-            title: "3. Instalação",
-            description: "Montagem por equipas certificadas com materiais de alta qualidade."
+            title: "3. Installation",
+            description: "Montage par des équipes certifiées avec des matériaux de haute qualité."
         },
         {
             icon: Headphones,
-            title: "4. Suporte",
-            description: "Monitorização remota 24/7 e garantia de performance a longo prazo."
+            title: "4. Support",
+            description: "Surveillance à distance 24/7 et garantie de performance à long terme."
         }
     ];
 
@@ -30,10 +30,10 @@ const SolutionsProcess: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">
-                        Como Funciona
+                        Comment ça Marche
                     </h2>
                     <p className="text-slate-600 text-lg">
-                        Da primeira visita até à independência energética, cuidamos de todo o processo.
+                        De la première visite à l'indépendance énergétique, nous nous occupons de tout le processus.
                     </p>
                 </div>
 

@@ -28,10 +28,10 @@ export const Navigation: React.FC = () => {
     const shouldBeScrolled = scrolled || !isHomePage;
 
     const links = [
-        { label: 'Home', path: '/' },
-        { label: 'Soluções', path: '/services' },
-        { label: 'Sobre', path: '/about' },
-        { label: 'Contactos', path: '/contact' }
+        { label: 'Accueil', path: '/' },
+        { label: 'Solutions', path: '/services' },
+        { label: 'À propos', path: '/about' },
+        { label: 'Contact', path: '/contact' }
     ];
 
     return (
@@ -69,7 +69,7 @@ export const Navigation: React.FC = () => {
                         className="btn-cta"
                         onClick={() => handleNavClick('/contact')}
                     >
-                        Pedir Orçamento
+                        Demander un devis
                     </button>
 
                     <button
@@ -97,7 +97,7 @@ export const Navigation: React.FC = () => {
                         className="btn-mobile-cta"
                         onClick={() => handleNavClick('/contact')}
                     >
-                        Pedir Orçamento
+                        Demander un devis
                     </button>
                 </div>
             )}

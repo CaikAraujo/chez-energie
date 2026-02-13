@@ -2,10 +2,10 @@ import React from 'react';
 
 const StatsSection: React.FC = () => {
   const stats = [
-    { value: "+500", label: "Projetos Realizados" },
-    { value: "30%", label: "Poupança Média" },
-    { value: "24/7", label: "Suporte Técnico" },
-    { value: "25", label: "Anos de Garantia" },
+    { value: "+500", label: "Projets Réalisés" },
+    { value: "30%", label: "Économies Moyennes" },
+    { value: "24/7", label: "Support Technique" },
+    { value: "25", label: "Ans de Garantie" },
   ];
 
   return (

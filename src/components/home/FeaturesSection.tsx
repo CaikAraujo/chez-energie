@@ -21,10 +21,10 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                 {/* Section Header */}
                 <div className="features-header">
                     <h2 className="features-title">
-                        Tecnologia de <span className="features-highlight">Ponta</span>
+                        Technologie de <span className="features-highlight">Pointe</span>
                     </h2>
                     <p className="features-desc">
-                        Equipamentos selecionados pela durabilidade e performance superior.
+                        Équipements sélectionnés pour leur durabilité et performance supérieure.
                     </p>
                 </div>
 
@@ -39,13 +39,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box solar">
                                 <Sun size={24} />
                             </div>
-                            <h3 className="card-title">Painel Solar Full Black</h3>
+                            <h3 className="card-title">Panneau Solaire Full Black</h3>
                             <p className="card-text">
-                                Módulos monocristalinos com estética superior e eficiência garantida mesmo em dias nublados.
+                                Modules monocristallins avec esthétique supérieure et efficacité garantie même par temps nuageux.
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Garantia</span>
-                                <span className="card-value">25 Anos</span>
+                                <span className="card-label">Garantie</span>
+                                <span className="card-value">25 Ans</span>
                             </div>
                         </div>
                     </div>
@@ -59,12 +59,12 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box heat">
                                 <Thermometer size={24} />
                             </div>
-                            <h3 className="card-title">Bomba de Calor</h3>
+                            <h3 className="card-title">Pompe à Chaleur</h3>
                             <p className="card-text">
-                                Coeficiente de desempenho líder de mercado. 4x mais eficiente que sistemas a gás ou gasóleo.
+                                Coefficient de performance leader du marché. 4x plus efficace que les systèmes au gaz ou fioul.
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Eficiência</span>
+                                <span className="card-label">Efficacité</span>
                                 <span className="card-value">COP 4.5</span>
                             </div>
                         </div>
@@ -79,12 +79,12 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box ev">
                                 <Zap size={24} />
                             </div>
-                            <h3 className="card-title">Carregamento EV</h3>
+                            <h3 className="card-title">Recharge VE</h3>
                             <p className="card-text">
-                                Carregamento inteligente integrado com a sua produção solar. Encha o depósito com o sol.
+                                Chargement intelligent intégré avec votre production solaire. Faites le plein avec le soleil.
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Potência</span>
+                                <span className="card-label">Puissance</span>
                                 <span className="card-value">22 kW</span>
                             </div>
                         </div>
@@ -99,12 +99,12 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box wind">
                                 <Wind size={24} />
                             </div>
-                            <h3 className="card-title">Climatização</h3>
+                            <h3 className="card-title">Climatisation</h3>
                             <p className="card-text">
-                                Conforto térmico todo o ano com máxima eficiência energética e silêncio absoluto.
+                                Confort thermique toute l'année avec une efficacité énergétique maximale et un silence absolu.
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Ruído</span>
+                                <span className="card-label">Bruit</span>
                                 <span className="card-value">&lt; 20 dB</span>
                             </div>
                         </div>
@@ -118,15 +118,15 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
 
                     <div className="system-content">
                         <div className="system-text">
-                            <h3>Um Sistema, <br />Três Pilares</h3>
+                            <h3>Un Système, <br />Trois Piliers</h3>
                             <p>
-                                A sinergia perfeita entre a produção do telhado, o conforto da sala e a mobilidade da garagem. Tudo controlado numa única app.
+                                La synergie parfaite entre la production du toit, le confort du salon et la mobilité du garage. Tout contrôlé dans une seule application.
                             </p>
                             <button
                                 className="system-btn"
                                 onClick={onLearnMoreClick}
                             >
-                                Saber como funciona <ArrowRight size={18} />
+                                Savoir comment ça marche <ArrowRight size={18} />
                             </button>
                         </div>
 
@@ -138,7 +138,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                                 <div className="pillar-circle">
                                     <Sun className="pillar-icon" color="currentColor" />
                                 </div>
-                                <span className="pillar-label">Produção</span>
+                                <span className="pillar-label">Production</span>
                             </div>
 
                             {/* CONNECTOR 1: Solar -> Battery */}
@@ -169,7 +169,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                                 <div className="pillar-circle">
                                     <Battery className="pillar-icon" color="currentColor" />
                                 </div>
-                                <span className="pillar-label">Armazenamento</span>
+                                <span className="pillar-label">Stockage</span>
                             </div>
 
                             {/* CONNECTOR 2: Battery -> Home */}
@@ -200,7 +200,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                                 <div className="pillar-circle">
                                     <Home className="pillar-icon" color="currentColor" />
                                 </div>
-                                <span className="pillar-label">Consumo</span>
+                                <span className="pillar-label">Consommation</span>
                             </div>
 
                         </div>

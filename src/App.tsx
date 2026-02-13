@@ -8,6 +8,7 @@ import ServicesPage from './pages/ServicesPage';
 import SolutionsPage from './pages/SolutionsPage';
 import ContactPage from './pages/ContactPage';
 import { WhatsAppButton } from './components/ui/WhatsAppButton';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 const App: React.FC = () => {
   return (
@@ -29,10 +30,10 @@ const App: React.FC = () => {
           </main>
           <Footer />
         </div>
-
+        <ScrollToTop />
         <WhatsAppButton />
       </div>
-    </Router>
+    </Router >
   );
 };
 

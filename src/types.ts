@@ -21,12 +21,12 @@ export interface ServiceCardProps {
 }
 
 export enum ProjectType {
-    SOLAR = 'Painéis Solares',
-    HEATPUMP = 'Bombas de Calor',
-    BATTERY = 'Baterias & Armazenamento',
-    EVCHARGER = 'Carregamento Elétrico',
-    HVAC = 'Climatização',
-    OTHER = 'Outro'
+    SOLAR = 'Panneaux Solaires',
+    HEATPUMP = 'Pompes à Chaleur',
+    BATTERY = 'Batteries & Stockage',
+    EVCHARGER = 'Recharge Électrique',
+    HVAC = 'Climatisation',
+    OTHER = 'Autre'
 }
 
 export interface ContactFormData {
@@ -35,6 +35,15 @@ export interface ContactFormData {
     email: string;
     projectType: ProjectType;
     message: string;
+    // Dynamic fields
+    monthlyConsumption?: string;
+    availableArea?: string;
+    currentHeatingType?: string;
+    existingSolarSystem?: string;
+    storageCapacity?: string;
+    desiredPower?: string;
+    distanceToPanel?: string;
+    numberOfRooms?: string;
 }
 
 export interface AiFeedback {

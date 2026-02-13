@@ -12,13 +12,13 @@ const Services: React.FC = () => {
                 <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
                         <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-                        <span className="text-brand-dark text-xs font-bold tracking-widest uppercase">Nossas Soluções</span>
+                        <span className="text-brand-dark text-xs font-bold tracking-widest uppercase">Nos Solutions</span>
                     </div>
                     <h3 className="font-display text-4xl md:text-6xl font-bold text-brand-dark mb-6 leading-tight">
-                        Tecnologia que trabalha <br /><span className="text-brand-primary">pela sua casa.</span>
+                        La technologie au service <br /><span className="text-brand-primary">de votre maison.</span>
                     </h3>
                     <p className="text-slate-500 text-xl leading-relaxed">
-                        Integramos os sistemas mais avançados do mercado para garantir conforto máximo com o mínimo consumo.
+                        Nous intégrons les systèmes les plus avancés du marché pour garantir un confort maximal avec une consommation minimale.
                     </p>
                 </div>
 
@@ -40,8 +40,8 @@ const Services: React.FC = () => {
                             </div>
 
                             <div>
-                                <h4 className="font-display text-3xl font-bold text-brand-dark mb-4">Bombas de Calor</h4>
-                                <p className="text-slate-500 text-lg max-w-md leading-relaxed">Sistemas aerotérmicos de última geração. Até 75% de energia gratuita extraída do ar.</p>
+                                <h4 className="font-display text-3xl font-bold text-brand-dark mb-4">Pompes à Chaleur</h4>
+                                <p className="text-slate-500 text-lg max-w-md leading-relaxed">Systèmes aérothermiques de dernière génération. Jusqu'à 75% d'énergie gratuite extraite de l'air.</p>
                             </div>
 
                             {/* Hover Image Reveal */}
@@ -62,8 +62,8 @@ const Services: React.FC = () => {
                             <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-brand-accent mb-auto group-hover:rotate-12 transition-transform duration-500">
                                 <Zap className="w-7 h-7" />
                             </div>
-                            <h4 className="font-display text-2xl font-bold mb-3">Mobilidade Elétrica</h4>
-                            <p className="text-slate-400 leading-relaxed">Carregadores rápidos e inteligentes. Instalação chave na mão.</p>
+                            <h4 className="font-display text-2xl font-bold mb-3">Mobilité Électrique</h4>
+                            <p className="text-slate-400 leading-relaxed">Chargeurs rapides et intelligents. Installation clé en main.</p>
                         </div>
                     </div>
 
@@ -73,8 +73,8 @@ const Services: React.FC = () => {
                             <div className="w-14 h-14 rounded-2xl bg-brand-secondary/10 flex items-center justify-center text-brand-secondary mb-auto group-hover:scale-110 transition-transform duration-500">
                                 <Fan className="w-7 h-7" />
                             </div>
-                            <h4 className="font-display text-2xl font-bold text-brand-dark mb-3">Climatização</h4>
-                            <p className="text-slate-500 leading-relaxed">Ar condicionado multi-split silencioso e eficiente.</p>
+                            <h4 className="font-display text-2xl font-bold text-brand-dark mb-3">Climatisation</h4>
+                            <p className="text-slate-500 leading-relaxed">Climatisation multi-split silencieuse et efficace.</p>
                         </div>
                     </div>
 
@@ -85,22 +85,22 @@ const Services: React.FC = () => {
                                 <div className="w-16 h-16 rounded-full bg-brand-accent/10 flex items-center justify-center mb-4 text-brand-accent">
                                     <Leaf className="w-8 h-8" />
                                 </div>
-                                <span className="font-display font-bold text-xl text-brand-dark mb-1">100% Eco</span>
-                                <span className="text-sm text-slate-500 font-medium">Sustentável</span>
+                                <span className="font-display font-bold text-xl text-brand-dark mb-1">100% Éco</span>
+                                <span className="text-sm text-slate-500 font-medium">Durable</span>
                             </div>
                             <div className="p-8 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors duration-300">
                                 <div className="w-16 h-16 rounded-full bg-brand-secondary/10 flex items-center justify-center mb-4 text-brand-secondary">
                                     <Home className="w-8 h-8" />
                                 </div>
-                                <span className="font-display font-bold text-xl text-brand-dark mb-1">Residencial</span>
-                                <span className="text-sm text-slate-500 font-medium">& Comercial</span>
+                                <span className="font-display font-bold text-xl text-brand-dark mb-1">Résidentiel</span>
+                                <span className="text-sm text-slate-500 font-medium">& Commercial</span>
                             </div>
                             <div className="p-8 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors duration-300">
                                 <div className="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center mb-4 text-brand-primary">
                                     <BarChart3 className="w-8 h-8" />
                                 </div>
-                                <span className="font-display font-bold text-xl text-brand-dark mb-1">ROI Rápido</span>
-                                <span className="text-sm text-slate-500 font-medium">Retorno Garantido</span>
+                                <span className="font-display font-bold text-xl text-brand-dark mb-1">ROI Rapide</span>
+                                <span className="text-sm text-slate-500 font-medium">Retour Garanti</span>
                             </div>
                         </div>
                     </div>

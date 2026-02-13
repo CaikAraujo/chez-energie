@@ -4,18 +4,20 @@ import { motion } from 'framer-motion';
 import { Sun, Thermometer, Wind, Battery, Zap, ShieldCheck, Wrench, Users, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { ServiceCard, ServiceColor } from '../components/ServiceCard';
+import { useTranslations } from '../i18n/useTranslations';
 
 import DocumentTitle from '../components/shared/DocumentTitle';
 
 const AboutPage: React.FC = () => {
     const navigate = useNavigate();
+    const { t } = useTranslations('about');
 
     return (
         <div className="min-h-screen bg-slate-50">
             <DocumentTitle
-                title="À Propos de Nous"
-                description="Découvrez Chez Énergie, votre partenaire local à Genève pour l'installation experte de systèmes énergétiques durables."
-                // canonical="/about"
+                title={t('hero.title')}
+                description={t('hero.description')}
+            // canonical="/about"
             />
             {/* Hero Section */}
             <section className="relative bg-slate-900 text-white py-60 overflow-hidden">
@@ -36,19 +38,16 @@ const AboutPage: React.FC = () => {
                         className="max-w-3xl"
                     >
                         <h1 className="font-display font-bold text-4xl md:text-6xl mb-6 leading-tight">
-                            Énergie Propre.<br />
-                            <span className="text-emerald-400">Économie Réelle.</span><br />
-                            Futur Garanti.
+                            {t('hero.title')}
                         </h1>
                         <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
-                            Chez Energie est votre partenaire à Genève pour une transition énergétique intelligente.
-                            Nous allions technologie de pointe et expertise locale pour valoriser votre bien et réduire votre facture énergétique.
+                            {t('hero.description')}
                         </p>
                         <button
                             onClick={() => navigate('/contact')}
                             className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 group"
                         >
-                            Demander un Diagnostic Gratuit
+                            {t('hero.cta')}
                             <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                         </button>
                     </motion.div>
@@ -58,16 +57,15 @@ const AboutPage: React.FC = () => {
             {/* Mission Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-4xl mx-auto text-center">
-                    <span className="text-emerald-600 font-bold tracking-widest text-sm uppercase mb-4 block">Notre Mission</span>
+                    <span className="text-emerald-600 font-bold tracking-widest text-sm uppercase mb-4 block">{t('mission.badge')}</span>
                     <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-8">
-                        L'Autosuffisance qui Respecte la Planète et votre Portefeuille
+                        {t('mission.title')}
                     </h2>
                     <p className="text-slate-600 text-lg leading-relaxed mb-6">
-                        Chez Energie est née avec un objectif clair : rendre les maisons et entreprises de Genève et sa région autosuffisantes.
-                        Nous croyons que l'énergie du futur est décentralisée, propre et, surtout, économique.
+                        {t('mission.p1')}
                     </p>
                     <p className="text-slate-600 text-lg leading-relaxed">
-                        Nous ne vendons pas seulement des équipements ; nous offrons la liberté énergétique et un confort thermique de haut standing.
+                        {t('mission.p2')}
                     </p>
                 </div>
             </section>
@@ -77,41 +75,41 @@ const AboutPage: React.FC = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">
-                            Nos 5 Piliers de Solutions
+                            {t('pillars.title')}
                         </h2>
-                        <p className="text-slate-500">Technologies intégrées pour une efficacité maximale.</p>
+                        <p className="text-slate-500">{t('pillars.subtitle')}</p>
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-6">
                         {[
                             {
                                 icon: Thermometer,
-                                title: "Pompes à Chaleur",
-                                description: "Remplacez les vieilles chaudières par une efficacité maximale. Chauffez votre maison en extrayant l'énergie thermique de l'air, réduisant drastiquement les coûts.",
+                                title: t('pillars.items.heatPump.title'),
+                                description: t('pillars.items.heatPump.description'),
                                 color: "orange" as ServiceColor
                             },
                             {
                                 icon: Sun,
-                                title: "Panneaux Solaires",
-                                description: "Transformez votre toit en un actif financier. Produisez votre propre électricité propre et protégez-vous contre l'augmentation des tarifs.",
+                                title: t('pillars.items.solar.title'),
+                                description: t('pillars.items.solar.description'),
                                 color: "yellow" as ServiceColor
                             },
                             {
                                 icon: Wind,
-                                title: "Climatisation",
-                                description: "Confort absolu en toutes saisons. Systèmes silencieux et intelligents garantissant la température parfaite, été comme hiver.",
+                                title: t('pillars.items.hvac.title'),
+                                description: t('pillars.items.hvac.description'),
                                 color: "blue" as ServiceColor
                             },
                             {
                                 icon: Battery,
-                                title: "Batteries et Stockage",
-                                description: "Utilisez le soleil même la nuit. Stockez l'excès de production solaire pour garantir l'autonomie et la sécurité contre les pannes de réseau.",
+                                title: t('pillars.items.battery.title'),
+                                description: t('pillars.items.battery.description'),
                                 color: "emerald" as ServiceColor
                             },
                             {
                                 icon: Zap,
-                                title: "Points de Recharge",
-                                description: "La station-service est votre garage. Chargeurs rapides et intelligents intégrés à votre système solaire pour une mobilité à coût nul.",
+                                title: t('pillars.items.charging.title'),
+                                description: t('pillars.items.charging.description'),
                                 color: "indigo" as ServiceColor
                             }
                         ].map((service, index) => (
@@ -137,12 +135,12 @@ const AboutPage: React.FC = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <span className="text-emerald-400 font-bold tracking-widest text-sm uppercase mb-4 block">Ce qui nous différencie</span>
+                            <span className="text-emerald-400 font-bold tracking-widest text-sm uppercase mb-4 block">{t('whyUs.badge')}</span>
                             <h2 className="font-display font-bold text-3xl md:text-5xl mb-6">
-                                Pourquoi Chez Energie ?
+                                {t('whyUs.title')}
                             </h2>
                             <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                                Dans un marché complexe, nous apportons simplicité et confiance. Notre approche est technique, transparente et axée sur le long terme.
+                                {t('whyUs.description')}
                             </p>
 
                             <div className="space-y-6">
@@ -151,8 +149,8 @@ const AboutPage: React.FC = () => {
                                         <Wrench size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-lg mb-1">Installation Professionnelle Certifiée</h4>
-                                        <p className="text-slate-400 text-sm">Techniciens qualifiés suivant rigoureusement les normes suisses de sécurité et de qualité.</p>
+                                        <h4 className="font-bold text-lg mb-1">{t('whyUs.items.certified.title')}</h4>
+                                        <p className="text-slate-400 text-sm">{t('whyUs.items.certified.description')}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
@@ -160,8 +158,8 @@ const AboutPage: React.FC = () => {
                                         <Users size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-lg mb-1">Support Technique Local</h4>
-                                        <p className="text-slate-400 text-sm">Nous sommes à Genève. Notre support est proche, rapide et parle votre langue.</p>
+                                        <h4 className="font-bold text-lg mb-1">{t('whyUs.items.localSupport.title')}</h4>
+                                        <p className="text-slate-400 text-sm">{t('whyUs.items.localSupport.description')}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
@@ -169,8 +167,8 @@ const AboutPage: React.FC = () => {
                                         <ShieldCheck size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-lg mb-1">Technologie de Confiance</h4>
-                                        <p className="text-slate-400 text-sm">Nous travaillons uniquement avec des marques leaders mondiales pour garantir durabilité et performance.</p>
+                                        <h4 className="font-bold text-lg mb-1">{t('whyUs.items.trustedTech.title')}</h4>
+                                        <p className="text-slate-400 text-sm">{t('whyUs.items.trustedTech.description')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -185,8 +183,8 @@ const AboutPage: React.FC = () => {
                                 />
                             </div>
                             <div className="absolute -bottom-6 left-4 right-4 md:left-auto md:right-auto md:-left-6 bg-white p-6 rounded-xl shadow-xl md:max-w-xs text-slate-900">
-                                <p className="font-display font-bold text-3xl text-emerald-600 mb-1">100%</p>
-                                <p className="text-sm font-medium">Engagement envers la satisfaction et la qualité technique.</p>
+                                <p className="font-display font-bold text-3xl text-emerald-600 mb-1">{t('whyUs.stat.value')}</p>
+                                <p className="text-sm font-medium">{t('whyUs.stat.label')}</p>
                             </div>
                         </div>
                     </div>
@@ -197,17 +195,17 @@ const AboutPage: React.FC = () => {
             <section className="py-24 px-6 bg-emerald-600">
                 <div className="max-w-4xl mx-auto text-center text-white">
                     <h2 className="font-display font-bold text-3xl md:text-5xl mb-6">
-                        Prêt pour l'avenir de l'énergie ?
+                        {t('cta.title')}
                     </h2>
                     <p className="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
-                        Ne remettez pas à plus tard les économies que vous pouvez réaliser dès aujourd'hui. Parlez à nos experts.
+                        {t('cta.description')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button
                             onClick={() => navigate('/contact')}
                             className="bg-white text-emerald-900 px-8 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors shadow-lg"
                         >
-                            Devis Gratuit
+                            {t('cta.button')}
                         </button>
                     </div>
                 </div>

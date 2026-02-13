@@ -1,0 +1,523 @@
+{
+    "navigation": {
+        "home": "Home",
+        "solutions": "Solutions",
+        "about": "About",
+        "contact": "Contact",
+        "getQuote": "Get a Quote"
+    },
+    "hero": {
+        "badge": "Leaders in Renewable Energy in Switzerland",
+        "title": "Energy",
+        "titleHighlight": "Independence",
+        "title360": "360º",
+        "description": "Complete equipment and installation solutions for modern residences. Produce, climate control, and charge with cutting-edge technology.",
+        "ctaPrimary": "Configure Your System",
+        "ctaSecondary": "Talk to a Technician",
+        "trustIndicator": "Installed Projects"
+    },
+    "features": {
+        "title": "Cutting-Edge",
+        "titleHighlight": "Technology",
+        "description": "Equipment selected for durability and superior performance.",
+        "solar": {
+            "title": "Full Black Solar Panel",
+            "description": "Monocrystalline modules with superior aesthetics and guaranteed efficiency even in cloudy weather.",
+            "label": "Warranty",
+            "value": "25 Years"
+        },
+        "heatPump": {
+            "title": "Heat Pump",
+            "description": "Market-leading coefficient of performance. 4x more efficient than gas or oil systems.",
+            "label": "Efficiency",
+            "value": "COP 4.5"
+        },
+        "evCharger": {
+            "title": "EV Charging",
+            "description": "Smart charging integrated with your solar production. Fuel up with the sun.",
+            "label": "Power",
+            "value": "22 kW"
+        },
+        "hvac": {
+            "title": "Air Conditioning",
+            "description": "Year-round thermal comfort with maximum energy efficiency and absolute silence.",
+            "label": "Noise",
+            "value": "< 20 dB"
+        },
+        "system": {
+            "title": "One System,",
+            "titleLine2": "Three Pillars",
+            "description": "The perfect synergy between rooftop production, living room comfort, and garage mobility. All controlled in a single application.",
+            "button": "Learn How It Works",
+            "production": "Production",
+            "storage": "Storage",
+            "consumption": "Consumption"
+        }
+    },
+    "stats": {
+        "projects": "Completed Projects",
+        "savings": "Average Savings",
+        "support": "Technical Support",
+        "warranty": "Years Warranty"
+    },
+    "cta": {
+        "title": "Ready to start saving?",
+        "description": "Request your free quote today. Our team of engineers will analyze your bill and design the perfect solution.",
+        "emailPlaceholder": "Your email",
+        "button": "Request a Proposal",
+        "free": "Free",
+        "noCommitment": "No Commitment",
+        "response": "Response within 24h"
+    },
+    "testimonials": {
+        "title": "What our clients say",
+        "subtitle": "Over 500 families already trust Chez Energie for their energy transition. Our clients' satisfaction is our best guarantee."
+    },
+    "services": {
+        "heatPump": {
+            "title": "Heat Pumps",
+            "subtitle": "High-Efficiency Air Source",
+            "description": "Heat pump technology replaces gas and oil boilers. It uses thermal energy from outdoor air to heat your home and domestic hot water with exceptional efficiency.",
+            "details": "Unlike traditional systems that burn fuel, the heat pump simply transfers heat. For every kWh of electricity consumed, it delivers up to 4 kWh of heat (COP of 4.0).",
+            "benefits": {
+                "savings": "Savings up to 70%",
+                "hotWater": "Hot Water (DHW) year-round",
+                "noGas": "Eliminate gas bills",
+                "quiet": "Silent and eco-friendly"
+            }
+        },
+        "solar": {
+            "title": "Solar Energy",
+            "subtitle": "Photovoltaic Self-Consumption",
+            "description": "Produce your own clean and free electricity. Our photovoltaic systems are specifically sized for your consumption profile, maximizing return on investment.",
+            "details": "We use latest-generation monocrystalline panels with PERC technology, ensuring production even in cloudy weather. The system directly powers the home with solar priority.",
+            "benefits": {
+                "billReduction": "Immediate bill reduction",
+                "priceProtection": "Protection against price increases",
+                "roi": "ROI in 4-5 years",
+                "warranty": "25-year warranty"
+            }
+        },
+        "battery": {
+            "title": "Storage",
+            "subtitle": "Smart Batteries",
+            "description": "Don't waste solar energy produced during the day. Store the surplus in advanced lithium batteries to use it for free at night.",
+            "details": "Our hybrid storage solutions manage energy intelligently: first the home, then the batteries, and finally the grid, ensuring self-sufficiency above 80%.",
+            "benefits": {
+                "solar24": "Solar energy 24/7",
+                "backup": "Backup during outages",
+                "maxProfit": "Maximum profitability",
+                "app": "App management"
+            }
+        },
+        "evCharging": {
+            "title": "EV Charging",
+            "subtitle": "Electric Mobility",
+            "description": "Charge your electric vehicle quickly, safely, and intelligently, integrating the charger with your solar production to drive 'for free'.",
+            "details": "Smart wallboxes communicating with the meter. Automatic load balancing to avoid tripping breakers and charging only with solar surplus.",
+            "benefits": {
+                "fastCharging": "10x faster charging",
+                "solarOnly": "'Solar Only' mode",
+                "loadBalancing": "Dynamic balancing",
+                "universal": "Universal compatibility"
+            }
+        },
+        "smartHome": {
+            "title": "Home Automation",
+            "subtitle": "Smart Home",
+            "description": "Total control in the palm of your hand. Centralize energy, climate, and security management in a single intuitive application.",
+            "details": "Total ecosystem integration. Create scenarios like 'I'm leaving' that turns off lights and lowers heating, or 'Vacation' that simulates presence.",
+            "benefits": {
+                "centralized": "Centralized management",
+                "remote": "Total remote control",
+                "automation": "Routine automation",
+                "security": "Security alerts"
+            }
+        },
+        "hvac": {
+            "title": "Air Conditioning",
+            "subtitle": "Thermal Comfort",
+            "description": "Air Conditioning and Underfloor Heating solutions ensuring perfect temperature in every room, with maximum energy efficiency.",
+            "details": "We design the ideal thermal distribution solution for your home's architecture. Silent inverter systems with advanced air filtration and Wi-Fi control.",
+            "benefits": {
+                "zoneControl": "Zone-by-zone control",
+                "airPurification": "Air purification",
+                "discreet": "Discreet design",
+                "efficiency": "A+++ efficiency"
+            }
+        },
+        "cardTitles": {
+            "solarPanels": "Solar Panels",
+            "solarSubtitle": "Photovoltaic Production",
+            "heatPumps": "Heat Pumps",
+            "heatPumpsSubtitle": "Efficient Climate Control",
+            "evCharging": "EV Charging",
+            "evChargingSubtitle": "Electric Mobility",
+            "hvac": "Air Conditioning",
+            "hvacSubtitle": "365-Day Comfort"
+        },
+        "section": {
+            "title": "Our",
+            "titleHighlight": "Ecosystem",
+            "subtitle": "Each service has been designed to work independently or integrated into a complete energy independence solution.",
+            "requestQuote": "Request Quote",
+            "viewProjects": "View Projects",
+            "technicalPoint": "Technical Point"
+        },
+        "detailed": {
+            "heatPumps": {
+                "title": "Heat Pumps",
+                "category": "Solution 01",
+                "description": "Heat pump technology replaces oil and gas boilers. It uses thermal energy from the outside air to heat your home with exceptional efficiency.",
+                "highlight": "Thanks to the vapor injection system, it maintains 100% of its heating capacity even at -15°C.",
+                "specs": {
+                    "savings": {
+                        "label": "Savings",
+                        "value": "Up to 75% on bills"
+                    },
+                    "hotWater": {
+                        "label": "Hot Water",
+                        "value": "Available 24/7"
+                    },
+                    "efficiency": {
+                        "label": "Efficiency",
+                        "value": "COP up to 5.0"
+                    },
+                    "environment": {
+                        "label": "Environment",
+                        "value": "0 Local Emissions"
+                    }
+                }
+            },
+            "solar": {
+                "title": "Solar Energy",
+                "category": "Solution 02",
+                "description": "Produce your own clean, free electricity. Our photovoltaic systems are specifically sized for your consumption profile, maximizing return on investment.",
+                "highlight": "Monocrystalline PERC panels with a 25-year linear production warranty and efficiency exceeding 21%.",
+                "specs": {
+                    "return": {
+                        "label": "Return",
+                        "value": "4-5 Years"
+                    },
+                    "warranty": {
+                        "label": "Warranty",
+                        "value": "25 Years Performance"
+                    },
+                    "production": {
+                        "label": "Production",
+                        "value": "App Tracking"
+                    },
+                    "savings": {
+                        "label": "Savings",
+                        "value": "Immediate"
+                    }
+                }
+            },
+            "battery": {
+                "title": "Energy Storage",
+                "category": "Solution 03",
+                "description": "Maximize your energy independence by storing solar surplus. Use your free energy even at night or during grid outages.",
+                "highlight": "Lithium Iron Phosphate (LFP) batteries with +6000 life cycles and 90% depth of discharge.",
+                "specs": {
+                    "autonomy": {
+                        "label": "Autonomy",
+                        "value": "Up to 100% Off-Grid"
+                    },
+                    "lifespan": {
+                        "label": "Lifespan",
+                        "value": "+15 Years"
+                    },
+                    "backup": {
+                        "label": "Backup",
+                        "value": "Outage Protection"
+                    },
+                    "management": {
+                        "label": "Management",
+                        "value": "Integrated AI"
+                    }
+                }
+            },
+            "evCharging": {
+                "title": "EV Charging",
+                "category": "Solution 04",
+                "description": "Integrate electric mobility into your ecosystem. Charge your car with solar surplus and reduce your fuel costs to zero.",
+                "highlight": "Smart chargers with dynamic load balancing protecting your electrical panel.",
+                "specs": {
+                    "speed": {
+                        "label": "Speed",
+                        "value": "Up to 22kW AC"
+                    },
+                    "solarMode": {
+                        "label": "Solar Mode",
+                        "value": "100% Green Charge"
+                    },
+                    "connectivity": {
+                        "label": "Connectivity",
+                        "value": "Wi-Fi & 4G"
+                    },
+                    "compatible": {
+                        "label": "Compatible",
+                        "value": "Universal Type 2"
+                    }
+                }
+            },
+            "hvac": {
+                "title": "Air Conditioning",
+                "category": "Solution 05",
+                "description": "Air conditioning and underfloor heating solutions guaranteeing perfect temperature in every room, with maximum energy efficiency.",
+                "highlight": "Quiet inverter systems with advanced air filtration and integrated Wi-Fi control.",
+                "specs": {
+                    "efficiency": {
+                        "label": "Efficiency",
+                        "value": "Class A+++"
+                    },
+                    "comfort": {
+                        "label": "Comfort",
+                        "value": "Multizone"
+                    },
+                    "health": {
+                        "label": "Health",
+                        "value": "HEPA Filters"
+                    },
+                    "noise": {
+                        "label": "Noise",
+                        "value": "Ultra Quiet"
+                    }
+                }
+            }
+        }
+    },
+    "footer": {
+        "tagline": "Leaders in sustainable energy solutions. We transform houses into efficient and eco-friendly homes.",
+        "navigation": "Navigation",
+        "solutions": "Solutions",
+        "legal": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions",
+        "complaints": "Complaints",
+        "copyright": "© 2024 Chez Energie. All rights reserved.",
+        "taglineBottom": "Developed with green energy.",
+        "developedBy": "Developed by"
+    },
+    "seo": {
+        "home": {
+            "title": "Energy Independence in Geneva",
+            "description": "Leader in solar panels, heat pumps and air conditioning in Geneva. Reduce your bills and gain independence."
+        },
+        "solutions": {
+            "title": "Solar Calculator & Solutions",
+            "description": "Simulate your solar savings and discover our detailed technical solutions."
+        },
+        "about": {
+            "title": "About Chez Energie",
+            "description": "Discover our team of renewable energy experts and our commitment to a sustainable future."
+        },
+        "contact": {
+            "title": "Contact Us",
+            "description": "Request your free quote or ask your questions to our renewable energy experts."
+        }
+    },
+    "solutions": {
+        "hero": {
+            "badge": "Swiss Engineering",
+            "title": "Efficiency",
+            "titleHighlight": "Without Compromise.",
+            "description": "We design, install and maintain complete energy ecosystems. Photovoltaic, Thermal and Mobility integrated with millimeter precision.",
+            "ctaPrimary": "Request Technical Study",
+            "ctaSecondary": "Explore Solutions"
+        },
+        "calculator": {
+            "title": "Smart Solar Calculator",
+            "subtitle": "Simulate your savings and discover your solar potential",
+            "addressLabel": "Your address",
+            "addressPlaceholder": "Enter your city or postal code",
+            "monthlyBillLabel": "Monthly electricity bill",
+            "roofAreaLabel": "Available roof area",
+            "batteryLabel": "Include battery storage",
+            "blackoutButton": "Simulate Grid Outage",
+            "results": {
+                "title": "Your Solar Potential",
+                "systemSize": "System Size",
+                "annualProduction": "Annual Production",
+                "annualSavings": "Annual Savings",
+                "paybackPeriod": "Return on Investment",
+                "co2Reduction": "CO₂ Reduction",
+                "years": "years",
+                "trees": "trees planted"
+            },
+            "blackout": {
+                "title": "Grid Outage Mode",
+                "subtitle": "Your home keeps running",
+                "batteryLevel": "Battery Level",
+                "autonomy": "Remaining Autonomy",
+                "restore": "Restore Grid",
+                "activeLoads": "Active Critical Loads",
+                "loads": {
+                    "fridge": "Refrigeration",
+                    "wifi": "Communications",
+                    "lights": "Lighting (LED)",
+                    "consumption": "Consumption: {{value}}W"
+                },
+                "footer": "* With our islanding technology, switching to battery power is seamless (less than 10ms)."
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Questions about energy transition? We clarify everything.",
+            "questions": {
+                "warranty": {
+                    "q": "How do warranty and maintenance work?",
+                    "a": "We offer a 25-year warranty on solar panel performance and lifetime technical support. Our solutions include annual preventive maintenance to ensure maximum efficiency."
+                },
+                "savings": {
+                    "q": "How much can I save on my energy bill?",
+                    "a": "With an integrated system (Photovoltaic + Battery + Heat Pump), savings can reach 80% per year, drastically reducing dependence on the public electricity grid."
+                },
+                "subsidies": {
+                    "q": "Are there subsidies available?",
+                    "a": "Yes, there are various cantonal and federal aids (Pronovo) for renewable energy installation. Our team handles all the bureaucratic process and applications for you."
+                },
+                "installation": {
+                    "q": "How long does installation take?",
+                    "a": "After project approval, physical installation typically takes 2 to 3 days, depending on system complexity and size. We guarantee minimal impact on your daily routine."
+                }
+            }
+        }
+    },
+    "about": {
+        "hero": {
+            "badge": "Our Story",
+            "title": "Energy Excellence",
+            "subtitle": "Since 2015",
+            "description": "All excellence is born from a journey. Chez Energie was born from the vision of making renewable energy accessible, beautiful and smart for every Swiss home.",
+            "cta": "Talk to an Expert"
+        },
+        "mission": {
+            "badge": "Our Mission",
+            "title": "Self-Sufficiency that Respects the Planet and Your Wallet",
+            "p1": "Chez Energie was born with a clear goal: to make homes and businesses in Geneva and its region self-sufficient. We believe that the energy of the future is decentralized, clean, and, above all, economical.",
+            "p2": "We don't just sell equipment; we offer energy freedom and high-standard thermal comfort."
+        },
+        "pillars": {
+            "title": "Our 5 Solution Pillars",
+            "subtitle": "Integrated technologies for maximum efficiency.",
+            "items": {
+                "heatPump": {
+                    "title": "Heat Pumps",
+                    "description": "Replace old boilers with maximum efficiency. Heat your home by extracting thermal energy from the air, drastically reducing costs."
+                },
+                "solar": {
+                    "title": "Solar Panels",
+                    "description": "Turn your roof into a financial asset. Produce your own clean electricity and protect yourself against rising rates."
+                },
+                "hvac": {
+                    "title": "Air Conditioning",
+                    "description": "Absolute comfort in all seasons. Silent and intelligent systems guaranteeing perfect temperature, summer and winter."
+                },
+                "battery": {
+                    "title": "Batteries and Storage",
+                    "description": "Use the sun even at night. Store excess solar production to ensure autonomy and security against grid outages."
+                },
+                "charging": {
+                    "title": "Charging Points",
+                    "description": "The gas station is your garage. Fast and intelligent chargers integrated into your solar system for zero-cost mobility."
+                }
+            }
+        },
+        "whyUs": {
+            "badge": "What Sets Us Apart",
+            "title": "Why Chez Energie?",
+            "description": "In a complex market, we bring simplicity and confidence. Our approach is technical, transparent, and focused on the long term.",
+            "items": {
+                "certified": {
+                    "title": "Certified Professional Installation",
+                    "description": "Qualified technicians rigorously following Swiss safety and quality standards."
+                },
+                "localSupport": {
+                    "title": "Local Technical Support",
+                    "description": "We are in Geneva. Our support is close, fast, and speaks your language."
+                },
+                "trustedTech": {
+                    "title": "Trusted Technology",
+                    "description": "We work only with world-leading brands to guarantee durability and performance."
+                }
+            },
+            "stat": {
+                "value": "100%",
+                "label": "Commitment to satisfaction and technical quality."
+            }
+        },
+        "cta": {
+            "title": "Ready for the Future of Energy?",
+            "description": "Don't put off the savings you can make today. Speak to our experts.",
+            "button": "Free Quote"
+        }
+    },
+    "contact": {
+        "newRequest": "New Request",
+        "dynamic": {
+            "monthlyConsumption": "Avg. Monthly Consumption (kWh)",
+            "availableArea": "Available Area (m²)",
+            "heatingArea": "Heating Area (m²)",
+            "currentHeating": "Current Heating Type",
+            "existingSolar": "Existing Solar System?",
+            "storageCapacity": "Desired Capacity (kWh)",
+            "desiredPower": "Desired Power",
+            "distanceToPanel": "Dist. to Electric Panel (m)",
+            "coolingArea": "Cooling Area (m²)",
+            "numberOfRooms": "Number of Rooms",
+            "no": "No"
+        },
+        "projectTypes": {
+            "solar": "Solar Panels",
+            "heatpump": "Heat Pumps",
+            "battery": "Batteries & Storage",
+            "evcharger": "EV Charging",
+            "hvac": "HVAC / Cooling",
+            "other": "Other"
+        },
+        "hero": {
+            "badge": "Let's Talk About Your Project",
+            "title": "Let's build the",
+            "titleHighlight": "future",
+            "titleSuffix": "of your project.",
+            "description": "Smart energy solutions for homes and businesses. In Geneva and throughout French-speaking Switzerland, we transform the way you consume energy.",
+            "ctaTitle": "Request a Free Quote",
+            "ctaSubtitle": "Fill out the form below and our team will contact you."
+        },
+        "form": {
+            "nameLabel": "Full name",
+            "namePlaceholder": "John Doe",
+            "emailLabel": "Email",
+            "emailPlaceholder": "john@example.com",
+            "phoneLabel": "Phone",
+            "phonePlaceholder": "+41 XX XXX XX XX",
+            "serviceLabel": "Service of interest",
+            "servicePlaceholder": "Select a service",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Describe your project or questions...",
+            "fileLabel": "Attach a file (optional)",
+            "fileHint": "Photos of your roof, energy bills, etc.",
+            "submitButton": "Send Request",
+            "submitting": "Sending...",
+            "successTitle": "Request Sent!",
+            "successMessage": "Thank you for your interest. Our team will contact you within 24 hours.",
+            "newRequest": "New Request",
+            "submitError": "An error occurred while sending the message. Please try again or contact us by phone.",
+            "privacyPolicy": "By sending, you accept our privacy policy. Your data is 100% secure.",
+            "interestLabel": "Main Interest",
+            "selectOption": "Select"
+        },
+        "info": {
+            "title": "Contact Information",
+            "addressLabel": "Offices",
+            "addressValue": "Geneva",
+            "phoneLabel": "Phone",
+            "phoneValue": "+41 76 513 31 66",
+            "phoneNote": "Mon-Fri, 9am-6pm",
+            "emailLabel": "Email",
+            "emailValue": "Info@chezenergy.ch",
+            "emailNote": "Response within 24h"
+        }
+    }
+}

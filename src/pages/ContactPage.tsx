@@ -7,8 +7,11 @@ import { Button } from '../components/contact/Button';
 import { InputField } from '../components/contact/InputField';
 import { SuccessScreen } from '../components/contact/SuccessScreen';
 import DocumentTitle from '../components/shared/DocumentTitle';
+import { useTranslations } from '../i18n/useTranslations';
+
 
 const ContactPage: React.FC = () => {
+    const { t } = useTranslations('contact');
     const location = useLocation();
     const [formData, setFormData] = useState<ContactFormData>({
         name: '',
@@ -30,27 +33,27 @@ const ContactPage: React.FC = () => {
     // Configuration for dynamic fields based on ProjectType
     const dynamicFieldConfig = useMemo(() => ({
         [ProjectType.SOLAR]: [
-            { name: 'monthlyConsumption', label: 'Conso. Mensuelle Moyenne (kWh)', type: 'number' },
-            { name: 'availableArea', label: 'Surface Disponible (m²)', type: 'number' }
+            { name: 'monthlyConsumption', label: t('dynamic.monthlyConsumption'), type: 'number' },
+            { name: 'availableArea', label: t('dynamic.availableArea'), type: 'number' }
         ],
         [ProjectType.HEATPUMP]: [
-            { name: 'availableArea', label: 'Surface à Chauffer (m²)', type: 'number' },
-            { name: 'currentHeatingType', label: 'Type de Chauffage Actuel', type: 'text' }
+            { name: 'availableArea', label: t('dynamic.heatingArea'), type: 'number' },
+            { name: 'currentHeatingType', label: t('dynamic.currentHeating'), type: 'text' }
         ],
         [ProjectType.BATTERY]: [
-            { name: 'existingSolarSystem', label: 'Système Solaire Existant ?', type: 'select', options: ['Oui', 'Non'] },
-            { name: 'storageCapacity', label: 'Capacité Souhaitée (kWh)', type: 'number' }
+            { name: 'existingSolarSystem', label: t('dynamic.existingSolar'), type: 'select', options: [t('dynamic.yes'), t('dynamic.no')] },
+            { name: 'storageCapacity', label: t('dynamic.storageCapacity'), type: 'number' }
         ],
         [ProjectType.EVCHARGER]: [
-            { name: 'desiredPower', label: 'Puissance Souhaitée', type: 'select', options: ['7kW', '11kW', '22kW'] },
-            { name: 'distanceToPanel', label: 'Distance Tableau Électrique (m)', type: 'number' }
+            { name: 'desiredPower', label: t('dynamic.desiredPower'), type: 'select', options: ['7kW', '11kW', '22kW'] },
+            { name: 'distanceToPanel', label: t('dynamic.distanceToPanel'), type: 'number' }
         ],
         [ProjectType.HVAC]: [
-            { name: 'availableArea', label: 'Surface à Climatiser (m²)', type: 'number' },
-            { name: 'numberOfRooms', label: 'Nombre de Pièces', type: 'number' }
+            { name: 'availableArea', label: t('dynamic.coolingArea'), type: 'number' },
+            { name: 'numberOfRooms', label: t('dynamic.numberOfRooms'), type: 'number' }
         ],
         [ProjectType.OTHER]: []
-    }), []);
+    }), [t]);
 
     const currentDynamicFields = dynamicFieldConfig[formData.projectType as ProjectType] || [];
 
@@ -136,8 +139,8 @@ const ContactPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-brand-surface font-sans selection:bg-brand-accent selection:text-brand-dark flex flex-col md:flex-row">
             <DocumentTitle
-                title="Contactez-nous | Devis Gratuit"
-                description="Demandez votre devis gratuit ou un diagnostic énergétique à Genève. Réponse sous 24h."
+                title={t('hero.title') + " " + t('hero.titleHighlight') + " " + t('hero.titleSuffix') + " | Chez Energie"}
+                description={t('hero.description')}
             // canonical="/contact"
             />
             {/* Left Panel: Brand & Info */}
@@ -155,10 +158,10 @@ const ContactPage: React.FC = () => {
                 >
                     <div className="w-16 h-1 bg-brand-accent mb-6 rounded-full" />
                     <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-8 tracking-tight">
-                        Construisons le <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-emerald-400">futur</span> de votre projet.
+                        {t('hero.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-emerald-400">{t('hero.titleHighlight')}</span> {t('hero.titleSuffix')}
                     </h1>
                     <p className="text-slate-300 text-lg md:text-xl max-w-lg leading-relaxed mb-10 border-l-2 border-slate-700 pl-6">
-                        Solutions énergétiques intelligentes pour résidences et entreprises. À Genève et dans toute la Suisse Romande, nous transformons votre façon de consommer l'énergie.
+                        {t('hero.description')}
                     </p>
                 </motion.div>
 
@@ -228,13 +231,13 @@ const ContactPage: React.FC = () => {
                             className="max-w-xl mx-auto mt-20"
                         >
                             <div className="mb-12">
-                                <h2 className="text-3xl font-display font-bold mb-2">Demander un Devis Gratuit</h2>
-                                <p className="text-slate-500">Remplissez le formulaire ci-dessous et notre équipe vous contactera.</p>
+                                <h2 className="text-3xl font-display font-bold mb-2">{t('hero.ctaTitle')}</h2>
+                                <p className="text-slate-500">{t('hero.ctaSubtitle')}</p>
                             </div>
 
                             {submitStatus === 'error' && (
                                 <div className="bg-red-50 text-red-800 p-4 rounded-lg mb-8 border border-red-100 text-sm">
-                                    Une erreur est survenue lors de l'envoi du message. Veuillez réessayer ou nous contacter par téléphone.
+                                    {t('form.submitError')}
                                 </div>
                             )}
 
@@ -242,19 +245,19 @@ const ContactPage: React.FC = () => {
 
                                 {/* Project Type Selection - Visual Cards */}
                                 <div>
-                                    <label className="block text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Intérêt Principal</label>
+                                    <label className="block text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">{t('form.interestLabel')}</label>
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                        {Object.values(ProjectType).map((type) => (
+                                        {(Object.entries(ProjectType) as [string, ProjectType][]).map(([key, value]) => (
                                             <div
-                                                key={type}
-                                                onClick={() => handleTypeSelect(type)}
-                                                className={`cursor-pointer p-4 rounded-lg border-2 flex flex-col items-center justify-center text-center gap-2 transition-all duration-200 ${formData.projectType === type
+                                                key={value}
+                                                onClick={() => handleTypeSelect(value)}
+                                                className={`cursor-pointer p-4 rounded-lg border-2 flex flex-col items-center justify-center text-center gap-2 transition-all duration-200 ${formData.projectType === value
                                                     ? 'bg-brand-dark text-white border-brand-dark shadow-lg scale-[1.02]'
                                                     : 'bg-white border-slate-100 text-slate-500 hover:border-brand-dark/30'
                                                     }`}
                                             >
-                                                {projectIcons[type]}
-                                                <span className="text-xs font-bold leading-tight">{type}</span>
+                                                {projectIcons[value]}
+                                                <span className="text-xs font-bold leading-tight">{t(`projectTypes.${key.toLowerCase()}`)}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -262,26 +265,29 @@ const ContactPage: React.FC = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <InputField
-                                        label="Nom Complet"
+                                        label={t('form.nameLabel')}
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
+                                        placeholder={t('form.namePlaceholder')}
                                     />
                                     <InputField
-                                        label="Numéro de Téléphone"
+                                        label={t('form.phoneLabel')}
                                         name="phone"
                                         type="tel"
                                         value={formData.phone}
                                         onChange={handleChange}
+                                        placeholder={t('form.phonePlaceholder')}
                                     />
                                 </div>
 
                                 <InputField
-                                    label="Email Professionnel ou Personnel"
+                                    label={t('form.emailLabel')}
                                     name="email"
                                     type="email"
                                     value={formData.email}
                                     onChange={handleChange}
+                                    placeholder={t('form.emailPlaceholder')}
                                 />
 
                                 {/* Dynamic Fields Section */}
@@ -304,7 +310,7 @@ const ContactPage: React.FC = () => {
                                                             className={`peer w-full border-b-2 border-slate-200 bg-transparent py-3 pr-8 focus:border-brand-primary focus:outline-none transition-colors appearance-none cursor-pointer 
                                                         ${(formData as any)[field.name] ? 'text-slate-900' : 'text-transparent'}`}
                                                         >
-                                                            <option value="" disabled className="text-slate-500">Sélectionner</option>
+                                                            <option value="" disabled className="text-slate-500">{t('form.selectOption')}</option>
                                                             {field.options?.map(opt => (
                                                                 <option key={opt} value={opt} className="text-slate-900">{opt}</option>
                                                             ))}
@@ -337,11 +343,12 @@ const ContactPage: React.FC = () => {
                                 )}
 
                                 <InputField
-                                    label="Message (Optionnel)"
+                                    label={t('form.messageLabel')}
                                     name="message"
                                     isTextArea
                                     value={formData.message}
                                     onChange={handleChange}
+                                    placeholder={t('form.messagePlaceholder')}
                                 />
 
                                 <div className="pt-8 flex flex-col items-center gap-4 w-full">
@@ -349,16 +356,16 @@ const ContactPage: React.FC = () => {
                                         {isSubmitting ? (
                                             <>
                                                 <Loader2 className="w-6 h-6 animate-spin mr-2" />
-                                                Envoi en cours...
+                                                {t('form.submitting')}
                                             </>
                                         ) : (
                                             <>
-                                                Envoyer la Demande <ArrowRight size={24} className="ml-3 group-hover:translate-x-1 transition-transform" />
+                                                {t('form.submitButton')} <ArrowRight size={24} className="ml-3 group-hover:translate-x-1 transition-transform" />
                                             </>
                                         )}
                                     </Button>
                                     <div className="text-xs text-slate-400 text-center max-w-sm leading-relaxed opacity-80">
-                                        En envoyant, vous acceptez notre politique de confidentialité. Vos données sont 100% sécurisées.
+                                        {t('form.privacyPolicy')}
                                     </div>
                                 </div>
 

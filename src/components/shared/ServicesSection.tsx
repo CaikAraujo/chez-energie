@@ -1,85 +1,87 @@
 import { ArrowRight, CheckCircle2, Zap, Thermometer, Sun, Timer, ShieldCheck, Leaf, TrendingUp, Smartphone, Battery, Home, Wind } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { ProjectType } from '../../types';
+import { useTranslations } from '../../i18n/useTranslations';
 
 
 const ServicesSection: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslations('services');
 
   const detailedServices = [
     {
       id: "heat-pumps",
-      title: "Pompes à Chaleur",
+      title: t('detailed.heatPumps.title'),
       projectType: ProjectType.HEATPUMP,
-      category: "Solution 01",
-      description: "La technologie de la pompe à chaleur remplace les chaudières au fioul et au gaz. Elle utilise l'énergie thermique de l'air extérieur pour chauffer votre maison avec une efficacité exceptionnelle.",
-      image: "/img/services/pompe_chaleur.webp", // Ensure this path exists or use a placeholder if needed
-      highlight: "Grâce au système d'injection de vapeur, elle maintient 100% de sa capacité de chauffage même à -15°C.",
+      category: t('detailed.heatPumps.category'),
+      description: t('detailed.heatPumps.description'),
+      image: "/img/services/pompe_chaleur.webp",
+      highlight: t('detailed.heatPumps.highlight'),
       specs: [
-        { label: "Économies", value: "Jusqu'à 75% sur la facture", icon: TrendingUp },
-        { label: "Eau Chaude", value: "Disponible 24/7", icon: Thermometer },
-        { label: "Efficacité", value: "COP jusqu'à 5.0", icon: Zap },
-        { label: "Environnement", value: "0 Émissions Locales", icon: Leaf },
+        { label: t('detailed.heatPumps.specs.savings.label'), value: t('detailed.heatPumps.specs.savings.value'), icon: TrendingUp },
+        { label: t('detailed.heatPumps.specs.hotWater.label'), value: t('detailed.heatPumps.specs.hotWater.value'), icon: Thermometer },
+        { label: t('detailed.heatPumps.specs.efficiency.label'), value: t('detailed.heatPumps.specs.efficiency.value'), icon: Zap },
+        { label: t('detailed.heatPumps.specs.environment.label'), value: t('detailed.heatPumps.specs.environment.value'), icon: Leaf },
       ]
     },
     {
       id: "solar",
-      title: "Énergie Solaire",
+      title: t('detailed.solar.title'),
       projectType: ProjectType.SOLAR,
-      category: "Solution 02",
-      description: "Produisez votre propre électricité propre et gratuite. Nos systèmes photovoltaïques sont dimensionnés spécifiquement pour votre profil de consommation, maximisant le retour sur investissement.",
+      category: t('detailed.solar.category'),
+      description: t('detailed.solar.description'),
       image: "/img/services/panneau.webp",
-      highlight: "Panneaux monocristallins PERC avec une garantie de production linéaire de 25 ans et une efficacité supérieure à 21%.",
+      highlight: t('detailed.solar.highlight'),
       specs: [
-        { label: "Retour", value: "4-5 Ans", icon: Timer },
-        { label: "Garantie", value: "25 Ans de Performance", icon: ShieldCheck },
-        { label: "Production", value: "Suivi App", icon: Smartphone },
-        { label: "Économies", value: "Immédiate", icon: TrendingUp },
+        { label: t('detailed.solar.specs.return.label'), value: t('detailed.solar.specs.return.value'), icon: Timer },
+        { label: t('detailed.solar.specs.warranty.label'), value: t('detailed.solar.specs.warranty.value'), icon: ShieldCheck },
+        { label: t('detailed.solar.specs.production.label'), value: t('detailed.solar.specs.production.value'), icon: Smartphone },
+        { label: t('detailed.solar.specs.savings.label'), value: t('detailed.solar.specs.savings.value'), icon: TrendingUp },
       ]
     },
     {
       id: "battery",
-      title: "Stockage",
+      title: t('detailed.battery.title'),
       projectType: ProjectType.BATTERY,
-      category: "Solution 03",
-      description: "Maximisez votre indépendance énergétique en stockant le surplus solaire. Utilisez votre énergie gratuite même la nuit ou lors de pannes de réseau.",
+      category: t('detailed.battery.category'),
+      description: t('detailed.battery.description'),
       image: "/img/services/energy.webp",
-      highlight: "Batteries Lithium Fer Phosphate (LFP) avec +6000 cycles de vie et une profondeur de décharge de 90%.",
+      highlight: t('detailed.battery.highlight'),
       specs: [
-        { label: "Autonomie", value: "Jusqu'à 100% Hors Réseau", icon: Battery },
-        { label: "Durée de Vie", value: "+15 Ans", icon: ShieldCheck },
-        { label: "Secours", value: "Protection Coupure", icon: Zap },
-        { label: "Gestion", value: "IA Intégrée", icon: Smartphone },
+        { label: t('detailed.battery.specs.autonomy.label'), value: t('detailed.battery.specs.autonomy.value'), icon: Battery },
+        { label: t('detailed.battery.specs.lifespan.label'), value: t('detailed.battery.specs.lifespan.value'), icon: ShieldCheck },
+        { label: t('detailed.battery.specs.backup.label'), value: t('detailed.battery.specs.backup.value'), icon: Zap },
+        { label: t('detailed.battery.specs.management.label'), value: t('detailed.battery.specs.management.value'), icon: Smartphone },
       ]
     },
     {
       id: "ev-charging",
-      title: "Recharge VE",
+      title: t('detailed.evCharging.title'),
       projectType: ProjectType.EVCHARGER,
-      category: "Solution 04",
-      description: "Intégrez la mobilité électrique dans votre écosystème. Rechargez votre voiture avec le surplus d'énergie solaire et réduisez vos coûts de carburant à zéro.",
+      category: t('detailed.evCharging.category'),
+      description: t('detailed.evCharging.description'),
       image: "/img/services/prise_eletrique.webp",
-      highlight: "Chargeurs intelligents avec équilibrage de charge dynamique protégeant votre tableau électrique.",
+      highlight: t('detailed.evCharging.highlight'),
       specs: [
-        { label: "Vitesse", value: "Jusqu'à 22kW AC", icon: Zap },
-        { label: "Mode Solaire", value: "Charge 100% Verte", icon: Sun },
-        { label: "Connectivité", value: "Wi-Fi & 4G", icon: Smartphone },
-        { label: "Compatible", value: "Universel Type 2", icon: CheckCircle2 },
+        { label: t('detailed.evCharging.specs.speed.label'), value: t('detailed.evCharging.specs.speed.value'), icon: Zap },
+        { label: t('detailed.evCharging.specs.solarMode.label'), value: t('detailed.evCharging.specs.solarMode.value'), icon: Sun },
+        { label: t('detailed.evCharging.specs.connectivity.label'), value: t('detailed.evCharging.specs.connectivity.value'), icon: Smartphone },
+        { label: t('detailed.evCharging.specs.compatible.label'), value: t('detailed.evCharging.specs.compatible.value'), icon: CheckCircle2 },
       ]
     },
     {
       id: "hvac",
-      title: "Climatisation",
+      title: t('detailed.hvac.title'),
       projectType: ProjectType.HVAC,
-      category: "Solution 05",
-      description: "Solutions de climatisation et chauffage au sol garantissant une température parfaite dans chaque pièce, avec une efficacité énergétique maximale.",
+      category: t('detailed.hvac.category'),
+      description: t('detailed.hvac.description'),
       image: "/img/services/clima.webp",
-      highlight: "Systèmes inverter silencieux avec filtration d'air avancée et contrôle Wi-Fi intégré.",
+      highlight: t('detailed.hvac.highlight'),
       specs: [
-        { label: "Efficacité", value: "Classe A+++", icon: Zap },
-        { label: "Confort", value: "Multizone", icon: Home },
-        { label: "Santé", value: "Filtres HEPA", icon: Wind },
-        { label: "Bruit", value: "Ultra Silencieux", icon: ShieldCheck },
+        { label: t('detailed.hvac.specs.efficiency.label'), value: t('detailed.hvac.specs.efficiency.value'), icon: Zap },
+        { label: t('detailed.hvac.specs.comfort.label'), value: t('detailed.hvac.specs.comfort.value'), icon: Home },
+        { label: t('detailed.hvac.specs.health.label'), value: t('detailed.hvac.specs.health.value'), icon: Wind },
+        { label: t('detailed.hvac.specs.noise.label'), value: t('detailed.hvac.specs.noise.value'), icon: ShieldCheck },
       ]
     }
   ];
@@ -94,10 +96,10 @@ const ServicesSection: React.FC = () => {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-24">
         <h2 className="font-display font-bold text-4xl md:text-5xl text-slate-900 mb-6">
-          Notre <span className="text-emerald-500">Écosystème</span>
+          {t('section.title')} <span className="text-emerald-500">{t('section.titleHighlight')}</span>
         </h2>
         <p className="text-slate-600 text-lg leading-relaxed">
-          Chaque service a été conçu pour fonctionner isolément ou intégré dans une solution complète d'indépendance énergétique.
+          {t('section.subtitle')}
         </p>
       </div>
 
@@ -141,11 +143,11 @@ const ServicesSection: React.FC = () => {
                   onClick={() => handleContactClick(service.projectType)}
                   className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors flex items-center gap-2 group"
                 >
-                  Demander un Devis
+                  {t('section.requestQuote')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="px-8 py-3.5 border border-slate-200 text-slate-600 rounded-full font-bold hover:bg-slate-50 transition-colors">
-                  Voir les Projets
+                  {t('section.viewProjects')}
                 </button>
               </div>
             </div>
@@ -170,7 +172,7 @@ const ServicesSection: React.FC = () => {
                       <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1 text-white/90">Point Technique</h4>
+                      <h4 className="font-bold text-sm mb-1 text-white/90">{t('section.technicalPoint')}</h4>
                       <p className="text-xs leading-relaxed text-white/80 font-medium">
                         {service.highlight}
                       </p>
@@ -194,11 +196,11 @@ const ServicesSection: React.FC = () => {
                 onClick={() => handleContactClick(service.projectType)}
                 className="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2 group"
               >
-                Demander un Devis
+                {t('section.requestQuote')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="w-full sm:w-auto px-8 py-3.5 border border-slate-200 text-slate-600 rounded-full font-bold hover:bg-slate-50 transition-colors text-center">
-                Voir les Projets
+                {t('section.viewProjects')}
               </button>
             </div>
 

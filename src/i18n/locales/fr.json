@@ -1,0 +1,523 @@
+{
+    "navigation": {
+        "home": "Accueil",
+        "solutions": "Solutions",
+        "about": "À propos",
+        "contact": "Contact",
+        "getQuote": "Demander un devis"
+    },
+    "hero": {
+        "badge": "Leaders en Énergie Renouvelable en Suisse",
+        "title": "Autonomie",
+        "titleHighlight": "Énergétique",
+        "title360": "360º",
+        "description": "Solutions complètes de matériel et d'installation pour résidences modernes. Produisez, climatisez et chargez avec une technologie de pointe.",
+        "ctaPrimary": "Configurer le Système",
+        "ctaSecondary": "Parler à un Technicien",
+        "trustIndicator": "Projets installés"
+    },
+    "features": {
+        "title": "Technologie de",
+        "titleHighlight": "Pointe",
+        "description": "Équipements sélectionnés pour leur durabilité et performance supérieure.",
+        "solar": {
+            "title": "Panneau Solaire Full Black",
+            "description": "Modules monocristallins avec esthétique supérieure et efficacité garantie même par temps nuageux.",
+            "label": "Garantie",
+            "value": "25 Ans"
+        },
+        "heatPump": {
+            "title": "Pompe à Chaleur",
+            "description": "Coefficient de performance leader du marché. 4x plus efficace que les systèmes au gaz ou fioul.",
+            "label": "Efficacité",
+            "value": "COP 4.5"
+        },
+        "evCharger": {
+            "title": "Recharge VE",
+            "description": "Chargement intelligent intégré avec votre production solaire. Faites le plein avec le soleil.",
+            "label": "Puissance",
+            "value": "22 kW"
+        },
+        "hvac": {
+            "title": "Climatisation",
+            "description": "Confort thermique toute l'année avec une efficacité énergétique maximale et un silence absolu.",
+            "label": "Bruit",
+            "value": "< 20 dB"
+        },
+        "system": {
+            "title": "Un Système,",
+            "titleLine2": "Trois Piliers",
+            "description": "La synergie parfaite entre la production du toit, le confort du salon et la mobilité du garage. Tout contrôlé dans une seule application.",
+            "button": "Savoir comment ça marche",
+            "production": "Production",
+            "storage": "Stockage",
+            "consumption": "Consommation"
+        }
+    },
+    "stats": {
+        "projects": "Projets Réalisés",
+        "savings": "Économies Moyennes",
+        "support": "Support Technique",
+        "warranty": "Ans de Garantie"
+    },
+    "cta": {
+        "title": "Prêt à commencer à économiser ?",
+        "description": "Demandez votre devis gratuit dès aujourd'hui. Notre équipe d'ingénieurs analysera votre facture et concevra la solution parfaite.",
+        "emailPlaceholder": "Votre email",
+        "button": "Demander une Proposition",
+        "free": "Gratuit",
+        "noCommitment": "Sans Engagement",
+        "response": "Réponse sous 24h"
+    },
+    "testimonials": {
+        "title": "Ce que disent nos clients",
+        "subtitle": "Plus de 500 familles font déjà confiance à Chez Energie pour leur transition énergétique. La satisfaction de nos clients est notre meilleure garantie."
+    },
+    "services": {
+        "heatPump": {
+            "title": "Pompes à Chaleur",
+            "subtitle": "Aérothermie Haute Efficacité",
+            "description": "La technologie de pompe à chaleur remplace les chaudières à gaz et fioul. Elle utilise l'énergie thermique de l'air extérieur pour chauffer votre maison et l'eau sanitaire avec un rendement exceptionnel.",
+            "details": "Contrairement aux systèmes traditionnels qui brûlent du combustible, la pompe à chaleur transfère simplement la chaleur. Pour chaque kWh d'électricité consommé, elle restitue jusqu'à 4 kWh de chaleur (COP de 4.0).",
+            "benefits": {
+                "savings": "Économies jusqu'à 70%",
+                "hotWater": "Eau Chaude (ECS) toute l'année",
+                "noGas": "Suppression de la facture de gaz",
+                "quiet": "Silencieux et écologique"
+            }
+        },
+        "solar": {
+            "title": "Énergie Solaire",
+            "subtitle": "Autoconsommation Photovoltaïque",
+            "description": "Produisez votre propre électricité propre et gratuite. Nos systèmes photovoltaïques sont dimensionnés spécifiquement pour votre profil de consommation, maximisant le retour sur investissement.",
+            "details": "Nous utilisons des panneaux monocristallins de dernière génération avec technologie PERC, garantissant une production même par temps nuageux. Le système alimente directement la maison en priorité solaire.",
+            "benefits": {
+                "billReduction": "Réduction immédiate de la facture",
+                "priceProtection": "Protection contre la hausse des prix",
+                "roi": "Retour sur investissement en 4-5 ans",
+                "warranty": "Garantie de 25 ans"
+            }
+        },
+        "battery": {
+            "title": "Stockage",
+            "subtitle": "Batteries Intelligentes",
+            "description": "Ne gaspillez pas l'énergie solaire produite le jour. Stockez le surplus dans des batteries au lithium avancées pour l'utiliser gratuitement la nuit.",
+            "details": "Nos solutions de stockage hybride gèrent l'énergie intelligemment : d'abord la maison, puis les batteries, et enfin le réseau, garantissant une autosuffisance supérieure à 80%.",
+            "benefits": {
+                "solar24": "Énergie solaire 24h/24",
+                "backup": "Backup en cas de panne",
+                "maxProfit": "Rentabilité maximale",
+                "app": "Gestion via App"
+            }
+        },
+        "evCharging": {
+            "title": "Recharge VE",
+            "subtitle": "Mobilité Électrique",
+            "description": "Rechargez votre véhicule électrique rapidement, sûrement et intelligemment, en intégrant le chargeur à votre production solaire pour rouler 'gratuitement'.",
+            "details": "Wallboxes intelligentes communiquant avec le compteur. Équilibrage de charge automatique pour éviter de faire sauter les plombs et recharge uniquement avec le surplus solaire.",
+            "benefits": {
+                "fastCharging": "Recharge 10x plus rapide",
+                "solarOnly": "Mode 'Solaire Uniquement'",
+                "loadBalancing": "Équilibrage dynamique",
+                "universal": "Compatibilité universelle"
+            }
+        },
+        "smartHome": {
+            "title": "Domotique",
+            "subtitle": "Maison Intelligente",
+            "description": "Contrôle total dans le creux de votre main. Centralisez la gestion de l'énergie, de la climatisation et de la sécurité dans une seule application intuitive.",
+            "details": "Intégration totale de l'écosystème. Créez des scénarios comme 'Je pars' qui éteint les lumières et baisse le chauffage, ou 'Vacances' qui simule une présence.",
+            "benefits": {
+                "centralized": "Gestion centralisée",
+                "remote": "Contrôle à distance total",
+                "automation": "Automatisation des routines",
+                "security": "Alertes de sécurité"
+            }
+        },
+        "hvac": {
+            "title": "Climatisation",
+            "subtitle": "Confort Thermique",
+            "description": "Solutions de Climatisation et Plancher Chauffant garantissant une température parfaite dans chaque pièce, avec une efficacité énergétique maximale.",
+            "details": "Nous concevons la solution de distribution thermique idéale pour l'architecture de votre maison. Systèmes inverter silencieux avec filtration d'air avancée et contrôle Wi-Fi.",
+            "benefits": {
+                "zoneControl": "Contrôle zone par zone",
+                "airPurification": "Purification de l'air",
+                "discreet": "Design discret",
+                "efficiency": "Efficacité A+++"
+            }
+        },
+        "cardTitles": {
+            "solarPanels": "Panneaux Solaires",
+            "solarSubtitle": "Production Photovoltaïque",
+            "heatPumps": "Pompes à Chaleur",
+            "heatPumpsSubtitle": "Climatisation Efficace",
+            "evCharging": "Recharge VE",
+            "evChargingSubtitle": "Mobilité Électrique",
+            "hvac": "Climatisation",
+            "hvacSubtitle": "Confort 365 jours"
+        },
+        "section": {
+            "title": "Notre",
+            "titleHighlight": "Écosystème",
+            "subtitle": "Chaque service a été conçu pour fonctionner isolément ou intégré dans une solution complète d'indépendance énergétique.",
+            "requestQuote": "Demander un Devis",
+            "viewProjects": "Voir les Projets",
+            "technicalPoint": "Point Technique"
+        },
+        "detailed": {
+            "heatPumps": {
+                "title": "Pompes à Chaleur",
+                "category": "Solution 01",
+                "description": "La technologie de la pompe à chaleur remplace les chaudières au fioul et au gaz. Elle utilise l'énergie thermique de l'air extérieur pour chauffer votre maison avec une efficacité exceptionnelle.",
+                "highlight": "Grâce au système d'injection de vapeur, elle maintient 100% de sa capacité de chauffage même à -15°C.",
+                "specs": {
+                    "savings": {
+                        "label": "Économies",
+                        "value": "Jusqu'à 75% sur la facture"
+                    },
+                    "hotWater": {
+                        "label": "Eau Chaude",
+                        "value": "Disponible 24/7"
+                    },
+                    "efficiency": {
+                        "label": "Efficacité",
+                        "value": "COP jusqu'à 5.0"
+                    },
+                    "environment": {
+                        "label": "Environnement",
+                        "value": "0 Émissions Locales"
+                    }
+                }
+            },
+            "solar": {
+                "title": "Énergie Solaire",
+                "category": "Solution 02",
+                "description": "Produisez votre propre électricité propre et gratuite. Nos systèmes photovoltaïques sont dimensionnés spécifiquement pour votre profil de consommation, maximisant le retour sur investissement.",
+                "highlight": "Panneaux monocristallins PERC avec une garantie de production linéaire de 25 ans et une efficacité supérieure à 21%.",
+                "specs": {
+                    "return": {
+                        "label": "Retour",
+                        "value": "4-5 Ans"
+                    },
+                    "warranty": {
+                        "label": "Garantie",
+                        "value": "25 Ans de Performance"
+                    },
+                    "production": {
+                        "label": "Production",
+                        "value": "Suivi App"
+                    },
+                    "savings": {
+                        "label": "Économies",
+                        "value": "Immédiate"
+                    }
+                }
+            },
+            "battery": {
+                "title": "Stockage",
+                "category": "Solution 03",
+                "description": "Maximisez votre indépendance énergétique en stockant le surplus solaire. Utilisez votre énergie gratuite même la nuit ou lors de pannes de réseau.",
+                "highlight": "Batteries Lithium Fer Phosphate (LFP) avec +6000 cycles de vie et une profondeur de décharge de 90%.",
+                "specs": {
+                    "autonomy": {
+                        "label": "Autonomie",
+                        "value": "Jusqu'à 100% Hors Réseau"
+                    },
+                    "lifespan": {
+                        "label": "Durée de Vie",
+                        "value": "+15 Ans"
+                    },
+                    "backup": {
+                        "label": "Secours",
+                        "value": "Protection Coupure"
+                    },
+                    "management": {
+                        "label": "Gestion",
+                        "value": "IA Intégrée"
+                    }
+                }
+            },
+            "evCharging": {
+                "title": "Recharge VE",
+                "category": "Solution 04",
+                "description": "Intégrez la mobilité électrique dans votre écosystème. Rechargez votre voiture avec le surplus d'énergie solaire et réduisez vos coûts de carburant à zéro.",
+                "highlight": "Chargeurs intelligents avec équilibrage de charge dynamique protégeant votre tableau électrique.",
+                "specs": {
+                    "speed": {
+                        "label": "Vitesse",
+                        "value": "Jusqu'à 22kW AC"
+                    },
+                    "solarMode": {
+                        "label": "Mode Solaire",
+                        "value": "Charge 100% Verte"
+                    },
+                    "connectivity": {
+                        "label": "Connectivité",
+                        "value": "Wi-Fi & 4G"
+                    },
+                    "compatible": {
+                        "label": "Compatible",
+                        "value": "Universel Type 2"
+                    }
+                }
+            },
+            "hvac": {
+                "title": "Climatisation",
+                "category": "Solution 05",
+                "description": "Solutions de climatisation et chauffage au sol garantissant une température parfaite dans chaque pièce, avec une efficacité énergétique maximale.",
+                "highlight": "Systèmes inverter silencieux avec filtration d'air avancée et contrôle Wi-Fi intégré.",
+                "specs": {
+                    "efficiency": {
+                        "label": "Efficacité",
+                        "value": "Classe A+++"
+                    },
+                    "comfort": {
+                        "label": "Confort",
+                        "value": "Multizone"
+                    },
+                    "health": {
+                        "label": "Santé",
+                        "value": "Filtres HEPA"
+                    },
+                    "noise": {
+                        "label": "Bruit",
+                        "value": "Ultra Silencieux"
+                    }
+                }
+            }
+        }
+    },
+    "footer": {
+        "tagline": "Leaders en solutions d'énergie durable. Nous transformons des maisons en foyers efficaces et écologiques.",
+        "navigation": "Navigation",
+        "solutions": "Solutions",
+        "legal": "Légal",
+        "privacy": "Politique de Confidentialité",
+        "terms": "Conditions Générales",
+        "complaints": "Réclamations",
+        "copyright": "© 2024 Chez Energie. Tous droits réservés.",
+        "taglineBottom": "Développé avec de l'énergie verte.",
+        "developedBy": "Développé par"
+    },
+    "seo": {
+        "home": {
+            "title": "Autonomie Énergétique à Genève",
+            "description": "Leader en panneaux solaires, pompes à chaleur et climatisation à Genève. Réduisez vos factures et gagnez en autonomie."
+        },
+        "solutions": {
+            "title": "Calculateur Solaire & Solutions",
+            "description": "Simulez vos économies solaires et découvrez nos solutions techniques détaillées."
+        },
+        "about": {
+            "title": "À Propos de Chez Energie",
+            "description": "Découvrez notre équipe d'experts en énergie renouvelable et notre engagement pour un avenir durable."
+        },
+        "contact": {
+            "title": "Contactez-Nous",
+            "description": "Demandez votre devis gratuit ou posez vos questions à nos experts en énergie renouvelable."
+        }
+    },
+    "solutions": {
+        "hero": {
+            "badge": "Ingénierie Suisse",
+            "title": "Efficacité",
+            "titleHighlight": "Sans Compromis.",
+            "description": "Nous concevons, installons et entretenons des écosystèmes énergétiques complets. Photovoltaïque, Thermique et Mobilité intégrés avec une précision millimétrique.",
+            "ctaPrimary": "Demander une Étude Technique",
+            "ctaSecondary": "Explorer les Solutions"
+        },
+        "calculator": {
+            "title": "Calculateur\u00A0Solaire\nIntelligent",
+            "subtitle": "Simulez vos économies et découvrez votre potentiel solaire",
+            "addressLabel": "Votre adresse",
+            "addressPlaceholder": "Entrez votre ville ou code postal",
+            "monthlyBillLabel": "Facture mensuelle d'électricité",
+            "roofAreaLabel": "Surface de toit disponible",
+            "batteryLabel": "Inclure batterie de stockage",
+            "blackoutButton": "Simuler Panne de Réseau",
+            "results": {
+                "title": "Votre Potentiel Solaire",
+                "systemSize": "Taille du Système",
+                "annualProduction": "Production Annuelle",
+                "annualSavings": "Économies Annuelles",
+                "paybackPeriod": "Retour sur Investissement",
+                "co2Reduction": "Réduction CO₂",
+                "years": "ans",
+                "trees": "arbres plantés"
+            },
+            "blackout": {
+                "title": "Mode Panne de Réseau",
+                "subtitle": "Votre maison continue de fonctionner",
+                "batteryLevel": "Niveau de Batterie",
+                "autonomy": "Autonomie Restante",
+                "restore": "Restaurer le Réseau",
+                "activeLoads": "Charges Prioritaires Actives",
+                "loads": {
+                    "fridge": "Réfrigération",
+                    "wifi": "Communications",
+                    "lights": "Éclairage (LED)",
+                    "consumption": "Consommation : {{value}}W"
+                },
+                "footer": "* Avec notre technologie d'îlotage, le passage sur batterie est imperceptible (moins de 10ms)."
+            }
+        },
+        "faq": {
+            "title": "Questions Fréquentes",
+            "subtitle": "Des questions sur la transition énergétique ? Nous clarifions tout.",
+            "questions": {
+                "warranty": {
+                    "q": "Comment fonctionne la garantie et la maintenance ?",
+                    "a": "Nous offrons une garantie de 25 ans sur la performance des panneaux solaires et une assistance technique à vie. Nos solutions incluent une maintenance préventive annuelle pour garantir une efficacité maximale."
+                },
+                "savings": {
+                    "q": "Combien puis-je économiser sur ma facture d'énergie ?",
+                    "a": "Avec un système intégré (Photovoltaïque + Batterie + Pompe à Chaleur), les économies peuvent atteindre 80 % par an, réduisant drastiquement la dépendance au réseau électrique public."
+                },
+                "subsidies": {
+                    "q": "Existe-t-il des subventions disponibles ?",
+                    "a": "Oui, il existe diverses aides cantonales et fédérales (Pronovo) pour l'installation d'énergies renouvelables. Notre équipe s'occupe de tout le processus bureaucratique et des demandes pour vous."
+                },
+                "installation": {
+                    "q": "Combien de temps dure l'installation ?",
+                    "a": "Après l'approbation du projet, l'installation physique prend généralement entre 2 et 3 jours, selon la complexité et la dimension du système. Nous garantissons un impact minimal sur votre routine quotidienne."
+                }
+            }
+        }
+    },
+    "about": {
+        "hero": {
+            "badge": "Notre Histoire",
+            "title": "Excellence Énergétique",
+            "subtitle": "Depuis 2015",
+            "description": "Toute excellence naît d'un parcours. Chez Energie est née de la vision de rendre l'énergie renouvelable accessible, belle et intelligente pour chaque foyer suisse.",
+            "cta": "Parler avec un Expert"
+        },
+        "mission": {
+            "badge": "Notre Mission",
+            "title": "L'Autosuffisance qui Respecte la Planète et votre Portefeuille",
+            "p1": "Chez Energie est née avec un objectif clair : rendre les maisons et entreprises de Genève et sa région autosuffisantes. Nous croyons que l'énergie du futur est décentralisée, propre et, surtout, économique.",
+            "p2": "Nous ne vendons pas seulement des équipements ; nous offrons la liberté énergétique et un confort thermique de haut standing."
+        },
+        "pillars": {
+            "title": "Nos 5 Piliers de Solutions",
+            "subtitle": "Technologies intégrées pour une efficacité maximale.",
+            "items": {
+                "heatPump": {
+                    "title": "Pompes à Chaleur",
+                    "description": "Remplacez les vieilles chaudières par une efficacité maximale. Chauffez votre maison en extrayant l'énergie thermique de l'air, réduisant drastiquement les coûts."
+                },
+                "solar": {
+                    "title": "Panneaux Solaires",
+                    "description": "Transformez votre toit en un actif financier. Produisez votre propre électricité propre et protégez-vous contre l'augmentation des tarifs."
+                },
+                "hvac": {
+                    "title": "Climatisation",
+                    "description": "Confort absolu en toutes saisons. Systèmes silencieux et intelligents garantissant la température parfaite, été comme hiver."
+                },
+                "battery": {
+                    "title": "Batteries et Stockage",
+                    "description": "Utilisez le soleil même la nuit. Stockez l'excès de production solaire pour garantir l'autonomie et la sécurité contre les pannes de réseau."
+                },
+                "charging": {
+                    "title": "Points de Recharge",
+                    "description": "La station-service est votre garage. Chargeurs rapides et intelligents intégrés à votre système solaire pour une mobilité à coût nul."
+                }
+            }
+        },
+        "whyUs": {
+            "badge": "Ce qui nous différencie",
+            "title": "Pourquoi Chez Energie ?",
+            "description": "Dans un marché complexe, nous apportons simplicité et confiance. Notre approche est technique, transparente et axée sur le long terme.",
+            "items": {
+                "certified": {
+                    "title": "Installation Professionnelle Certifiée",
+                    "description": "Techniciens qualifiés suivant rigoureusement les normes suisses de sécurité et de qualité."
+                },
+                "localSupport": {
+                    "title": "Support Technique Local",
+                    "description": "Nous sommes à Genève. Notre support est proche, rapide et parle votre langue."
+                },
+                "trustedTech": {
+                    "title": "Technologie de Confiance",
+                    "description": "Nous travaillons uniquement avec des marques leaders mondiales pour garantir durabilité et performance."
+                }
+            },
+            "stat": {
+                "value": "100%",
+                "label": "Engagement envers la satisfaction et la qualité technique."
+            }
+        },
+        "cta": {
+            "title": "Prêt pour l'avenir de l'énergie ?",
+            "description": "Ne remettez pas à plus tard les économies que vous pouvez réaliser dès aujourd'hui. Parlez à nos experts.",
+            "button": "Devis Gratuit"
+        }
+    },
+    "contact": {
+        "newRequest": "Nouvelle Demande",
+        "dynamic": {
+            "monthlyConsumption": "Conso. Mensuelle Moyenne (kWh)",
+            "availableArea": "Surface Disponible (m²)",
+            "heatingArea": "Surface à Chauffer (m²)",
+            "currentHeating": "Type de Chauffage Actuel",
+            "existingSolar": "Système Solaire Existant ?",
+            "storageCapacity": "Capacité Souhaitée (kWh)",
+            "desiredPower": "Puissance Souhaitée",
+            "distanceToPanel": "Distance Tableau Électrique (m)",
+            "coolingArea": "Surface à Climatiser (m²)",
+            "numberOfRooms": "Nombre de Pièces",
+            "no": "Non"
+        },
+        "projectTypes": {
+            "solar": "Panneaux Solaires",
+            "heatpump": "Pompes à Chaleur",
+            "battery": "Batteries & Stockage",
+            "evcharger": "Recharge Électrique",
+            "hvac": "Climatisation",
+            "other": "Autre"
+        },
+        "hero": {
+            "badge": "Parlons de Votre Projet",
+            "title": "Construisons le",
+            "titleHighlight": "futur",
+            "titleSuffix": "de votre projet.",
+            "description": "Solutions énergétiques intelligentes pour résidences et entreprises. À Genève et dans toute la Suisse Romande, nous transformons votre façon de consommer l'énergie.",
+            "ctaTitle": "Demander un Devis Gratuit",
+            "ctaSubtitle": "Remplissez le formulaire ci-dessous et notre équipe vous contactera."
+        },
+        "form": {
+            "nameLabel": "Nom complet",
+            "namePlaceholder": "Jean Dupont",
+            "emailLabel": "Email",
+            "emailPlaceholder": "jean@example.com",
+            "phoneLabel": "Téléphone",
+            "phonePlaceholder": "+41 XX XXX XX XX",
+            "serviceLabel": "Service d'intérêt",
+            "servicePlaceholder": "Sélectionnez un service",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Décrivez votre projet ou vos questions...",
+            "fileLabel": "Joindre un fichier (optionnel)",
+            "fileHint": "Photos de votre toit, factures d'énergie, etc.",
+            "submitButton": "Envoyer la Demande",
+            "submitting": "Envoi en cours...",
+            "successTitle": "Demande Envoyée !",
+            "successMessage": "Merci pour votre intérêt. Notre équipe vous contactera sous 24h.",
+            "newRequest": "Nouvelle Demande",
+            "submitError": "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer ou nous contacter par téléphone.",
+            "privacyPolicy": "En envoyant, vous acceptez notre politique de confidentialité. Vos données sont 100% sécurisées.",
+            "interestLabel": "Intérêt Principal",
+            "selectOption": "Sélectionner"
+        },
+        "info": {
+            "title": "Informations de Contact",
+            "addressLabel": "Bureaux",
+            "addressValue": "Genève",
+            "phoneLabel": "Téléphone",
+            "phoneValue": "+41 76 513 31 66",
+            "phoneNote": "Lun-Ven, 9h-18h",
+            "emailLabel": "Email",
+            "emailValue": "Info@chezenergy.ch",
+            "emailNote": "Réponse sous 24h"
+        }
+    }
+}

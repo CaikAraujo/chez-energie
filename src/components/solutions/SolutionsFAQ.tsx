@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useTranslations } from '../../i18n/useTranslations';
 
 const SolutionsFAQ: React.FC = () => {
+    const { t } = useTranslations('solutions');
+
     const faqs = [
         {
-            question: "Comment fonctionne la garantie et la maintenance ?",
-            answer: "Nous offrons une garantie de 25 ans sur la performance des panneaux solaires et une assistance technique à vie. Nos solutions incluent une maintenance préventive annuelle pour garantir une efficacité maximale."
+            question: t('faq.questions.warranty.q'),
+            answer: t('faq.questions.warranty.a')
         },
         {
-            question: "Combien puis-je économiser sur ma facture d'énergie ?",
-            answer: "Avec un système intégré (Photovoltaïque + Batterie + Pompe à Chaleur), les économies peuvent atteindre 80 % par an, réduisant drastiquement la dépendance au réseau électrique public."
+            question: t('faq.questions.savings.q'),
+            answer: t('faq.questions.savings.a')
         },
         {
-            question: "Existe-t-il des subventions disponibles ?",
-            answer: "Oui, il existe diverses aides cantonales et fédérales (Pronovo) pour l'installation d'énergies renouvelables. Notre équipe s'occupe de tout le processus bureaucratique et des demandes pour vous."
+            question: t('faq.questions.subsidies.q'),
+            answer: t('faq.questions.subsidies.a')
         },
         {
-            question: "Combien de temps dure l'installation ?",
-            answer: "Après l'approbation du projet, l'installation physique prend généralement entre 2 et 3 jours, selon la complexité et la dimension du système. Nous garantissons un impact minimal sur votre routine quotidienne."
+            question: t('faq.questions.installation.q'),
+            answer: t('faq.questions.installation.a')
         },
     ];
 
@@ -28,10 +31,10 @@ const SolutionsFAQ: React.FC = () => {
             <div className="max-w-3xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">
-                        Questions Fréquentes
+                        {t('faq.title')}
                     </h2>
                     <p className="text-slate-600">
-                        Des questions sur la transition énergétique ? Nous clarifions tout.
+                        {t('faq.subtitle')}
                     </p>
                 </div>
 

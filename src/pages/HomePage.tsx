@@ -6,6 +6,8 @@ import StatsSection from '../components/shared/StatsSection';
 import CTASection from '../components/shared/CTASection';
 import DocumentTitle from '../components/shared/DocumentTitle';
 import { SectionId } from '../types';
+import { useLocale } from '../contexts/LocaleContext';
+import { useTranslations } from '../i18n/useTranslations';
 
 import TestimonialsSection from '../components/home/TestimonialsSection'; // Import
 
@@ -15,6 +17,8 @@ import SEO from '../components/shared/SEO';
 
 const HomePage: React.FC = () => {
     const navigate = useNavigate();
+    const { locale } = useLocale();
+    const { t } = useTranslations('seo');
 
     const scrollTo = (sectionId: SectionId) => {
         const element = document.getElementById(sectionId);
@@ -26,11 +30,11 @@ const HomePage: React.FC = () => {
     return (
         <>
             <DocumentTitle
-                title="Autonomie Énergétique à Genève"
-                description="Leader en panneaux solaires, pompes à chaleur et climatisation à Genève. Réduisez vos factures et gagnez en autonomie."
+                title={t('home.title')}
+                description={t('home.description')}
             />
             <Hero scrollTo={scrollTo} />
-            <FeaturesSection onLearnMoreClick={() => navigate('/solutions#calculator')} />
+            <FeaturesSection onLearnMoreClick={() => navigate(`/${locale}/solutions#calculator`)} />
             <StatsSection />
             <TestimonialsSection />
             <CTASection />

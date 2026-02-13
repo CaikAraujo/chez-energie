@@ -1,11 +1,14 @@
 import React from 'react';
+import { useTranslations } from '../../i18n/useTranslations';
 
 const StatsSection: React.FC = () => {
+  const { t } = useTranslations('stats');
+
   const stats = [
-    { value: "+500", label: "Projets Réalisés" },
-    { value: "30%", label: "Économies Moyennes" },
-    { value: "24/7", label: "Support Technique" },
-    { value: "25", label: "Ans de Garantie" },
+    { value: "+500", label: t('projects') },
+    { value: "30%", label: t('savings') },
+    { value: "24/7", label: t('support') },
+    { value: "25", label: t('warranty') },
   ];
 
   return (

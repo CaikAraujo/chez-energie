@@ -4,11 +4,13 @@ import ServicesSection from '../components/shared/ServicesSection';
 import SolutionsFAQ from '../components/solutions/SolutionsFAQ';
 import SolarCalculator from '../components/solutions/SolarCalculator';
 import { SectionId } from '../types';
+import { useTranslations } from '../i18n/useTranslations';
 
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const SolutionsPage: React.FC = () => {
+    const { t } = useTranslations('seo');
     const location = useLocation();
 
     useEffect(() => {
@@ -42,9 +44,9 @@ const SolutionsPage: React.FC = () => {
     return (
         <div className="bg-slate-900"> {/* Dark background base */}
             <DocumentTitle
-                title="Calculateur Solaire & Solutions"
-                description="Simulez vos économies solaires et découvrez nos solutions techniques détaillées."
-                // canonical="/solutions"
+                title={t('solutions.title')}
+                description={t('solutions.description')}
+            // canonical="/solutions"
             />
             <SolutionsHero scrollTo={scrollTo} />
             <div id="solutions-content" className="relative z-10 bg-slate-50 space-y-24 pb-24">

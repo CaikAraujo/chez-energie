@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { MapPin, Search, Power, Battery } from 'lucide-react';
 import { SWISS_CITIES } from '../../../data/swissCities';
+import { useTranslations } from '../../../i18n/useTranslations';
 
 interface CalculatorControlsProps {
     address: string;
@@ -29,6 +30,7 @@ export const CalculatorControls: React.FC<CalculatorControlsProps> = ({
     onBatteryToggle,
     onBlackoutSimulate,
 }) => {
+    const { t } = useTranslations('solutions');
     const [suggestions, setSuggestions] = useState<typeof SWISS_CITIES>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
     const autocompleteRef = useRef<HTMLDivElement>(null);
@@ -74,15 +76,15 @@ export const CalculatorControls: React.FC<CalculatorControlsProps> = ({
                         className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 hover:text-red-400 text-xs font-bold uppercase tracking-wider border border-red-500/20 transition-all ml-auto"
                     >
                         <Power className="w-3 h-3" />
-                        Simuler une Panne
+                        {t('calculator.blackoutButton')}
                     </button>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-                    Estimez votre <span className="text-emerald-400">Rentabilité Solaire</span>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight whitespace-pre-line">
+                    {t('calculator.title')}
                 </h2>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                    Découvrez combien vous pouvez économiser sur 25 ans en optimisant votre surface de toiture.
+                    {t('calculator.subtitle')}
                 </p>
             </div>
 
@@ -90,11 +92,11 @@ export const CalculatorControls: React.FC<CalculatorControlsProps> = ({
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 space-y-8 shadow-xl">
                 {/* Location Input */}
                 <div className="space-y-2 relative" ref={autocompleteRef}>
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Localisation</label>
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t('calculator.addressLabel')}</label>
                     <div className="relative">
                         <input
                             type="text"
-                            placeholder="Entrez votre localité..."
+                            placeholder={t('calculator.addressPlaceholder')}
                             value={address}
                             onChange={handleInputChange}
                             onFocus={() => address.length > 0 && setShowSuggestions(true)}
@@ -125,7 +127,7 @@ export const CalculatorControls: React.FC<CalculatorControlsProps> = ({
                 {/* Monthly Bill Slider */}
                 <div className="space-y-4">
                     <div className="flex justify-between items-baseline">
-                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Facture Mensuelle</label>
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t('calculator.monthlyBillLabel')}</label>
                         <div className="text-xl font-bold text-white tabular-nums">{monthlyBill} <span className="text-xs text-slate-500 font-normal">CHF</span></div>
                     </div>
                     <input
@@ -144,7 +146,7 @@ export const CalculatorControls: React.FC<CalculatorControlsProps> = ({
                 {/* Roof Area Slider */}
                 <div className="space-y-4">
                     <div className="flex justify-between items-baseline">
-                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Surface de Toiture</label>
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t('calculator.roofAreaLabel')}</label>
                         <div className="text-xl font-bold text-white tabular-nums">{roofArea} <span className="text-xs text-slate-500 font-normal">m²</span></div>
                     </div>
                     <input
@@ -171,8 +173,8 @@ export const CalculatorControls: React.FC<CalculatorControlsProps> = ({
                                 <Battery className="w-5 h-5" />
                             </div>
                             <div>
-                                <div className={`font-bold text-sm transition-colors ${hasBattery ? 'text-white' : 'text-slate-300'}`}>Inclure une Batterie</div>
-                                <div className="text-xs text-slate-500">Stockage intelligent</div>
+                                <div className={`font-bold text-sm transition-colors ${hasBattery ? 'text-white' : 'text-slate-300'}`}>{t('calculator.batteryLabel')}</div>
+                                <div className="text-xs text-slate-500">{t('calculator.batteryLabel')}</div>
                             </div>
                         </div>
                         <div className={`w-11 h-6 rounded-full transition-colors relative ${hasBattery ? 'bg-indigo-500' : 'bg-slate-800'}`}>

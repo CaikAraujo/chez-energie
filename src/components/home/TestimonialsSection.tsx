@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import './TestimonialsSection.css';
+import { useTranslations } from '../../i18n/useTranslations';
 
 const testimonials = [
     {
@@ -30,6 +31,8 @@ const testimonials = [
 ];
 
 const TestimonialsSection: React.FC = () => {
+    const { t } = useTranslations('testimonials');
+
     return (
         <section className="testimonials-section">
             {/* Background Effects */}
@@ -38,10 +41,9 @@ const TestimonialsSection: React.FC = () => {
 
             <div className="testimonials-container">
                 <div className="testimonials-header">
-                    <h3 className="testimonials-title">Ce que disent nos clients</h3>
+                    <h3 className="testimonials-title">{t('title')}</h3>
                     <p className="testimonials-subtitle">
-                        Plus de 500 familles font déjà confiance à Chez Energie pour leur transition énergétique.
-                        La satisfaction de nos clients est notre meilleure garantie.
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -75,3 +77,4 @@ const TestimonialsSection: React.FC = () => {
 };
 
 export default TestimonialsSection;
+

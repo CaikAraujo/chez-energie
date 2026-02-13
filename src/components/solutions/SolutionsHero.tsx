@@ -1,12 +1,15 @@
 import React from 'react';
 import { ChevronDown, Zap } from 'lucide-react';
 import { SectionId } from '../../types';
+import { useTranslations } from '../../i18n/useTranslations';
 
 interface SolutionsHeroProps {
     scrollTo: (sectionId: SectionId) => void;
 }
 
 const SolutionsHero: React.FC<SolutionsHeroProps> = ({ scrollTo }) => {
+    const { t } = useTranslations('solutions');
+
     return (
         <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-slate-900">
 
@@ -26,18 +29,18 @@ const SolutionsHero: React.FC<SolutionsHeroProps> = ({ scrollTo }) => {
                 {/* Label */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
                     <Zap className="w-4 h-4 text-brand-green fill-brand-green" />
-                    <span className="text-xs font-bold tracking-[0.2em] text-white uppercase">Ingénierie Suisse</span>
+                    <span className="text-xs font-bold tracking-[0.2em] text-white uppercase">{t('hero.badge')}</span>
                 </div>
 
                 {/* Main Title */}
                 <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-8 leading-tight">
-                    Efficacité <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-teal-400">Sans Compromis.</span>
+                    {t('hero.title')} <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-teal-400">{t('hero.titleHighlight')}</span>
                 </h1>
 
                 {/* Description */}
                 <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light mb-12">
-                    Nous concevons, installons et entretenons des écosystèmes énergétiques complets. Photovoltaïque, Thermique et Mobilité intégrés avec une précision millimétrique.
+                    {t('hero.description')}
                 </p>
 
                 {/* Actions */}
@@ -49,7 +52,7 @@ const SolutionsHero: React.FC<SolutionsHeroProps> = ({ scrollTo }) => {
                         }}
                         className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-100 transition-all active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
                     >
-                        Demander une Étude Technique
+                        {t('hero.ctaPrimary')}
                     </button>
                     <button
                         onClick={() => {
@@ -58,7 +61,7 @@ const SolutionsHero: React.FC<SolutionsHeroProps> = ({ scrollTo }) => {
                         }}
                         className="px-8 py-4 border border-white/20 text-white rounded-full font-medium hover:bg-white/10 transition-all backdrop-blur-sm"
                     >
-                        Explorer les Solutions
+                        {t('hero.ctaSecondary')}
                     </button>
                 </div>
             </div>

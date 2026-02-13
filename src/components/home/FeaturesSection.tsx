@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sun, Thermometer, Zap, Battery, Home, ArrowRight, Wind } from 'lucide-react';
 import { SectionId } from '../../types';
+import { useTranslations } from '../../i18n/useTranslations';
 import './FeaturesSection.css';
 
 interface FeaturesSectionProps {
@@ -8,6 +9,8 @@ interface FeaturesSectionProps {
 }
 
 export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreClick }) => {
+    const { t } = useTranslations('features');
+
     return (
         <section id={SectionId.SERVICES} className="features-section">
 
@@ -21,10 +24,10 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                 {/* Section Header */}
                 <div className="features-header">
                     <h2 className="features-title">
-                        Technologie de <span className="features-highlight">Pointe</span>
+                        {t('title')} <span className="features-highlight">{t('titleHighlight')}</span>
                     </h2>
                     <p className="features-desc">
-                        Équipements sélectionnés pour leur durabilité et performance supérieure.
+                        {t('description')}
                     </p>
                 </div>
 
@@ -39,13 +42,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box solar">
                                 <Sun size={24} />
                             </div>
-                            <h3 className="card-title">Panneau Solaire Full Black</h3>
+                            <h3 className="card-title">{t('solar.title')}</h3>
                             <p className="card-text">
-                                Modules monocristallins avec esthétique supérieure et efficacité garantie même par temps nuageux.
+                                {t('solar.description')}
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Garantie</span>
-                                <span className="card-value">25 Ans</span>
+                                <span className="card-label">{t('solar.label')}</span>
+                                <span className="card-value">{t('solar.value')}</span>
                             </div>
                         </div>
                     </div>
@@ -59,13 +62,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box heat">
                                 <Thermometer size={24} />
                             </div>
-                            <h3 className="card-title">Pompe à Chaleur</h3>
+                            <h3 className="card-title">{t('heatPump.title')}</h3>
                             <p className="card-text">
-                                Coefficient de performance leader du marché. 4x plus efficace que les systèmes au gaz ou fioul.
+                                {t('heatPump.description')}
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Efficacité</span>
-                                <span className="card-value">COP 4.5</span>
+                                <span className="card-label">{t('heatPump.label')}</span>
+                                <span className="card-value">{t('heatPump.value')}</span>
                             </div>
                         </div>
                     </div>
@@ -79,13 +82,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box ev">
                                 <Zap size={24} />
                             </div>
-                            <h3 className="card-title">Recharge VE</h3>
+                            <h3 className="card-title">{t('evCharger.title')}</h3>
                             <p className="card-text">
-                                Chargement intelligent intégré avec votre production solaire. Faites le plein avec le soleil.
+                                {t('evCharger.description')}
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Puissance</span>
-                                <span className="card-value">22 kW</span>
+                                <span className="card-label">{t('evCharger.label')}</span>
+                                <span className="card-value">{t('evCharger.value')}</span>
                             </div>
                         </div>
                     </div>
@@ -99,13 +102,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                             <div className="card-icon-box wind">
                                 <Wind size={24} />
                             </div>
-                            <h3 className="card-title">Climatisation</h3>
+                            <h3 className="card-title">{t('hvac.title')}</h3>
                             <p className="card-text">
-                                Confort thermique toute l'année avec une efficacité énergétique maximale et un silence absolu.
+                                {t('hvac.description')}
                             </p>
                             <div className="card-footer">
-                                <span className="card-label">Bruit</span>
-                                <span className="card-value">&lt; 20 dB</span>
+                                <span className="card-label">{t('hvac.label')}</span>
+                                <span className="card-value" dangerouslySetInnerHTML={{ __html: t('hvac.value') }} />
                             </div>
                         </div>
                     </div>
@@ -118,15 +121,15 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
 
                     <div className="system-content">
                         <div className="system-text">
-                            <h3>Un Système, <br />Trois Piliers</h3>
+                            <h3>{t('system.title')}<br />{t('system.titleLine2')}</h3>
                             <p>
-                                La synergie parfaite entre la production du toit, le confort du salon et la mobilité du garage. Tout contrôlé dans une seule application.
+                                {t('system.description')}
                             </p>
                             <button
                                 className="system-btn"
                                 onClick={onLearnMoreClick}
                             >
-                                Savoir comment ça marche <ArrowRight size={18} />
+                                {t('system.button')} <ArrowRight size={18} />
                             </button>
                         </div>
 
@@ -138,7 +141,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                                 <div className="pillar-circle">
                                     <Sun className="pillar-icon" color="currentColor" />
                                 </div>
-                                <span className="pillar-label">Production</span>
+                                <span className="pillar-label">{t('system.production')}</span>
                             </div>
 
                             {/* CONNECTOR 1: Solar -> Battery */}
@@ -169,7 +172,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                                 <div className="pillar-circle">
                                     <Battery className="pillar-icon" color="currentColor" />
                                 </div>
-                                <span className="pillar-label">Stockage</span>
+                                <span className="pillar-label">{t('system.storage')}</span>
                             </div>
 
                             {/* CONNECTOR 2: Battery -> Home */}
@@ -200,7 +203,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onLearnMoreCli
                                 <div className="pillar-circle">
                                     <Home className="pillar-icon" color="currentColor" />
                                 </div>
-                                <span className="pillar-label">Consommation</span>
+                                <span className="pillar-label">{t('system.consumption')}</span>
                             </div>
 
                         </div>
